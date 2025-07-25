@@ -7,7 +7,7 @@
     "alt": "Photograph of NYC"
   },
   {
-    "name": "Services",
+    "name": "projects",
     "src": "images/nyc_landing.jpg",
     "shade": "light",
     "alt": "Violet flowers against a black backdrop"
@@ -19,10 +19,10 @@
     "alt": ""
   },
   {
-    "name": "Our Events",
+    "name": "writing",
     "src": "images/hackathon_image.jpg",
     "shade": "dark",
-    "alt": "hatkathon"
+    "alt": "Cityscape seen from above through a purple haze"
   },
   {
     "name": "book",
