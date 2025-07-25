@@ -25,7 +25,7 @@ const Footer = ({ foregroundColor = 'white', backgroundColor = '#4e567e' }) => {
               ) : null;
             })}
           </div>
-          <p className="small" style={{color: foregroundColor}}>Copyright © {siteProperties.name} 2024</p>
+          <p className="small" style={{color: foregroundColor}}>Copyright © {siteProperties.name} 2025</p>
         </div>
       </section>
     );

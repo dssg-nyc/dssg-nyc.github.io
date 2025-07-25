@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
 #header {
     position: fixed;
     display: flex;
@@ -5,19 +7,22 @@
     flex-wrap: wrap;
     box-sizing: border-box;
     gap: 2rem;
-    background: rgba(255,255,255,0.75);
-    padding: 1rem;
+    background: #53C8FF;
+    padding: 2rem;
     top: 0;
     width: 100vw;
     z-index: 20;
+    font-family: "DM Sans", sans-serif;
   }
 
   #header a {
     text-decoration: none;
-    color: black;
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: "DM Sans", sans-serif;
   }
   
   #header a:hover {
-    color: #4e567e;
+    color: rgba(255, 255, 255, 0.8);
   }
-  
