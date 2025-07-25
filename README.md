@@ -1,6 +1,6 @@
 # README
 
-## Introduction JYR AI consulting
+## Introduction Data Science for Social Good NYC chapter for Data and IT Volunteers
 
 ## Prerequisites
 
