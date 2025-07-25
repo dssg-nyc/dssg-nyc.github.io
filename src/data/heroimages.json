@@ -1,14 +1,14 @@
 [
   {
     "name": "home",
-    "src": "images/nyc_landing.png",
+    "src": "images/nyc_landing.jpg",
     "shade": "dark",
     "adjustment": "-20%",
     "alt": "Photograph of NYC"
   },
   {
     "name": "projects",
-    "src": "images/nyc_landing.png",
+    "src": "images/nyc_landing.jpg",
     "shade": "light",
     "alt": "Violet flowers against a black backdrop"
   },
