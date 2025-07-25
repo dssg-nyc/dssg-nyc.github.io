@@ -1,14 +1,14 @@
 {
-  "homepage": "https://jyr-ai.github.io",
-  "author": "JianYin Roachell <jianyin.roachell@gmail.com>",
-  "name": "jian-bookings-site",
+  "homepage": "https://dssg-nyc.github.io",
+  "author": "Jian Roachell <dssgnyc@gmail.com>",
+  "name": "dssgnyc-site",
   "private": false,
   "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "cname": "echo https://jyr-ai.github.io > ./dist/CNAME",
+    "cname": "echo https://dssg-nyc.github.io > ./dist/CNAME",
     "deploy": "gh-pages -d dist",
     "preview": "vite preview"
   },
