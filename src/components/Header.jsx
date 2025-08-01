@@ -3,6 +3,11 @@ import { useEffect } from 'react';
 import './Header.css';
 
 const Header = () => {
+  const logo = (
+    <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>
+      <img src="/images/logo2.png" alt="DSSG Logo" style={{height: '100px'}} />
+    </a>
+  );
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -29,6 +34,7 @@ const Header = () => {
 
   return (
     <div id="header">
+      {logo}
       <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>Home</a>
       <a href="/#projects" onClick={(e) => handleAnchorClick(e, '#projects')}>Projects</a>
       <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')}>Writing</a>

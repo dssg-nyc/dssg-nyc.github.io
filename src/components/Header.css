@@ -3,12 +3,13 @@
 #header {
     position: fixed;
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    align-items: center;
     flex-wrap: wrap;
     box-sizing: border-box;
     gap: 2rem;
     background: #53C8FF;
-    padding: 2rem;
+    padding: 0.3rem 0.4rem;
     top: 0;
     width: 100vw;
     z-index: 20;
@@ -18,7 +19,7 @@
   #header a {
     text-decoration: none;
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     font-weight: 500;
     font-family: "DM Sans", sans-serif;
   }

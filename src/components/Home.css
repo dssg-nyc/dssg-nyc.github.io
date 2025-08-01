@@ -12,3 +12,20 @@
 .clickable-icon:hover {
     transform: scale(1.1);
 }
+
+h1 {
+    color: #F47E2D;
+    text-shadow: 0 0 8px #002D72, 0 0 10px #002D72;
+    -webkit-text-stroke: 2px white;
+    text-stroke: 2px white;
+    font-weight: bold;
+    font-size: 8rem;
+}
+h2 {
+    color: #F47E2D;
+    text-shadow: 0 0 8px #002D72, 0 0 10px #002D72;
+    -webkit-text-stroke: 1px white;
+    text-stroke: 1px white;
+    font-weight: bold;
+    font-size: 3rem;
+}
