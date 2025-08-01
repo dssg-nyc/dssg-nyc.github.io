@@ -5,7 +5,7 @@ import './Header.css';
 const Header = () => {
   const logo = (
     <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')}>
-      <img src="/images/logo2.png" alt="DSSG Logo" style={{height: '100px'}} />
+      <img src="/images/logo3.png" alt="DSSG Logo" style={{height: '100px'}} />
     </a>
   );
   const location = useLocation();
