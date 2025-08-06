@@ -2,32 +2,28 @@ import { PropTypes } from 'prop-types';
 import './Card.css';
 
 const Card = ({ project }) => (
-  <div className={`project-card ${project['icon-overlay'] ? 'featured' : ''}`}>
-    <div className="content-wrapper">
-      <div className="title-section">
-        <div className="title-container">
-          <h3>{project.title}</h3>
-        </div>
-      </div>
+  <div className="modern-card">
+    <div className="card-content">
       {project.img && (
-        <div className="image-section">
+        <div className="card-image">
           <img src={`/images/${project.img}`} alt={project.title} />
         </div>
       )}
-      <div className={`body-section ${project.img ? 'with-image' : ''}`}>
-        <p>{project.description}</p>
-        <a href={project.url} target="_blank" rel="noopener noreferrer" className="button">
-          View Project
-        </a>
+      <div className="card-body">
+        <h3 className="card-title">{project.title}</h3>
+        <p className="card-description">{project.description}</p>
+        <div className="card-footer">
+          <a 
+            href={project.url} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="button card-button"
+          >
+            {project.buttonText || 'Learn More'}
+          </a>
+        </div>
       </div>
     </div>
-    {project['icon-overlay'] && (
-      <img
-        src={`/images/${project['icon-overlay']}`}
-        alt="Icon Overlay"
-        className="icon-overlay"
-      />
-    )}
   </div>
 );
 

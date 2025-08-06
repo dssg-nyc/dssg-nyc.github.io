@@ -1,48 +1,336 @@
-.projects-container {
-  display: flex;
-  min-height: 60vh;
-  padding: 2rem;
-  gap: 2rem;
+.projects-section {
+  padding: var(--space-3xl) 0;
+  background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
 }
 
-.projects-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.projects-header {
   text-align: center;
-  padding: 2rem;
+  margin-bottom: var(--space-3xl);
 }
 
-.projects-column h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
-  color: #002D72;
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
 }
 
-.projects-column h2 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--gray-600);
+  max-width: 600px;
+  margin: 0 auto;
   line-height: 1.6;
 }
 
-.project-button {
-  padding: 1rem 2rem;
-  background-color: #F47E2D;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+/* Main Grid Layout */
+.involvement-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-2xl);
+  align-items: stretch;
+  margin-bottom: var(--space-3xl);
 }
 
-.project-button:hover {
-  background-color: #002D72;
+/* Individual Cards */
+.involvement-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.involvement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+}
+
+.involvement-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+.professionals-card::before {
+  background: var(--gradient-primary);
+}
+
+.nonprofits-card::before {
+  background: var(--gradient-secondary);
+}
+
+/* Card Headers */
+.card-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.card-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.professionals-icon {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  color: white;
+}
+
+.nonprofits-icon {
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
+  color: white;
+}
+
+.card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: var(--space-xs);
+}
+
+.card-tagline {
+  color: var(--gray-500);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.card-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--gray-700);
+  margin-bottom: var(--space-lg);
+}
+
+/* Benefits List */
+.benefits-list {
+  margin-bottom: var(--space-lg);
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-sm);
+  padding: var(--space-sm);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.benefit-item:hover {
+  background: var(--gray-100);
+  transform: translateX(4px);
+}
+
+.benefit-icon {
+  font-size: 1.25rem;
+  margin-right: var(--space-sm);
+  min-width: 30px;
+}
+
+.benefit-item span {
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* Skills Tags */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
+}
+
+.skill-tag {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Services List */
+.services-list {
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.service-category h4 {
+  color: var(--primary-orange);
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.service-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-category li {
+  padding: var(--space-xs) 0;
+  color: var(--gray-700);
+  position: relative;
+  padding-left: var(--space-md);
+}
+
+.service-category li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--primary-orange);
+  font-weight: bold;
+}
+
+/* Card Footer */
+.card-footer {
+  text-align: center;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Visual Separator */
+.section-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  position: relative;
+}
+
+.divider-line {
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--gray-300), transparent);
+}
+
+.divider-icon {
+  background: white;
+  border: 2px solid var(--gray-200);
+  border-radius: 50%;
+  padding: var(--space-sm);
+  margin: var(--space-sm) 0;
+  box-shadow: var(--shadow-md);
+}
+
+/* Bottom Stats Section */
+.projects-bottom {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.stat-item {
+  padding: var(--space-lg);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .involvement-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .section-divider {
+    display: none;
+  }
+  
+  .stats-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-  .projects-container {
-    flex-direction: column;
+  .projects-section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .involvement-card {
+    padding: var(--space-lg);
+  }
+  
+  .card-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .stats-section {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-tags {
+    justify-content: center;
+  }
+  
+  .benefits-list {
+    margin-bottom: var(--space-md);
+  }
+  
+  .benefit-item {
+    padding: var(--space-xs);
   }
 }
