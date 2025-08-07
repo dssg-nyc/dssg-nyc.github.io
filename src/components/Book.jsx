@@ -77,12 +77,7 @@ const Book = () => {
               <div className="contact-alternatives">
                 <h4>Prefer a Different Way to Connect?</h4>
                 <div className="contact-options">
-                  <a href="https://forms.gle/your-general-contact-form" 
-                     target="_blank" 
-                     rel="noopener noreferrer" 
-                     className="button outline">
-                    Contact Form
-                  </a>
+                <h5>Contact: dssgnyc@gmail.com</h5>
                   <a href="mailto:dssgnyc@gmail.com" 
                      className="button outline">
                     Email Us
