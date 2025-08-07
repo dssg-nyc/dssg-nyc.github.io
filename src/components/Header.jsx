@@ -54,11 +54,11 @@ const Header = () => {
           <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="nav-link">
             Home
           </a>
-          <a href="/#about" onClick={(e) => handleAnchorClick(e, '#about')} className="nav-link">
-            About
-          </a>
           <a href="/#projects" onClick={(e) => handleAnchorClick(e, '#projects')} className="nav-link">
             Get Involved
+          </a>
+          <a href="/#about" onClick={(e) => handleAnchorClick(e, '#about')} className="nav-link">
+            About
           </a>
           <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
             Impact Stories

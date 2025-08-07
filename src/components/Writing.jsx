@@ -24,12 +24,6 @@ const Writing = () => {
       "description": "Stories from our community of data professionals making a difference, featuring career insights and project highlights",
       "buttonText": "Read Stories",
       "url": "#"
-    },
-    {
-      "title": "Data for Good Best Practices",
-      "description": "A comprehensive guide for non-profits on how to leverage data science effectively while maintaining ethical standards",
-      "buttonText": "Download Guide",
-      "url": "#"
     }
   ];
 

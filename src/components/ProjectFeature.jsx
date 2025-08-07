@@ -74,19 +74,6 @@ const ProjectFeature = () => {
               </div>
             </div>
             
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <div className="quote-icon">"</div>
-                <blockquote>
-                  Working with DSSG NYC transformed how we approach data-driven decision making. 
-                  Their volunteer experts helped us optimize our programs and reach 40% more beneficiaries.
-                </blockquote>
-                <div className="testimonial-author">
-                  <strong>Sarah Chen</strong>
-                  <span>Executive Director, NYC Community Partners</span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

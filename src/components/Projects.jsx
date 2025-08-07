@@ -25,14 +25,22 @@ const Projects = () => {
               </div>
               <h3>Data & IT Professionals</h3>
               <p className="card-tagline">Use your skills for social good</p>
+              <div className="card-footer">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8bvJdbx70NBQwizsA2UKAUiZ5AILtc7bWUH0KxOT_ej6MJw/viewform?usp=header" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="button">
+                  Volunteer
+                </a>
+              </div>
             </div>
             
             <div className="card-content">
               <p className="card-description">
-                Join our network of skilled technologists volunteering their expertise to help non-profit 
-                organizations solve complex challenges through data science, web development, and IT solutions.
+                Join our network of civic technologists advising non-profit 
+                organizations to solve complex challenges through data science, web development, and IT solutions.
               </p>
-              
+
               <div className="benefits-list">
                 <div className="benefit-item">
                   <div className="benefit-icon">✨</div>
@@ -51,25 +59,22 @@ const Projects = () => {
                   <span>Develop new skills & expertise</span>
                 </div>
               </div>
-              
+              <div className="services-list">
+              <div className="service-category">
+              <h4>Practice new skills:</h4>
               <div className="skills-tags">
-                <span className="skill-tag">Data Science</span>
-                <span className="skill-tag">Machine Learning</span>
-                <span className="skill-tag">Web Development</span>
-                <span className="skill-tag">Database Design</span>
-                <span className="skill-tag">Cloud Architecture</span>
-                <span className="skill-tag">Data Visualization</span>
+                <span className="skill-tag">Applied Data Science</span>
+                <span className="skill-tag">Machine Learning & AI Agents</span>
+                <span className="skill-tag">Automate Web Development</span>
+                <span className="skill-tag">Database Design & Data Ingestion</span>
+                <span className="skill-tag">Cloud Architecture & Kubernetes</span>
+                <span className="skill-tag">Data Story Telling</span>
+              </div>
+              </div>
               </div>
             </div>
             
-            <div className="card-footer">
-              <a href="https://forms.gle/your-volunteer-form" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="button">
-                Join as Volunteer
-              </a>
-            </div>
+
           </div>
           
           {/* Visual Separator */}
@@ -92,14 +97,22 @@ const Projects = () => {
                   <path d="M12 16C16.4183 16 20 19.5817 20 24H4C4 19.5817 7.58172 16 12 16Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <h3>For Non-Profit Organizations</h3>
+              <h3>Non-Profit Organizations</h3>
               <p className="card-tagline">Leverage technology for greater impact</p>
+              <div className="card-footer">
+                <a href="https://forms.gle/your-nonprofit-form" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   className="button secondary">
+                  Get Advice
+                </a>
+              </div>
             </div>
             
             <div className="card-content">
               <p className="card-description">
-                Partner with our expert volunteers to unlock the power of data and technology for your mission. 
-                Get professional-grade solutions tailored to your organization's unique needs and budget.
+                Partner with our passionate volunteers to unlock the power of data and technology for your mission. 
+                Get tailored IT solutions for your organization's unique needs and budget.
               </p>
               
               <div className="benefits-list">
@@ -123,27 +136,19 @@ const Projects = () => {
               
               <div className="services-list">
                 <div className="service-category">
-                  <h4>Services We Offer:</h4>
-                  <ul>
-                    <li>Program impact measurement & analysis</li>
-                    <li>Donor database optimization</li>
-                    <li>Website development & modernization</li>
-                    <li>Data visualization dashboards</li>
-                    <li>Process automation solutions</li>
-                    <li>Grant application data support</li>
-                  </ul>
+                  <h4>Pro Bono Services We Offer:</h4>
+                  <div className="skills-tags">
+                    <span className="skill-tag">Causal Impact for Social Research</span>
+                    <span className="skill-tag">Database optimization</span>
+                    <span className="skill-tag">Website development & modernization</span>
+                    <span className="skill-tag">Data visualization dashboards</span>
+                    <span className="skill-tag">Process automation solutions</span>
+                    <span className="skill-tag">Agentic AI solutions</span>
+                  </div>
                 </div>
               </div>
             </div>
             
-            <div className="card-footer">
-              <a href="https://forms.gle/your-nonprofit-form" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 className="button secondary">
-                Request Partnership
-              </a>
-            </div>
           </div>
         </div>
         

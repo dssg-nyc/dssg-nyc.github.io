@@ -15,7 +15,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--gradient-hero);
   z-index: 1;
 }
 
@@ -38,17 +37,17 @@
   line-height: 1;
   margin-bottom: var(--space-md);
   color: white;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-  font-family: var(--font-primary);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: clamp(1.25rem, 3vw, 1.75rem);
   margin-bottom: var(--space-lg);
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-shadow: 0 2px 8px white;
 }
 
 .hero-description {

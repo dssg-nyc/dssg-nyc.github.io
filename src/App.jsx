@@ -26,8 +26,8 @@ function App() {
                 name="DSSG x NYC"
               />
               <Home />
-              <About />
               <Projects />
+              <About />
               <ProjectFeature />
               <Writing />
               <Book />
