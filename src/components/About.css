@@ -1,0 +1,245 @@
+.about-section {
+  padding: var(--space-3xl) 0;
+  background: linear-gradient(135deg, white 0%, var(--gray-50) 100%);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.about-content {
+  padding-right: var(--space-lg);
+}
+
+.about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-lg);
+  line-height: 1.1;
+}
+
+.about-description {
+  margin-bottom: var(--space-xl);
+}
+
+.about-description p.lead {
+  font-size: 1.375rem;
+  line-height: 1.6;
+  color: var(--gray-700);
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+}
+
+.about-description p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin-bottom: var(--space-md);
+}
+
+/* Values Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.value-item {
+  padding: var(--space-lg);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+  border: 1px solid var(--gray-200);
+}
+
+.value-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.value-item h4 {
+  color: var(--gray-800);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.value-item p {
+  font-size: 1rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Visual Section */
+.about-visual {
+  padding-left: var(--space-lg);
+}
+
+.about-image-container {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-xl);
+}
+
+.about-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: var(--space-xl);
+  color: white;
+}
+
+.overlay-content {
+  text-align: center;
+}
+
+.stat-highlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: var(--space-xs);
+}
+
+/* Tech Skills Section */
+.tech-skills {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.tech-skills h4 {
+  color: var(--gray-800);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-md);
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  background: var(--gray-100);
+  transform: translateY(-2px);
+}
+
+.skill-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--space-xs);
+}
+
+.skill-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  
+  .about-content,
+  .about-visual {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .values-grid {
+    gap: var(--space-md);
+  }
+  
+  .value-item {
+    padding: var(--space-md);
+  }
+  
+  .about-image {
+    height: 300px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tech-skills {
+    padding: var(--space-lg);
+  }
+}

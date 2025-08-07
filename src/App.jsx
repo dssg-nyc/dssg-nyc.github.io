@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
+import About from './components/About';
 import ProjectFeature from './components/ProjectFeature';
 import Projects from './components/Projects';
 import Writing from './components/Writing';
@@ -19,13 +20,14 @@ function App() {
           <Route path="/" element={
             <>
               <Seo
-                title="DSSG x NYC"
-                description="Pro Bono IT, Data and AI consulting for Non-Profits in New York City."
+                title="DSSG x NYC - Data Science for Social Good"
+                description="Pro Bono IT, Data and AI consulting for Non-Profits in New York City. Connect with skilled professionals making a difference through technology."
                 type="website"
                 name="DSSG x NYC"
               />
               <Home />
               <Projects />
+              <About />
               <ProjectFeature />
               <Writing />
               <Book />

@@ -1,152 +1,112 @@
-.project-card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  text-align: center;
-  background-color: white;
-  color: black;
-  flex: 1 0 200px;
-  margin: 0.5rem;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: visible; /* Ensures icon overflow is visible */
-}
-
-.content-wrapper {
-  position: relative;
-  border-radius: 15px; /* Match the project-card border-radius */
-  overflow: hidden; /* Hide overflow for image and text */
-  flex-grow: 1;
+.modern-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.image-section {
-  display: flex;
-  flex: 1;
-  color: black;
-  position: relative;
+.modern-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
 }
 
-.image-section img {
-  display: block;
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  border-radius: 0;
+  transition: all 0.3s ease;
 }
 
-.body-section {
-  padding: 1rem;
+.modern-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: var(--space-xl);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
-  /* Default styles without specific background or positioning */
+  flex: 1;
 }
 
-.with-image {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 5;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: var(--space-md);
+  line-height: 1.3;
 }
 
-/* Hover effect for non-touch devices */
-@media (hover: hover) {
-  .project-card:hover .with-image {
-  transition: background-color 0.3s ease;
-}
-}
-
-@media (hover: hover) {
-    .project-card:hover .with-image {
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-  }
+.card-description {
+  color: var(--gray-600);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  flex: 1;
 }
 
-/* Always show the overlay for touch devices */
-@media (hover: none) {
-  .with-image {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-  }
+.card-footer {
+  margin-top: auto;
 }
 
-.icon-overlay {
-  position: absolute;
-  top: -2rem;
-  right: -2rem;
-  max-width: 8rem;
-  max-height: 8rem;
-  z-index: 10;
-}
-
-.title-section {
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 1rem;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.title-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card-button {
   width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-blue);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
 }
 
-.body-section {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+.card-button:hover {
+  background: white;
+  color: var(--secondary-blue);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
 }
 
-.with-image p {
-  visibility: hidden;
-  opacity: 0;
-}
-
-.with-image .button {
-  /* Change to hidden and 0 opacity to hide button until hover */
-  visibility: hidden;;
-  opacity: 0;
-}
-
-.button,
-.with-image p {
-  transition: visibility 0.3s ease, opacity 0.3s ease;
-}
-
-/* Hover effect for non-touch devices */
-@media (hover: hover) {
-  .project-card:hover .with-image .button,
-  .project-card:hover .with-image p {
-    visibility: visible;
-    opacity: 1;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-body {
+    padding: var(--space-lg);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-image {
+    height: 160px;
   }
 }
 
-/* Always show the button and text for touch devices */
-@media (hover: none) {
-  .with-image .button,
-  .with-image p {
-    visibility: visible;
-    opacity: 1;
+@media (max-width: 480px) {
+  .card-body {
+    padding: var(--space-md);
+  }
+  
+  .card-image {
+    height: 140px;
   }
 }
