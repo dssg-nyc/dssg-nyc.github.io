@@ -42,7 +42,7 @@ const Book = () => {
           
           <div className="partnership-grid">
             <div className="partnership-info">
-              <h3>Why Partner with DSSG NYC?</h3>
+              <h3>Become a Partner-Sponsor</h3>
               <div className="info-list">
                 <div className="info-item">
                   <div className="info-icon">🎯</div>
