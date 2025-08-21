@@ -28,17 +28,9 @@ const Home = () => {
             {siteProperties.title}
           </p>
           <p className="hero-description">
-            Connecting skilled data science and technology professionals with non-profit organizations 
+            Data Science for Social Good (DSSG) connects skilled data science and technology professionals with non-profit organizations 
             to create meaningful social impact through pro bono consulting and volunteer work.
           </p>
-          <div className="hero-buttons">
-            <a href="#projects" className="button">
-              Get Involved
-            </a>
-            <a href="#book" className="button secondary">
-              Partner With Us
-            </a>
-          </div>
         </div>
       </div>
       <div className="scroll-indicator">

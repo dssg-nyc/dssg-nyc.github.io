@@ -100,7 +100,7 @@ const Projects = () => {
               <h3>Non-Profit Organizations</h3>
               <p className="card-tagline">Leverage technology for greater impact</p>
               <div className="card-footer">
-                <a href="mailto:dssgnyc@gmail.com" 
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScxK78KmTbbF2LnqqVvniWg21DrrU2B8WkvS6euTILKkR18bw/viewform?usp=header" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    className="button secondary">
