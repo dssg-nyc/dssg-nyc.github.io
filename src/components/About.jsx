@@ -82,6 +82,44 @@ const About = () => {
             </div>
           </div>
         </div>
+        
+        {/* Team Section */}
+        <div className="team-section">
+          <h3 className="team-title">Our Team</h3>
+          <div className="team-grid">
+            <div className="founder-card">
+              <div className="founder-image-container">
+                <img 
+                  src="/images/jianhead.png" 
+                  alt="Founder of DSSG NYC" 
+                  className="founder-image"
+                />
+              </div>
+              <div className="founder-info">
+                <h4 className="founder-name">Jian</h4>
+                <p className="founder-bio">
+                  Founder and passionate advocate for using data science to drive social change. 
+                  With community organizing training and years of experience in the tech industry, Jian started DSSG NYC to bring 
+                  together like-minded professionals who want to make a difference in their community.
+                </p>
+              </div>
+            </div>
+            
+            <div className="cofounder-callout">
+              <div className="callout-content">
+                <h4 className="callout-title">Join Our Team!</h4>
+                <p className="callout-text">
+                  We're looking for passionate co-founders to help grow DSSG NYC and expand our impact. 
+                  If you're interested in joining our leadership team and helping shape the future of 
+                  data science for social good in NYC, we'd love to hear from you!
+                </p>
+                <p className="callout-contact">
+                  Contact us at: <a href="mailto:contact@dssg.nyc">dssgnyc@gmail.com</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
