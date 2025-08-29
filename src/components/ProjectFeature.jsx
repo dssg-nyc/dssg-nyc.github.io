@@ -57,7 +57,7 @@ const ProjectFeature = () => {
             <div className="visual-container">
               <img 
                 src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" 
-                alt="DSSG NYC team collaborating on social impact projects"
+                alt="NYC DSSG team collaborating on social impact projects"
                 className="feature-image"
               />
               <div className="visual-overlay">

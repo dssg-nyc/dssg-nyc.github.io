@@ -9,7 +9,7 @@ const About = () => {
         <div className="about-grid">
           <div className="about-content">
             <div className="about-text">
-              <h2 className="about-title">About DSSG NYC</h2>
+              <h2 className="about-title">About NYC DSSG</h2>
               <div className="about-description">
                 <p className="lead">
                   We are a community of passionate data scientists, developers, and technology professionals 
@@ -56,7 +56,7 @@ const About = () => {
             <div className="about-image-container">
               <img 
                 src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" 
-                alt="DSSG NYC team collaborating on data science projects"
+                alt="NYC DSSG team collaborating on data science projects"
                 className="about-image"
               />
               <div className="image-overlay">
@@ -91,7 +91,7 @@ const About = () => {
               <div className="founder-image-container">
                 <img 
                   src="/images/jianhead.png" 
-                  alt="Founder of DSSG NYC" 
+                  alt="Founder of NYC DSSG" 
                   className="founder-image"
                 />
               </div>
@@ -99,7 +99,7 @@ const About = () => {
                 <h4 className="founder-name">Jian</h4>
                 <p className="founder-bio">
                   Founder and passionate advocate for using data science to drive social change. 
-                  With community organizing training and years of experience in the tech industry, Jian started DSSG NYC to bring 
+                  With community organizing training and years of experience in the tech industry, Jian started NYC DSSG to bring 
                   together like-minded professionals who want to make a difference in their community.
                 </p>
               </div>
@@ -109,7 +109,7 @@ const About = () => {
               <div className="callout-content">
                 <h4 className="callout-title">Join Our Team!</h4>
                 <p className="callout-text">
-                  We're looking for passionate co-founders to help grow DSSG NYC and expand our impact. 
+                  We're looking for passionate co-founders to help grow NYC DSSG and expand our impact. 
                   If you're interested in joining our leadership team and helping shape the future of 
                   data science for social good in NYC, we'd love to hear from you!
                 </p>

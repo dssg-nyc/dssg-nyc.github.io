@@ -20,10 +20,10 @@ function App() {
           <Route path="/" element={
             <>
               <Seo
-                title="DSSG x NYC - Data Science for Social Good"
+                title="NYC x DSSG - Data Science for Social Good"
                 description="Pro Bono IT, Data and AI consulting for Non-Profits in New York City. Connect with skilled professionals making a difference through technology."
                 type="website"
-                name="DSSG x NYC"
+                name="NYC x DSSG"
               />
               <Home />
               <Projects />

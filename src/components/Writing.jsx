@@ -9,7 +9,7 @@ const Writing = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
 
-  // Updated writing data specific to DSSG NYC
+  // Updated writing data specific to NYC
   const writingData = [
     {
       "title": "DSSG Berlin Chapter",
@@ -71,7 +71,7 @@ const Writing = () => {
       <div className="writing-overlay" />
       <div className="container">
         <div className="writing-header">
-          <h2 className="section-title">Impact Stories & Resources</h2>
+          <h2 className="section-title">Our Global Chapters & Impact Stories</h2>
           <p className="section-subtitle">
             Discover the real-world impact we're creating together and access resources 
             to help your organization or volunteer journey
