@@ -230,6 +230,154 @@
   }
 }
 
+/* Team Section */
+.team-section {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.team-title {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* Founder Card */
+.founder-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl);
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.founder-image-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-lg);
+  border: 4px solid var(--primary-blue);
+}
+
+.founder-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: var(--space-md);
+}
+
+.founder-bio {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 0;
+}
+
+/* Co-founder Callout */
+.cofounder-callout {
+  padding: var(--space-xl);
+  background: white;
+  border-radius: var(--radius-xl);
+  color: #000000;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+}
+
+.callout-content {
+  text-align: center;
+}
+
+.callout-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: #000000;
+}
+
+.callout-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  color: #000000;
+}
+
+.callout-contact {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.callout-contact a {
+  color: var(--primary-blue);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.callout-contact a:hover {
+  color: var(--gray-100);
+}
+
+/* Responsive Design for Team Section */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+  
+  .founder-card,
+  .cofounder-callout {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+  }
+  
+  .team-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-xl);
+  }
+  
+  .founder-image-container {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .founder-name {
+    font-size: 1.375rem;
+  }
+  
+  .callout-title {
+    font-size: 1.375rem;
+  }
+}
+
 @media (max-width: 480px) {
   .values-grid {
     grid-template-columns: 1fr;
@@ -241,5 +389,32 @@
   
   .tech-skills {
     padding: var(--space-lg);
+  }
+  
+  .team-title {
+    font-size: 1.75rem;
+  }
+  
+  .founder-card,
+  .cofounder-callout {
+    padding: var(--space-lg);
+  }
+  
+  .founder-image-container {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .founder-name {
+    font-size: 1.25rem;
+  }
+  
+  .callout-title {
+    font-size: 1.25rem;
+  }
+  
+  .callout-text,
+  .founder-bio {
+    font-size: 1rem;
   }
 }
