@@ -5,7 +5,7 @@ const Projects = () => {
     <section className="projects-section white" id="projects">
       <div className="container">
         <div className="projects-header">
-          <h2 className="section-title">Get Involved with DSSG NYC</h2>
+          <h2 className="section-title">Get Involved with NYC DSSG</h2>
           <p className="section-subtitle">
             Join our community of professionals making a difference through technology and data science
           </p>

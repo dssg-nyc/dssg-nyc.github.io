@@ -23,7 +23,7 @@ const Footer = () => {
               <div className="footer-logo">
                 <img src="/images/logo3.png" alt="DSSG Logo" className="logo-img" />
                 <div className="brand-text">
-                  <h3>DSSG NYC</h3>
+                  <h3>NYC DSSG</h3>
                   <p>Data Science for Social Good</p>
                 </div>
               </div>

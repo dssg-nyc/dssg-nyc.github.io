@@ -25,7 +25,7 @@ const Home = () => {
             {siteProperties.name}
           </h1>
           <p className="hero-subtitle lead">
-            {siteProperties.title}
+            
           </p>
           <p className="hero-description">
             Data Science for Social Good (DSSG) connects skilled data science and technology professionals with non-profit organizations 
