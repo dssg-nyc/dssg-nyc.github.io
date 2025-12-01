@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Seo from './components/Seo';
+import Events from './components/Events';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           } />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/events" element={<Events />} />
         </Routes>
         <Footer />
       </div>

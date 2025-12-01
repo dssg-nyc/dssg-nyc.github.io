@@ -98,9 +98,40 @@ const About = () => {
               <div className="founder-info">
                 <h4 className="founder-name">Jian</h4>
                 <p className="founder-bio">
-                  Founder and passionate advocate for using data science to drive social change. 
-                  With community organizing training and years of experience in the tech industry, Jian started NYC DSSG to bring 
-                  together like-minded professionals who want to make a difference in their community.
+                  He is passionate advocate for using data science to drive social change. He previously did research in Comutational Social Sciences for Max-Planck Institute of Geoanthropology. He is interested in open-source intelligence tools and AI agentic systems.
+                  With community organizing training and years of experience in the big data industry, he is dedicated to social good and civic tech.
+                </p>
+              </div>
+            </div>
+
+            <div className="founder-card">
+              <div className="founder-image-container">
+                <img 
+                  src="/images/ursula_pic.png" 
+                  alt="Ursula - Nonprofit Lead" 
+                  className="founder-image"
+                />
+              </div>
+              <div className="founder-info">
+                <h4 className="founder-name">Ursula</h4>
+                <p className="founder-bio">
+                   Ursula is a Brooklyn-based data scientist focused on civic tech. At Democracy Works, she focuses on voter behavior, and previously led many research projects with Newlab after graduating from Master's from NYU and Political Science from UC Berkeley. She began her career in law, and now advocate of open data policy and nonprofit engagement for DSSG.  
+                </p>
+              </div>
+            </div>
+
+            <div className="founder-card">
+              <div className="founder-image-container">
+                <img 
+                  src="/images/carina_pic.png" 
+                  alt="Carina Ye - Data Professional" 
+                  className="founder-image"
+                />
+              </div>
+              <div className="founder-info">
+                <h4 className="founder-name">Carina Ye</h4>
+                <p className="founder-bio">
+                  Carina is a data professional with a Master's in Data Science and a dual Bachelor's in Quantitative Economics and Fine Arts from Tufts University. In her free time, she volunteers with several nonprofits in the data and civic tech space and enjoys exploring NYC's museums, food, yoga studios, and the city's many spontaneous events. She's especially interested in the interdisciplinary intersections between data, art, and community.
                 </p>
               </div>
             </div>
@@ -109,7 +140,7 @@ const About = () => {
               <div className="callout-content">
                 <h4 className="callout-title">Join Our Team!</h4>
                 <p className="callout-text">
-                  We're looking for passionate co-founders to help grow NYC DSSG and expand our impact. 
+                  We're looking for passionate Data-Diplomats to help grow NYC DSSG and expand our impact. 
                   If you're interested in joining our leadership team and helping shape the future of 
                   data science for social good in NYC, we'd love to hear from you!
                 </p>

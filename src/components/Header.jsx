@@ -63,6 +63,9 @@ const Header = () => {
           <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
             Impact Stories
           </a>
+          <NavLink to="/events" className="nav-link">
+            Events
+          </NavLink>
           <a href="/#book" onClick={(e) => handleAnchorClick(e, '#book')} className="nav-link button-nav">
             Partner With Us
           </a>

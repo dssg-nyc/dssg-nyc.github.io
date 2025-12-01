@@ -78,42 +78,34 @@ const Writing = () => {
           </p>
         </div>
         
+        {/* Medium Article Preview - Moved above the three boxes */}
+        <div className="medium-article-section">
+          <div className="medium-article-card" style={{backgroundImage: "url('/images/hackathon_image.jpg')"}}>
+            <div className="medium-article-overlay"></div>
+            <div className="medium-article-content">
+              <h3>Featured Article</h3>
+              <h4>NYC NourishAI Hackathon: A Day of Data Science & AI Built for Health and Food Equity</h4>
+              <p className="article-excerpt">
+                Read about our recent hackathon where data scientists and AI professionals came together 
+                to tackle health and food equity challenges in NYC. Discover the innovative solutions 
+                and community impact created through this collaborative event.
+              </p>
+              <a 
+                href="https://medium.com/@dssgnyc/nyc-nourishai-hackathon-a-day-of-data-science-ai-built-for-health-and-food-equity-4ff226e2dad9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="button medium-button"
+              >
+                Read on Medium
+              </a>
+            </div>
+          </div>
+        </div>
+        
         <div className="writing-grid">
           {writingData.map((writing, index) => (
             <Card key={index} project={writing} />
           ))}
-        </div>
-        
-        <div className="newsletter-section">
-          <div className="newsletter-card">
-            <div className="newsletter-content">
-              <h3>Stay Connected</h3>
-              <p>Get updates on our latest projects, success stories, and volunteer opportunities delivered to your inbox</p>
-            <form className="newsletter-form" onSubmit={handleSubmit}>
-              <input 
-                type="email" 
-                placeholder="Enter your email address" 
-                className="email-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isSubmitting}
-                required
-              />
-              <button 
-                type="submit" 
-                className="button"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Subscribing...' : 'Subscribe'}
-              </button>
-            </form>
-            {submitStatus && (
-              <div className={`submit-status ${submitStatus.type}`}>
-                {submitStatus.message}
-              </div>
-            )}
-            </div>
-          </div>
         </div>
       </div>
     </section>
