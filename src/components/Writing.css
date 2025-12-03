@@ -50,6 +50,89 @@
   margin-bottom: var(--space-3xl);
 }
 
+/* Medium Article Section */
+.medium-article-section {
+  margin-bottom: var(--space-3xl);
+  display: flex;
+  justify-content: center;
+}
+
+.medium-article-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--radius-xl);
+  padding: var(--space-3xl);
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medium-article-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.medium-article-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  max-width: 700px;
+}
+
+.medium-article-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--primary-orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.medium-article-content h4 {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+  color: white;
+  line-height: 1.2;
+}
+
+.article-excerpt {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-xl);
+  line-height: 1.6;
+}
+
+.medium-button {
+  background: var(--gradient-secondary);
+  border: none;
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.medium-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
 /* Newsletter Section */
 .newsletter-section {
   margin-top: var(--space-3xl);
@@ -154,6 +237,20 @@
   .writing-grid {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+  }
+  
+  .medium-article-card {
+    padding: var(--space-xl);
+    min-height: 300px;
+    max-width: 100%;
+  }
+  
+  .medium-article-content h4 {
+    font-size: 1.75rem;
+  }
+  
+  .article-excerpt {
+    font-size: 1.125rem;
   }
   
   .newsletter-card {

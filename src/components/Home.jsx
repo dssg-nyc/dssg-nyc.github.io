@@ -28,8 +28,7 @@ const Home = () => {
             
           </p>
           <p className="hero-description">
-            Data Science for Social Good (DSSG) connects skilled data science and technology professionals with non-profit organizations 
-            to create meaningful social impact through pro bono consulting and volunteer work.
+            Data Science for Social Good (DSSG) is a global community of passionate data scientists, AI developers, and technology professionals dedicated to creating positive social impact through pro bono volunteer work.
           </p>
         </div>
       </div>
