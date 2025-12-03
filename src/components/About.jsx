@@ -147,8 +147,8 @@ const About = () => {
               <div className="founder-info">
                 <h4 className="founder-name">Join Our Team!</h4>
                 <p className="founder-bio">
-                  We're looking for passionate Data-Diplomats to help grow NYC DSSG and expand our impact. 
-                  If you're interested in joining our leadership team and helping shape the future of 
+                  We're looking for passionate Data Diplomats to help grow NYC DSSG and expand our impact. 
+                  If you're interested in joining our core team and helping shape the future of 
                   data science for social good in NYC, we'd love to hear from you!
                 </p>
                 <p className="callout-contact">
