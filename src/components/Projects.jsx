@@ -172,6 +172,27 @@ const Projects = () => {
             </div>
           </div>
         </div>
+
+        {/* Data Diplomats Section */}
+        <div className="data-diplomats-section">
+          <div className="data-diplomats-content">
+            <img 
+              src="/images/Calling for Data Diplomats.png" 
+              alt="Calling for Data Diplomats" 
+              className="data-diplomats-image"
+            />
+            <div className="data-diplomats-button-container">
+              <a 
+                href="https://forms.gle/nKTURDV5PWRRv3Gb9" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="button data-diplomats-button"
+              >
+                Apply
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

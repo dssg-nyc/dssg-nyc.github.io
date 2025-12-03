@@ -80,23 +80,20 @@ const Writing = () => {
         
         {/* Medium Article Preview - Moved above the three boxes */}
         <div className="medium-article-section">
-          <div className="medium-article-card" style={{backgroundImage: "url('/images/hackathon_image.jpg')"}}>
+          <div className="medium-article-card" style={{backgroundImage: "url('/images/nourishAI.png')"}}>
             <div className="medium-article-overlay"></div>
             <div className="medium-article-content">
-              <h3>Featured Article</h3>
-              <h4>NYC NourishAI Hackathon: A Day of Data Science & AI Built for Health and Food Equity</h4>
+              <h3>Latest News</h3>
+              <h4>NYC NourishAI Hackathon: AI Built for Health and Food Equity</h4>
               <p className="article-excerpt">
-                Read about our recent hackathon where data scientists and AI professionals came together 
-                to tackle health and food equity challenges in NYC. Discover the innovative solutions 
-                and community impact created through this collaborative event.
-              </p>
+                "On behalf of G.I.V.E. Inc., we extend our deepest thanks to DSSG × NYC for partnering with us on our first civic-tech hackathon. Together, we mobilized more than 168 hours of collective service, representing an estimated $15,000 in social and technical value dedicated to advancing community-driven innovation." - Sergio, Director of GIVE Inc.</p>
               <a 
                 href="https://medium.com/@dssgnyc/nyc-nourishai-hackathon-a-day-of-data-science-ai-built-for-health-and-food-equity-4ff226e2dad9" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="button medium-button"
               >
-                Read on Medium
+                Read Full Story
               </a>
             </div>
           </div>

@@ -115,7 +115,7 @@ const About = () => {
               <div className="founder-info">
                 <h4 className="founder-name">Ursula</h4>
                 <p className="founder-bio">
-                   Ursula is a Brooklyn-based data scientist focused on civic tech. At Democracy Works, she focuses on voter behavior, and previously led many research projects with Newlab after graduating from Master's from NYU and Political Science from UC Berkeley. She began her career in law, and now advocate of open data policy and nonprofit engagement for DSSG.  
+                   Ursula is a Brooklyn-based data scientist focused on civic tech and leads DSSG NYC’s nonprofit engagement efforts. She concentrates her research on voter engagement, economic development, and public infrastructure and services. She began her career as a lawyer working on open data policy and spent three years working on civic projects in Tbilisi, Georgia. 
                 </p>
               </div>
             </div>
@@ -129,17 +129,24 @@ const About = () => {
                 />
               </div>
               <div className="founder-info">
-                <h4 className="founder-name">Carina Ye</h4>
+                <h4 className="founder-name">Carina</h4>
                 <p className="founder-bio">
                   Carina is a data professional with a Master's in Data Science and a dual Bachelor's in Quantitative Economics and Fine Arts from Tufts University. In her free time, she volunteers with several nonprofits in the data and civic tech space and enjoys exploring NYC's museums, food, yoga studios, and the city's many spontaneous events. She's especially interested in the interdisciplinary intersections between data, art, and community.
                 </p>
               </div>
             </div>
             
-            <div className="cofounder-callout">
-              <div className="callout-content">
-                <h4 className="callout-title">Join Our Team!</h4>
-                <p className="callout-text">
+            <div className="founder-card">
+              <div className="founder-image-container">
+                <img 
+                  src="/images/questionmark_face.jpg" 
+                  alt="Join Our Team - Future Team Member" 
+                  className="founder-image"
+                />
+              </div>
+              <div className="founder-info">
+                <h4 className="founder-name">Join Our Team!</h4>
+                <p className="founder-bio">
                   We're looking for passionate Data-Diplomats to help grow NYC DSSG and expand our impact. 
                   If you're interested in joining our leadership team and helping shape the future of 
                   data science for social good in NYC, we'd love to hear from you!

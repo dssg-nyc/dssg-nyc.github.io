@@ -321,6 +321,78 @@
   }
 }
 
+/* Data Diplomats Section */
+.data-diplomats-section {
+  margin-top: var(--space-3xl);
+  padding-top: var(--space-3xl);
+  border-top: 1px solid var(--gray-200);
+  text-align: center;
+}
+
+.data-diplomats-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.data-diplomats-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  margin-bottom: var(--space-xl);
+  transition: all 0.3s ease;
+}
+
+.data-diplomats-image:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2xl);
+}
+
+.data-diplomats-button-container {
+  margin-top: var(--space-lg);
+}
+
+.data-diplomats-button {
+  background: var(--gradient-primary);
+  border: none;
+  padding: var(--space-md) var(--space-2xl);
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 45, 114, 0.3);
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+.data-diplomats-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 45, 114, 0.4);
+}
+
+.data-diplomats-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .data-diplomats-section {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-2xl);
+  }
+  
+  .data-diplomats-image {
+    max-width: 100%;
+  }
+  
+  .data-diplomats-button {
+    padding: var(--space-sm) var(--space-xl);
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .skills-tags {
     justify-content: center;
@@ -332,5 +404,12 @@
   
   .benefit-item {
     padding: var(--space-xs);
+  }
+  
+  .data-diplomats-button {
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 1rem;
+    width: 100%;
+    max-width: 200px;
   }
 }
