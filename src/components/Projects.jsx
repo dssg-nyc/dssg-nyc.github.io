@@ -155,19 +155,19 @@ const Projects = () => {
         <div className="projects-bottom">
           <div className="stats-section">
             <div className="stat-item">
-              <div className="stat-number">50+</div>
+              <div className="stat-number">70+</div>
               <div className="stat-label">Active Volunteers</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">25+</div>
+              <div className="stat-number">8+</div>
               <div className="stat-label">Partner Organizations</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">100+</div>
+              <div className="stat-number">10+</div>
               <div className="stat-label">Projects Completed</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">$2M+</div>
+              <div className="stat-number">$40k+</div>
               <div className="stat-label">Pro Bono Value Delivered</div>
             </div>
           </div>
