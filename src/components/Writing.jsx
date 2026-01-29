@@ -71,38 +71,68 @@ const Writing = () => {
       <div className="writing-overlay" />
       <div className="container">
         <div className="writing-header">
-          <h2 className="section-title">Our Global Chapters & Impact Stories</h2>
+          <h2 className="section-title">Our Impact Stories</h2>
           <p className="section-subtitle">
             Discover the real-world impact we're creating together and access resources 
             to help your organization or volunteer journey
           </p>
         </div>
         
-        {/* Medium Article Preview - Moved above the three boxes */}
-        <div className="medium-article-section">
-          <div className="medium-article-card" style={{backgroundImage: "url('/images/nourishAI.png')"}}>
-            <div className="medium-article-overlay"></div>
-            <div className="medium-article-content">
-              <h3>Latest News</h3>
-              <h4>NYC NourishAI Hackathon: AI Built for Health and Food Equity</h4>
-              <p className="article-excerpt">
-                "On behalf of G.I.V.E. Inc., we extend our deepest thanks to DSSG × NYC for partnering with us on our first civic-tech hackathon. Together, we mobilized more than 168 hours of collective service, representing an estimated $15,000 in social and technical value dedicated to advancing community-driven innovation." - Sergio, Director of GIVE Inc.</p>
-              <a 
-                href="https://medium.com/@dssgnyc/nyc-nourishai-hackathon-a-day-of-data-science-ai-built-for-health-and-food-equity-4ff226e2dad9" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="button medium-button"
-              >
-                Read Full Story
-              </a>
+        {/* Medium Articles Row - Side by side */}
+        <div className="medium-articles-row">
+          {/* Public Health Equity - Left */}
+          <div className="medium-article-section">
+            <div className="medium-article-card" style={{backgroundImage: "url('/images/nourishAI.png')"}}>
+              <div className="medium-article-overlay"></div>
+              <div className="medium-article-content">
+                <h3>Public Health Equity</h3>
+                <h4>NYC NourishAI Hackathon: AI Built for Health and Food Equity</h4>
+                <p className="article-excerpt">
+                  "On behalf of G.I.V.E. Inc., we extend our deepest thanks to DSSG × NYC for partnering with us on our first civic-tech hackathon. Together, we mobilized more than 168 hours of collective service, representing an estimated $15,000 in social and technical value dedicated to advancing community-driven innovation." - Sergio, Director of GIVE Inc.</p>
+                <a 
+                  href="https://medium.com/@dssgnyc/nyc-nourishai-hackathon-a-day-of-data-science-ai-built-for-health-and-food-equity-4ff226e2dad9" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="button medium-button"
+                >
+                  Read Full Story
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Transportation Safety - Right */}
+          <div className="medium-article-section">
+            <div className="medium-article-card" style={{backgroundImage: "url('/images/superspeeder.jpg')"}}>
+              <div className="medium-article-overlay"></div>
+              <div className="medium-article-content">
+                <h3>Transportation Safety</h3>
+                <h4>NYC Transportation Safety Hackathon: Stop Super Speeders</h4>
+                <p className="article-excerpt">
+                  We built a Stop-Super-Speeder data dashboard for Families for Safe Streets & Transportation Alternatives to prevent speeding-related accidents in NYC. With a pro bono value of $19,000 delivered in software, we brought together data scientists, engineers, and community advocates to develop solutions that can save lives and make our streets safer for everyone.</p>
+                <a 
+                  href="https://medium.com/@dssgnyc/nyc-transportation-safety-hackathon-stop-super-speeders-d474cff6e4e4" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="button medium-button"
+                >
+                  Read Full Story
+                </a>
+              </div>
             </div>
           </div>
         </div>
         
         <div className="writing-grid">
-          {writingData.map((writing, index) => (
-            <Card key={index} project={writing} />
-          ))}
+          {writingData
+            .filter(writing => 
+              writing.title !== "DSSG Berlin Chapter" && 
+              writing.title !== "DSSG Portugal Chapter" && 
+              writing.title !== "DSSG Florida Chapter"
+            )
+            .map((writing, index) => (
+              <Card key={index} project={writing} />
+            ))}
         </div>
       </div>
     </section>

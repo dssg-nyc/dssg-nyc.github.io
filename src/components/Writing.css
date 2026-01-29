@@ -50,9 +50,16 @@
   margin-bottom: var(--space-3xl);
 }
 
+/* Medium Articles Row */
+.medium-articles-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
 /* Medium Article Section */
 .medium-article-section {
-  margin-bottom: var(--space-3xl);
   display: flex;
   justify-content: center;
 }
@@ -62,13 +69,12 @@
   background-position: center;
   background-repeat: no-repeat;
   border-radius: var(--radius-xl);
-  padding: var(--space-3xl);
+  padding: var(--space-xl);
   text-align: center;
-  max-width: 900px;
   width: 100%;
   position: relative;
   overflow: hidden;
-  min-height: 400px;
+  min-height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -94,7 +100,7 @@
 
 .medium-article-content h3 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: var(--space-sm);
   color: var(--primary-orange);
@@ -104,18 +110,18 @@
 
 .medium-article-content h4 {
   font-family: var(--font-display);
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   color: white;
   line-height: 1.2;
 }
 
 .article-excerpt {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: rgba(255, 255, 255, 0.9);
-  margin-bottom: var(--space-xl);
-  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  line-height: 1.5;
 }
 
 .medium-button {
@@ -239,18 +245,27 @@
     gap: var(--space-lg);
   }
   
+  .medium-articles-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  
   .medium-article-card {
     padding: var(--space-xl);
     min-height: 300px;
     max-width: 100%;
   }
   
+  .medium-article-content h3 {
+    font-size: 1.125rem;
+  }
+  
   .medium-article-content h4 {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
   
   .article-excerpt {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
   
   .newsletter-card {

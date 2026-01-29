@@ -25,6 +25,7 @@ const Footer = () => {
                 <div className="brand-text">
                   <h3>NYC DSSG</h3>
                   <p>Data Science for Social Good</p>
+                  <p>Data Diplomats for Nonprofits</p>
                 </div>
               </div>
               <p className="brand-description">
@@ -76,10 +77,10 @@ const Footer = () => {
           
           <div className="footer-bottom">
             <div className="footer-legal">
-              <p>&copy; 2025 {siteProperties.name}. All rights reserved.</p>
+              <p>&copy; 2026 {siteProperties.name}. All rights reserved.</p>
             </div>
             <div className="footer-attribution">
-              <p>Built with ❤️ in New York City</p>
+              <p>Support Civic Tech in New York City</p>
             </div>
           </div>
         </div>

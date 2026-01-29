@@ -12,18 +12,13 @@ const About = () => {
               <h2 className="about-title">About NYC DSSG</h2>
               <div className="about-description">
                 <p className="lead">
-                  We are a community of passionate data scientists, developers, and technology professionals 
+                  First and foremost, we are community organizers - with a mission to foster a culture of passionate civic technologists
                   dedicated to creating positive social impact through pro bono consulting and volunteer work.
                 </p>
                 <p>
-                  Our mission is to bridge the gap between cutting-edge technology and social good by connecting 
-                  skilled professionals with non-profit organizations that need data-driven solutions to amplify 
-                  their impact.
-                </p>
+                  Our mission is to build cohorts of civic technologists and ethical AI leaders who understand local issues and use civic technology to provide real solutions in our city. We focus on healthy food access, affordable housing, education equity, transportation safety, environmental justice, and public health. </p>
                 <p>
-                  Founded as part of the global Data Science for Social Good network, our NYC chapter has grown 
-                  into a vibrant community of professionals who believe that technology should serve humanity 
-                  and create meaningful change in our communities.
+                  Founded by the Data Diplomats for Nonprofits (NYC), our volunteer group has grown into a vibrant community of professionals committed to using technology for meaningful social impact. 
                 </p>
               </div>
               
