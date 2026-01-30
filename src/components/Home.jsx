@@ -28,7 +28,7 @@ const Home = () => {
             
           </p>
           <p className="hero-description">
-            NYC Data Science for Social Good (DSSG) is a civic tech volunteer group led by the Data Diplomats for Nonprofits. We’re grassroots organizers uniting data scientists, AI engineers, and IT professionals to drive social impact through pro bono nonprofit work. </p>
+            NYC Data Science for Social Good (DSSG) is a civic tech volunteer group led by the Data Diplomats for Nonprofits. We’re NYC grassroot organizers uniting data scientists, AI engineers, and IT professionals to drive social impact through pro bono nonprofit work. </p>
         </div>
       </div>
       <div className="scroll-indicator">
