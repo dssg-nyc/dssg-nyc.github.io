@@ -14,10 +14,12 @@ import BlogPost from './components/BlogPost';
 import Seo from './components/Seo';
 import Events from './components/Events';
 import DataDiplomats from './components/DataDiplomats';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
       <div className="App">
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={

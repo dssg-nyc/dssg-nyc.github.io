@@ -34,7 +34,7 @@ const OpenSource = () => {
                   </div>
                 )}
                 <a href={project.url} target="_blank" rel="noopener noreferrer" className="button">
-                  View on GitHub
+                  Visit Project
                 </a>
               </div>
             </div>

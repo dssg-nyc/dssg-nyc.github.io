@@ -2,7 +2,8 @@ import React from 'react';
 import './Events.css';
 import Seo from './Seo';
 
-const LUMA_CALENDAR_URL = 'https://lu.ma/dssg-nyc';
+const LUMA_EMBED_URL = 'https://luma.com/embed/calendar/cal-4VqcQEpR4zqBF8Q/events';
+const LUMA_CALENDAR_URL = 'https://luma.com/calendar/cal-4VqcQEpR4zqBF8Q';
 
 const Events = () => {
   return (
@@ -23,7 +24,7 @@ const Events = () => {
         <div className="events-content">
           <div className="events-embed-section">
             <iframe
-              src={`${LUMA_CALENDAR_URL}/embed`}
+              src={LUMA_EMBED_URL}
               className="luma-embed"
               frameBorder="0"
               allowFullScreen
