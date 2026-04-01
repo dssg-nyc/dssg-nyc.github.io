@@ -25,6 +25,12 @@
     "alt": "Cityscape seen from above through a purple haze"
   },
   {
+    "name": "open-source",
+    "src": "",
+    "shade": "white",
+    "alt": ""
+  },
+  {
     "name": "book",
     "src": "",
     "shade": "white",

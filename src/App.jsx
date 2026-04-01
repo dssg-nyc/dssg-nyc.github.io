@@ -6,16 +6,20 @@ import About from './components/About';
 import ProjectFeature from './components/ProjectFeature';
 import Projects from './components/Projects';
 import Writing from './components/Writing';
+import OpenSource from './components/OpenSource';
 import Book from './components/Book';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Seo from './components/Seo';
 import Events from './components/Events';
+import DataDiplomats from './components/DataDiplomats';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
       <div className="App">
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={
@@ -31,11 +35,13 @@ function App() {
               <About />
               <ProjectFeature />
               <Writing />
+              <OpenSource />
               <Book />
             </>
           } />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/diplomats" element={<DataDiplomats />} />
           <Route path="/events" element={<Events />} />
         </Routes>
         <Footer />

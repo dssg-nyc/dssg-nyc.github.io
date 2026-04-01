@@ -1,0 +1,14 @@
+[
+  {
+    "title": "FOIA-FLUENT",
+    "description": "A platform that simplifies the Freedom of Information Act request process, making government transparency more accessible to everyone.",
+    "url": "https://www.foiafluent.com",
+    "tags": ["FOIA", "transparency", "government"]
+  },
+  {
+    "title": "Unredacted Monitor",
+    "description": "A tool for monitoring and tracking government document redactions, promoting accountability and public access to information.",
+    "url": "https://unredacted.us",
+    "tags": ["transparency", "monitoring", "government"]
+  }
+]

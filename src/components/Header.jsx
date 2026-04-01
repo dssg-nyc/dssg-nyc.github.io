@@ -49,7 +49,7 @@ const Header = () => {
             </div>
           </a>
         </div>
-        
+
         <nav className="nav-menu">
           <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="nav-link">
             Home
@@ -63,6 +63,9 @@ const Header = () => {
           <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
             Impact Stories
           </a>
+          <NavLink to="/diplomats" className="nav-link">
+            Data Diplomats
+          </NavLink>
           <NavLink to="/events" className="nav-link">
             Events
           </NavLink>

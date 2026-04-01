@@ -1,0 +1,52 @@
+{
+  "sectionTitle": "Our Data Diplomats",
+  "sectionDescription": "Data Diplomats for Nonprofits, Inc. is the 501(c)(3) nonprofit organization behind NYC x DSSG. Our Data Diplomats are trained volunteers who serve in cohorts, partnering directly with nonprofit organizations on data science, AI, and technology projects.",
+  "entityNote": "Data Diplomats for Nonprofits, Inc. is the legal entity that operates DSSG NYC — our flagship civic tech volunteer program uniting data scientists, AI engineers, and IT professionals for pro bono nonprofit work.",
+  "applyUrl": "https://forms.gle/nKTURDV5PWRRv3Gb9",
+  "cohorts": [
+    {
+      "id": "cohort-1",
+      "name": "Cohort 1",
+      "term": "Winter 2025",
+      "description": "Our founding cohort of Data Diplomats who launched DSSG NYC and established its mission of civic tech for social good.",
+      "members": [
+        {
+          "name": "Jian",
+          "image": "/images/jianhead.png",
+          "role": "Founder",
+          "bio": "He is a passionate advocate for using data science to drive social change. He previously did research in Computational Social Sciences for Max-Planck Institute of Geoanthropology. He is interested in open-source intelligence tools and AI agentic systems. With community organizing training and years of experience in the big data industry, he is dedicated to social good and civic tech.",
+          "linkedin": ""
+        },
+        {
+          "name": "Ursula",
+          "image": "/images/ursula_pic.png",
+          "role": "Nonprofit Lead",
+          "bio": "Ursula is a Brooklyn-based data scientist focused on civic tech and leads DSSG NYC's nonprofit engagement efforts. She concentrates her research on voter engagement, economic development, and public infrastructure and services. She began her career as a lawyer working on open data policy and spent three years working on civic projects in Tbilisi, Georgia.",
+          "linkedin": ""
+        },
+        {
+          "name": "Carina",
+          "image": "/images/carina_pic.png",
+          "role": "Data Professional",
+          "bio": "Carina is a data professional with a Master's in Data Science and a dual Bachelor's in Quantitative Economics and Fine Arts from Tufts University. In her free time, she volunteers with several nonprofits in the data and civic tech space and enjoys exploring NYC's museums, food, yoga studios, and the city's many spontaneous events. She's especially interested in the interdisciplinary intersections between data, art, and community.",
+          "linkedin": ""
+        }
+      ]
+    },
+    {
+      "id": "cohort-2",
+      "name": "Cohort 2",
+      "term": "Spring 2026",
+      "description": "Our next cohort of Data Diplomats — applications are now open!",
+      "members": [
+        {
+          "name": "You?",
+          "image": "/images/questionmark_face.jpg",
+          "role": "Future Data Diplomat",
+          "bio": "We're looking for passionate civic technologists to join our next cohort. If you're a data scientist, AI engineer, or IT professional interested in using your skills for social good, we'd love to hear from you!",
+          "linkedin": ""
+        }
+      ]
+    }
+  ]
+}

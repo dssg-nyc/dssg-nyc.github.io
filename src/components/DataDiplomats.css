@@ -1,0 +1,271 @@
+/* Data Diplomats Page */
+.diplomats-section {
+  padding: var(--space-3xl) 0;
+  background: linear-gradient(135deg, white 0%, var(--gray-50) 100%);
+  min-height: 100vh;
+}
+
+/* Header */
+.diplomats-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--space-3xl);
+}
+
+.diplomats-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-lg);
+}
+
+.diplomats-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--gray-600);
+  margin-bottom: var(--space-xl);
+}
+
+.diplomats-entity-note {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-left: 4px solid var(--primary-orange);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: left;
+}
+
+.entity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.entity-icon {
+  font-size: 1rem;
+}
+
+.diplomats-entity-note p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+/* Cohort Block */
+.cohort-block {
+  margin-bottom: var(--space-3xl);
+}
+
+.cohort-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.cohort-name {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.cohort-term {
+  display: inline-block;
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cohort-description {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  margin-bottom: var(--space-xl);
+  max-width: 700px;
+}
+
+/* Diplomats Grid */
+.diplomats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+}
+
+/* Diplomat Card */
+.diplomat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-xl);
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diplomat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.diplomat-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: var(--space-md);
+  border: 4px solid var(--primary-blue);
+  flex-shrink: 0;
+}
+
+.diplomat-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.diplomat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diplomat-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  margin: 0 0 0.25rem;
+}
+
+.diplomat-role {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-orange);
+  margin-bottom: var(--space-sm);
+}
+
+.diplomat-bio {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.diplomat-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: var(--space-sm);
+  color: var(--secondary-blue);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.diplomat-linkedin:hover {
+  text-decoration: underline;
+}
+
+/* CTA Section */
+.diplomats-cta {
+  text-align: center;
+  padding: var(--space-2xl);
+  background: var(--gradient-primary);
+  border-radius: var(--radius-xl);
+  color: white;
+}
+
+.diplomats-cta h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.diplomats-cta p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: var(--space-lg);
+}
+
+.diplomats-cta .button {
+  background: var(--gradient-secondary);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.diplomats-cta .button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(244, 126, 45, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .diplomats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .diplomats-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .diplomats-title {
+    font-size: 2rem;
+  }
+
+  .cohort-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+
+  .cohort-name {
+    font-size: 1.6rem;
+  }
+
+  .diplomat-image-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .diplomats-cta h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .diplomats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diplomat-card {
+    padding: var(--space-lg);
+  }
+
+  .diplomats-cta {
+    padding: var(--space-xl);
+  }
+}
