@@ -21,7 +21,7 @@
   padding: 0 var(--space-lg);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--space-sm);
   height: 80px;
 }
 
@@ -73,16 +73,16 @@
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-sm);
 }
 
 .nav-link {
   font-family: var(--font-primary);
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   color: var(--gray-700);
   text-decoration: none;
-  padding: var(--space-xs) var(--space-sm);
+  padding: var(--space-xs) var(--space-xs);
   border-radius: var(--radius-sm);
   transition: all 0.3s ease;
   position: relative;

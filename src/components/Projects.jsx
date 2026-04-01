@@ -155,15 +155,15 @@ const Projects = () => {
         <div className="projects-bottom">
           <div className="stats-section">
             <div className="stat-item">
-              <div className="stat-number">70+</div>
-              <div className="stat-label">Active Volunteers</div>
+              <div className="stat-number">260+</div>
+              <div className="stat-label">Registered Volunteers</div>
             </div>
             <div className="stat-item">
               <div className="stat-number">8+</div>
               <div className="stat-label">Partner Organizations</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">10+</div>
+              <div className="stat-number">8+</div>
               <div className="stat-label">Projects Completed</div>
             </div>
             <div className="stat-item">
@@ -173,22 +173,20 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Data Diplomats Section */}
+        {/* Data Diplomats Link */}
         <div className="data-diplomats-section">
-          <div className="data-diplomats-content">
-            <img 
-              src="/images/Calling for Data Diplomats.png" 
-              alt="Calling for Data Diplomats" 
+          <div className="data-diplomats-content" style={{ textAlign: 'center' }}>
+            <img
+              src="/images/Calling for Data Diplomats.png"
+              alt="Calling for Data Diplomats"
               className="data-diplomats-image"
             />
             <div className="data-diplomats-button-container">
-              <a 
-                href="https://forms.gle/nKTURDV5PWRRv3Gb9" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <a
+                href="/#/diplomats"
                 className="button data-diplomats-button"
               >
-                Apply
+                Meet Our Data Diplomats
               </a>
             </div>
           </div>

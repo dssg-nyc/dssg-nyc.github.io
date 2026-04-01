@@ -13,6 +13,7 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Seo from './components/Seo';
 import Events from './components/Events';
+import DataDiplomats from './components/DataDiplomats';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           } />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
+          <Route path="/diplomats" element={<DataDiplomats />} />
           <Route path="/events" element={<Events />} />
         </Routes>
         <Footer />

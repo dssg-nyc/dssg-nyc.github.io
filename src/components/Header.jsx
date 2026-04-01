@@ -66,6 +66,9 @@ const Header = () => {
           <a href="/#open-source" onClick={(e) => handleAnchorClick(e, '#open-source')} className="nav-link">
             Open Source
           </a>
+          <NavLink to="/diplomats" className="nav-link">
+            Data Diplomats
+          </NavLink>
           <NavLink to="/events" className="nav-link">
             Events
           </NavLink>

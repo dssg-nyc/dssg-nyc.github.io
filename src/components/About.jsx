@@ -58,7 +58,7 @@ const About = () => {
                 <div className="overlay-content">
                   <div className="stat-highlight">
                     <span className="stat-number">50+</span>
-                    <span className="stat-label">Active Volunteers</span>
+                    <span className="stat-label">Registered Volunteers</span>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@ const About = () => {
         
         {/* Team Section */}
         <div className="team-section">
-          <h3 className="team-title">Our Team</h3>
+          <h3 className="team-title">Leadership Team</h3>
           <div className="team-grid">
             <div className="founder-card">
               <div className="founder-image-container">
