@@ -1,41 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Events.css';
 import Seo from './Seo';
 
+const LUMA_CALENDAR_URL = 'https://lu.ma/dssg-nyc';
+
 const Events = () => {
-  useEffect(() => {
-    // Load Eventbrite widget script
-    const script = document.createElement('script');
-    script.src = 'https://www.eventbrite.com/static/widgets/eb_widgets.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    // Initialize the widget when component mounts
-    const initializeWidget = () => {
-      if (window.EBWidgets) {
-        const exampleCallback = function() {
-          console.log('Order complete!');
-        };
-
-        window.EBWidgets.createWidget({
-          widgetType: 'checkout',
-          eventId: '1671837644399',
-          modal: true,
-          modalTriggerElementId: 'eventbrite-widget-modal-trigger-1671837644399',
-          onOrderComplete: exampleCallback
-        });
-      }
-    };
-
-    // Wait for the script to load
-    script.onload = initializeWidget;
-
-    return () => {
-      // Clean up
-      document.body.removeChild(script);
-    };
-  }, []);
-
   return (
     <>
       <Seo
@@ -44,7 +13,7 @@ const Events = () => {
         type="website"
         name="DSSG NYC Events"
       />
-      
+
       <div className="events-container">
         <div className="events-hero">
           <h1>Upcoming Events</h1>
@@ -52,16 +21,27 @@ const Events = () => {
         </div>
 
         <div className="events-content">
-          {/* Large events info box */}
+          <div className="events-embed-section">
+            <iframe
+              src={`${LUMA_CALENDAR_URL}/embed`}
+              className="luma-embed"
+              frameBorder="0"
+              allowFullScreen
+              aria-hidden="false"
+              tabIndex="0"
+              title="DSSG NYC Events Calendar"
+            />
+          </div>
+
           <div className="events-info-large">
             <div className="events-info-content">
               <h2>About Our Events</h2>
               <p>
-                DSSG NYC hosts regular meetups, workshops, and networking events focused on 
-                using data science and AI for social good. Our events bring together professionals, 
+                DSSG NYC hosts regular meetups, workshops, and networking events focused on
+                using data science and AI for social good. Our events bring together professionals,
                 students, and non-profit organizations to collaborate on meaningful projects.
               </p>
-              
+
               <div className="event-details">
                 <h3>What to Expect:</h3>
                 <ul>
@@ -74,13 +54,13 @@ const Events = () => {
               </div>
 
               <div className="events-button-container">
-                <a 
-                  href="https://www.eventbrite.com/o/nyc-data-science-for-social-good-dssg-nyc-115798799901#events" 
-                  target="_blank" 
+                <a
+                  href={LUMA_CALENDAR_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="events-button"
                 >
-                  See Events
+                  View All Events on LUMA
                 </a>
               </div>
             </div>

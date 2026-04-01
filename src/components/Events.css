@@ -27,7 +27,24 @@
 
 .events-content {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* LUMA embed section */
+.events-embed-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.luma-embed {
+  width: 100%;
+  min-height: 600px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 /* Large events info box */
@@ -84,8 +101,8 @@
 }
 
 .event-details li:before {
-  content: "•";
-  color: #667eea;
+  content: "\2022";
+  color: #F47E2D;
   font-weight: bold;
   position: absolute;
   left: 0;
@@ -98,7 +115,7 @@
 }
 
 .events-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #F47E2D;
   color: white;
   text-decoration: none;
   padding: 1.25rem 3rem;
@@ -106,60 +123,18 @@
   font-weight: 600;
   border-radius: 50px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+  box-shadow: 0 4px 15px rgba(244, 126, 45, 0.3);
   display: inline-block;
 }
 
 .events-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
+  box-shadow: 0 6px 20px rgba(244, 126, 45, 0.4);
+  background: #e06d1f;
 }
 
 .events-button:active {
   transform: translateY(0);
-}
-
-.events-info {
-  padding: 1rem;
-}
-
-.events-info h2 {
-  font-size: 2rem;
-  color: #2D3A41;
-  margin-bottom: 1.5rem;
-}
-
-.events-info p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-.event-details h3 {
-  font-size: 1.5rem;
-  color: #2D3A41;
-  margin-bottom: 1rem;
-}
-
-.event-details ul {
-  list-style: none;
-  padding: 0;
-}
-
-.event-details li {
-  padding: 0.5rem 0;
-  color: #555;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.event-details li:before {
-  content: "•";
-  color: #667eea;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
 }
 
 /* Responsive design */
@@ -170,6 +145,10 @@
 
   .events-hero h1 {
     font-size: 2.5rem;
+  }
+
+  .luma-embed {
+    min-height: 450px;
   }
 
   .events-info-large {
@@ -208,6 +187,10 @@
 
   .events-hero p {
     font-size: 1rem;
+  }
+
+  .luma-embed {
+    min-height: 350px;
   }
 
   .events-info-large {
