@@ -6,6 +6,7 @@ import About from './components/About';
 import ProjectFeature from './components/ProjectFeature';
 import Projects from './components/Projects';
 import Writing from './components/Writing';
+import OpenSource from './components/OpenSource';
 import Book from './components/Book';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
@@ -31,6 +32,7 @@ function App() {
               <About />
               <ProjectFeature />
               <Writing />
+              <OpenSource />
               <Book />
             </>
           } />

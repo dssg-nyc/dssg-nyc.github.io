@@ -1,0 +1,38 @@
+[
+  {
+    "title": "NYCdb",
+    "description": "Database tool for NYC housing data, making it accessible for tenant advocates and researchers.",
+    "url": "https://github.com/nycdb/nycdb",
+    "tags": ["housing", "data", "python"]
+  },
+  {
+    "title": "Councilmatic",
+    "description": "Track city council legislation and keep tabs on local government activities in NYC.",
+    "url": "https://github.com/datamade/councilmatic",
+    "tags": ["legislation", "government", "python"]
+  },
+  {
+    "title": "Access-A-Ride",
+    "description": "Tools and analysis for improving paratransit services for New Yorkers with disabilities.",
+    "url": "https://github.com/BetaNYC",
+    "tags": ["transit", "accessibility", "data"]
+  },
+  {
+    "title": "Civic Data Design Lab",
+    "description": "Open source tools from MIT for visualizing and analyzing urban data to inform civic action.",
+    "url": "https://github.com/civic-data-design-lab",
+    "tags": ["urban", "visualization", "data"]
+  },
+  {
+    "title": "OpenElections",
+    "description": "Collecting and standardizing election results data across the United States.",
+    "url": "https://github.com/openelections",
+    "tags": ["elections", "data", "python"]
+  },
+  {
+    "title": "CitySDK",
+    "description": "A toolkit by the U.S. Census Bureau for building civic data applications using Census APIs.",
+    "url": "https://github.com/uscensusbureau/citysdk",
+    "tags": ["census", "API", "javascript"]
+  }
+]
