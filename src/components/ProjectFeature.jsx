@@ -1,80 +1,75 @@
 import './ProjectFeature.css';
+import { openSegmentModal } from './SegmentModal';
+
+const STEPS = [
+  {
+    n: '01',
+    title: 'Listen first',
+    body: 'Every partnership begins with understanding your mission, your constraints, and the data you already have.',
+  },
+  {
+    n: '02',
+    title: 'Design together',
+    body: 'We shape an approach that fits your goals and your capacity — not the most impressive thing we could build.',
+  },
+  {
+    n: '03',
+    title: 'Build, hand off, support',
+    body: 'We build, test, and deploy with training and documentation, so the work keeps serving you after we step back.',
+  },
+];
+
+const FIGURES = [
+  { value: '260+', label: 'Registered volunteers' },
+  { value: '8+', label: 'Partner organizations' },
+  { value: '8+', label: 'Projects completed' },
+  { value: '$40k+', label: 'Pro bono value delivered' },
+];
 
 const ProjectFeature = () => {
   return (
-    <section className="feature-section" id="project-feature">
+    <section className="approach" id="approach">
       <div className="container">
-        <div className="feature-content">
-          <div className="feature-text">
-            <h2 className="feature-title">Our Approach to Social Impact</h2>
-            <div className="feature-description">
-              <p className="lead">
-                We believe that technology should serve humanity. Our approach combines cutting-edge data science 
-                with deep understanding of non-profit challenges to create solutions that truly make a difference.
-              </p>
-              <p>
-                Every partnership begins with listening. We take time to understand your mission, your challenges, 
-                and your goals. Then we apply our collective expertise in data science, machine learning, and 
-                software development to create tailored solutions that amplify your impact.
-              </p>
+        <div className="approach-head reveal">
+          <p className="eyebrow">Our approach</p>
+          <h2 className="approach-title">Technology should serve people first.</h2>
+          <p className="approach-lede lead">
+            We pair data science with a deep respect for the human work of nonprofits.
+            The result is software that amplifies a mission instead of complicating it.
+          </p>
+        </div>
+
+        <div className="approach-steps">
+          {STEPS.map((s, i) => (
+            <div className="approach-step reveal" key={s.n} style={{ '--reveal-delay': `${i * 70}ms` }}>
+              <span className="step-n">{s.n}</span>
+              <h4 className="step-title">{s.title}</h4>
+              <p className="step-body">{s.body}</p>
             </div>
-            
-            <div className="approach-steps">
-              <div className="step-item">
-                <div className="step-number">1</div>
-                <div className="step-content">
-                  <h4>Discovery & Assessment</h4>
-                  <p>We start by understanding your organization's unique needs and current data landscape.</p>
-                </div>
-              </div>
-              <div className="step-item">
-                <div className="step-number">2</div>
-                <div className="step-content">
-                  <h4>Solution Design</h4>
-                  <p>Our team designs a customized approach that aligns with your goals and resources.</p>
-                </div>
-              </div>
-              <div className="step-item">
-                <div className="step-number">3</div>
-                <div className="step-content">
-                  <h4>Implementation & Support</h4>
-                  <p>We build, test, and deploy solutions with ongoing support and training for your team.</p>
-                </div>
-              </div>
+          ))}
+        </div>
+
+        <div className="approach-figures reveal">
+          {FIGURES.map((f) => (
+            <div className="figure" key={f.label}>
+              <span className="figure-value">{f.value}</span>
+              <span className="figure-label">{f.label}</span>
             </div>
-            
-            <div className="feature-cta">
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScxK78KmTbbF2LnqqVvniWg21DrrU2B8WkvS6euTILKkR18bw/viewform?usp=header" className="button">
-                Start Your Project
-              </a>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8bvJdbx70NBQwizsA2UKAUiZ5AILtc7bWUH0KxOT_ej6MJw/viewform" className="button secondary">
-                Start Volunteering
-              </a>
-            </div>
-          </div>
-          
-          <div className="feature-visual">
-            <div className="visual-container">
-              <img 
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" 
-                alt="NYC DSSG team collaborating on social impact projects"
-                className="feature-image"
-              />
-              <div className="visual-overlay">
-                <div className="overlay-stats">
-                  <div className="overlay-stat">
-                    <span className="stat-number">85%</span>
-                    <span className="stat-label">Partner Satisfaction</span>
-                  </div>
-                  <div className="overlay-stat">
-                    <span className="stat-number">3x</span>
-                    <span className="stat-label">Average Impact Increase</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
+          ))}
+        </div>
+
+        <div className="approach-cta reveal">
+          <button type="button" className="button" onClick={openSegmentModal}>
+            Sign up &amp; register
+          </button>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLScxK78KmTbbF2LnqqVvniWg21DrrU2B8WkvS6euTILKkR18bw/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button secondary"
+          >
+            Start a project
+          </a>
         </div>
       </div>
     </section>

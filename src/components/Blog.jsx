@@ -6,13 +6,14 @@ import './Blog.css';
 const Blog = () => {
   return (
     <>
-      <Seo 
-        title="Christopher Carroll Smith | Blog"
-        description="Blog posts by Christopher Carroll Smith, software architect, data storyteller, and president of Promptly Technologies, LLC."
+      <Seo
+        title="NYC x DSSG | Blog"
+        description="Notes on data science, civic tech, and building for social good from the NYC x DSSG community."
         type="website"
-        name="Christopher Carroll Smith"
+        name="NYC x DSSG"
       />
       <div className="blog-container">
+        <p className="eyebrow">Notes & writing</p>
         <h1>Blog</h1>
         {blogData.map((post) => (
           <article id={post.id} key={post.id} className="blog-post-summary">

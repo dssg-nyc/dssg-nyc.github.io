@@ -1,156 +1,131 @@
-import React from 'react';
 import './About.css';
 import aboutData from '../data/aboutme.json';
 
+const VALUES = [
+  {
+    title: 'Community first',
+    body: 'Before we are technologists, we are organizers. The relationships come first; the code follows.',
+  },
+  {
+    title: 'Local & specific',
+    body: 'Food access, housing, transit safety, public health — real NYC problems, understood up close.',
+  },
+  {
+    title: 'Impact over output',
+    body: 'We measure success in lives improved and trust built, not in lines of code deployed.',
+  },
+  {
+    title: 'Open & ethical',
+    body: 'Open-source where we can, careful with AI always, and honest about what data can and cannot do.',
+  },
+];
+
+const TEAM = [
+  {
+    name: 'Jian',
+    role: 'Founder',
+    image: '/images/jianhead.png',
+    bio: 'A passionate advocate for using data science to drive social change. He researched Computational Social Sciences at the Max-Planck Institute of Geoanthropology, and is drawn to open-source intelligence tools and agentic AI. With community-organizing training and years in big data, he is dedicated to civic tech.',
+  },
+  {
+    name: 'Ursula',
+    role: 'Nonprofit Lead',
+    image: '/images/ursula_pic.png',
+    bio: 'A Brooklyn-based data scientist who leads DSSG NYC’s nonprofit engagement. Her work spans voter engagement, economic development, and public infrastructure. She began her career as a lawyer working on open-data policy and spent three years on civic projects in Tbilisi, Georgia.',
+  },
+  {
+    name: 'Carina',
+    role: 'Data Professional',
+    image: '/images/carina_pic.png',
+    bio: 'A data professional with a Master’s in Data Science and a dual Bachelor’s in Quantitative Economics and Fine Arts from Tufts. She volunteers across the civic-tech space and is fascinated by the intersections of data, art, and community.',
+  },
+  {
+    name: 'Join our team',
+    role: 'Future Data Diplomat',
+    image: '/images/questionmark_face.jpg',
+    bio: 'We’re looking for passionate Data Diplomats to help grow NYC DSSG and expand our impact. If you’d like to help shape data science for social good in NYC, we’d love to hear from you.',
+    contact: 'dssgnyc@gmail.com',
+  },
+];
+
 const About = () => {
   return (
-    <section className="about-section light" id="about">
+    <section className="about" id="about">
       <div className="container">
-        <div className="about-grid">
-          <div className="about-content">
-            <div className="about-text">
-              <h2 className="about-title">About NYC DSSG</h2>
-              <div className="about-description">
-                <p className="lead">
-                  First and foremost, we are community organizers - with a mission to foster a culture of passionate civic technologists
-                  dedicated to creating positive social impact through pro bono consulting and volunteer work.
-                </p>
-                <p>
-                  Our mission is to build cohorts of civic technologists and ethical AI leaders who understand local issues and use civic technology to provide real solutions in our city. We focus on healthy food access, affordable housing, education equity, transportation safety, environmental justice, and public health. </p>
-                <p>
-                  Founded by the Data Diplomats for Nonprofits (NYC), our volunteer group has grown into a vibrant community of professionals committed to using technology for meaningful social impact. 
-                </p>
-              </div>
-              
-              <div className="values-grid">
-                <div className="value-item">
-                  <div className="value-icon">🎯</div>
-                  <h4>Mission-Driven</h4>
-                  <p>Every project we undertake directly supports organizations making a difference in our communities.</p>
-                </div>
-                <div className="value-item">
-                  <div className="value-icon">🤝</div>
-                  <h4>Collaborative</h4>
-                  <p>We believe the best solutions come from diverse perspectives working together toward common goals.</p>
-                </div>
-                <div className="value-item">
-                  <div className="value-icon">⚡</div>
-                  <h4>Impact-Focused</h4>
-                  <p>We measure success not just in code deployed, but in lives improved and communities strengthened.</p>
-                </div>
-                <div className="value-item">
-                  <div className="value-icon">🌱</div>
-                  <h4>Growth-Oriented</h4>
-                  <p>We're committed to continuous learning and helping both volunteers and partners grow their capabilities.</p>
-                </div>
-              </div>
-            </div>
+        <div className="about-lede reveal">
+          <p className="eyebrow">Who we are</p>
+          <h2 className="about-headline">
+            First and foremost, we are community organizers — with a mission to grow
+            a culture of civic technologists who build for their neighbors.
+          </h2>
+        </div>
+
+        <div className="about-cols">
+          <div className="about-col reveal" style={{ '--reveal-delay': '60ms' }}>
+            <p>
+              NYC Data Science for Social Good is a civic-tech volunteer group led by
+              the Data Diplomats for Nonprofits. We unite data scientists, AI engineers,
+              and IT professionals to drive social impact through pro bono nonprofit work.
+            </p>
+            <p>
+              We focus on healthy food access, affordable housing, education equity,
+              transportation safety, environmental justice, and public health — building
+              cohorts of technologists and ethical AI leaders who understand local issues
+              and turn them into real solutions.
+            </p>
+            <p>
+              Founded by the Data Diplomats for Nonprofits, Inc. — a 501(c)(3) nonprofit —
+              our group has grown into a vibrant community committed to using technology
+              for meaningful, measurable good.
+            </p>
           </div>
-          
-          <div className="about-visual">
-            <div className="about-image-container">
-              <img 
-                src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg" 
-                alt="NYC DSSG team collaborating on data science projects"
-                className="about-image"
-              />
-              <div className="image-overlay">
-                <div className="overlay-content">
-                  <div className="stat-highlight">
-                    <span className="stat-number">50+</span>
-                    <span className="stat-label">Registered Volunteers</span>
-                  </div>
-                </div>
+
+          <div className="about-values reveal" style={{ '--reveal-delay': '120ms' }}>
+            {VALUES.map((v) => (
+              <div className="value" key={v.title}>
+                <h4 className="value-title">{v.title}</h4>
+                <p className="value-body">{v.body}</p>
               </div>
-            </div>
-            
-            <div className="tech-skills">
-              <h4>Our Expertise</h4>
-              <div className="skills-grid">
-                {aboutData.icons.map((icon, index) => (
-                  <div key={index} className="skill-item">
-                    <img src={icon.src} alt={icon.alt} className="skill-icon" />
-                    <span className="skill-name">{icon.alt}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
-        
-        {/* Team Section */}
-        <div className="team-section">
-          <h3 className="team-title">Leadership Team</h3>
+
+        <div className="about-expertise reveal">
+          <span className="expertise-label">Our toolkit</span>
+          <div className="expertise-icons">
+            {aboutData.icons.map((icon, i) => (
+              <div className="expertise-icon" key={i} title={icon.alt}>
+                <img src={icon.src} alt={icon.alt} />
+                <span>{icon.alt}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ---- Leadership ---- */}
+        <div className="team">
+          <div className="team-head reveal">
+            <p className="eyebrow">Leadership</p>
+            <h3 className="team-title">The people behind the work</h3>
+          </div>
           <div className="team-grid">
-            <div className="founder-card">
-              <div className="founder-image-container">
-                <img 
-                  src="/images/jianhead.png" 
-                  alt="Founder of NYC DSSG" 
-                  className="founder-image"
-                />
-              </div>
-              <div className="founder-info">
-                <h4 className="founder-name">Jian</h4>
-                <p className="founder-bio">
-                  He is passionate advocate for using data science to drive social change. He previously did research in Comutational Social Sciences for Max-Planck Institute of Geoanthropology. He is interested in open-source intelligence tools and AI agentic systems.
-                  With community organizing training and years of experience in the big data industry, he is dedicated to social good and civic tech.
-                </p>
-              </div>
-            </div>
-
-            <div className="founder-card">
-              <div className="founder-image-container">
-                <img 
-                  src="/images/ursula_pic.png" 
-                  alt="Ursula - Nonprofit Lead" 
-                  className="founder-image"
-                />
-              </div>
-              <div className="founder-info">
-                <h4 className="founder-name">Ursula</h4>
-                <p className="founder-bio">
-                   Ursula is a Brooklyn-based data scientist focused on civic tech and leads DSSG NYC’s nonprofit engagement efforts. She concentrates her research on voter engagement, economic development, and public infrastructure and services. She began her career as a lawyer working on open data policy and spent three years working on civic projects in Tbilisi, Georgia. 
-                </p>
-              </div>
-            </div>
-
-            <div className="founder-card">
-              <div className="founder-image-container">
-                <img 
-                  src="/images/carina_pic.png" 
-                  alt="Carina Ye - Data Professional" 
-                  className="founder-image"
-                />
-              </div>
-              <div className="founder-info">
-                <h4 className="founder-name">Carina</h4>
-                <p className="founder-bio">
-                  Carina is a data professional with a Master's in Data Science and a dual Bachelor's in Quantitative Economics and Fine Arts from Tufts University. In her free time, she volunteers with several nonprofits in the data and civic tech space and enjoys exploring NYC's museums, food, yoga studios, and the city's many spontaneous events. She's especially interested in the interdisciplinary intersections between data, art, and community.
-                </p>
-              </div>
-            </div>
-            
-            <div className="founder-card">
-              <div className="founder-image-container">
-                <img 
-                  src="/images/questionmark_face.jpg" 
-                  alt="Join Our Team - Future Team Member" 
-                  className="founder-image"
-                />
-              </div>
-              <div className="founder-info">
-                <h4 className="founder-name">Join Our Team!</h4>
-                <p className="founder-bio">
-                  We're looking for passionate Data Diplomats to help grow NYC DSSG and expand our impact. 
-                  If you're interested in joining our core team and helping shape the future of 
-                  data science for social good in NYC, we'd love to hear from you!
-                </p>
-                <p className="callout-contact">
-                  Contact us at: <a href="mailto:contact@dssg.nyc">dssgnyc@gmail.com</a>
-                </p>
-              </div>
-            </div>
+            {TEAM.map((m, i) => (
+              <article
+                className="member reveal"
+                key={m.name}
+                style={{ '--reveal-delay': `${i * 60}ms` }}
+              >
+                <div className="member-portrait">
+                  <img src={m.image} alt={m.name} />
+                </div>
+                <h4 className="member-name">{m.name}</h4>
+                <span className="member-role">{m.role}</span>
+                <p className="member-bio">{m.bio}</p>
+                {m.contact && (
+                  <a className="member-contact" href={`mailto:${m.contact}`}>{m.contact}</a>
+                )}
+              </article>
+            ))}
           </div>
         </div>
       </div>

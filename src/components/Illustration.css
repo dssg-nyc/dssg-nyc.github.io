@@ -1,0 +1,67 @@
+.ill {
+  color: var(--ink);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.ill-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.ill-hero .ill-svg { max-width: 640px; }
+.ill-divider .ill-svg { max-width: 520px; color: var(--ink-muted); }
+
+/* One-time draw-on / fade-in when the plate scrolls into view.
+   The hero illustration is wrapped in a .reveal, which toggles
+   `is-visible` on its parent; we key the draw animation off that. */
+.ill-draw {
+  opacity: 0;
+}
+
+.reveal.is-visible .ill-draw,
+.is-visible .ill-draw {
+  animation: ill-fade-in var(--dur-slow) var(--ease-out) forwards;
+}
+
+/* Strokes draw on via dash offset for the botanical/skyline groups */
+.ill-hero-svg .ill-draw path,
+.ill-hero-svg .ill-draw line,
+.ill-hero-svg .ill-draw circle,
+.ill-divider-svg .ill-draw path,
+.ill-divider-svg .ill-draw line,
+.ill-divider-svg .ill-draw circle {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+}
+
+.reveal.is-visible .ill-hero-svg .ill-draw path,
+.reveal.is-visible .ill-hero-svg .ill-draw line,
+.reveal.is-visible .ill-hero-svg .ill-draw circle,
+.is-visible .ill-divider-svg .ill-draw path,
+.is-visible .ill-divider-svg .ill-draw line,
+.is-visible .ill-divider-svg .ill-draw circle {
+  animation: ill-draw-on 1.6s var(--ease-out) forwards;
+}
+
+@keyframes ill-fade-in {
+  to { opacity: 1; }
+}
+
+@keyframes ill-draw-on {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Reduced motion: just show the art, no drawing */
+@media (prefers-reduced-motion: reduce) {
+  .ill-draw { opacity: 1; animation: none; }
+  .ill-svg .ill-draw path,
+  .ill-svg .ill-draw line,
+  .ill-svg .ill-draw circle {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+    animation: none !important;
+  }
+}

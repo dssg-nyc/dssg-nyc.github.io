@@ -2,16 +2,20 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './Header.css';
 
+const NAV_LINKS = [
+  { label: 'Initiatives', hash: '#initiatives' },
+  { label: 'About', hash: '#about' },
+  { label: 'Impact', hash: '#impact' },
+];
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -20,57 +24,68 @@ const Header = () => {
     if (location.hash) {
       const id = location.hash.substring(1);
       setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
       }, 100);
     }
   }, [location]);
 
   const handleAnchorClick = (e, hash) => {
     e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate(`/${hash}`);
-    } else {
-      navigate(hash);
-    }
+    setMenuOpen(false);
+    if (location.pathname !== '/') navigate(`/${hash}`);
+    else navigate(hash);
   };
 
   return (
-    <header className={`modern-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="header-container">
-        <div className="logo-section">
-          <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="logo-link">
-            <img src="/images/logo3.png" alt="DSSG Logo" className="logo-img" />
-            <div className="logo-text">
-              <span className="logo-title">DSSG</span>
-              <span className="logo-subtitle">NYC</span>
-            </div>
-          </a>
-        </div>
+    <header className={`ed-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="ed-header-inner">
+        <a
+          href="/#home"
+          onClick={(e) => handleAnchorClick(e, '#home')}
+          className="ed-brand"
+          aria-label="NYC x DSSG — home"
+        >
+          <span className="ed-brand-mark">NYC&#8202;&times;&#8202;DSSG</span>
+          <span className="ed-brand-sub">Data Science for Social Good</span>
+        </a>
 
-        <nav className="nav-menu">
-          <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="nav-link">
-            Home
-          </a>
-          <a href="/#projects" onClick={(e) => handleAnchorClick(e, '#projects')} className="nav-link">
-            Get Involved
-          </a>
-          <a href="/#about" onClick={(e) => handleAnchorClick(e, '#about')} className="nav-link">
-            About
-          </a>
-          <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
-            Impact Stories
-          </a>
-          <NavLink to="/diplomats" className="nav-link">
-            Data Diplomats
+        <button
+          className={`ed-burger ${menuOpen ? 'open' : ''}`}
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span /><span /><span />
+        </button>
+
+        <nav className={`ed-nav ${menuOpen ? 'open' : ''}`}>
+          {NAV_LINKS.map((l) => (
+            <a
+              key={l.hash}
+              href={`/${l.hash}`}
+              onClick={(e) => handleAnchorClick(e, l.hash)}
+              className="ed-nav-link"
+            >
+              {l.label}
+            </a>
+          ))}
+          <NavLink to="/diplomats" className="ed-nav-link" onClick={() => setMenuOpen(false)}>
+            Diplomats
           </NavLink>
-          <NavLink to="/events" className="nav-link">
+          <NavLink to="/events" className="ed-nav-link" onClick={() => setMenuOpen(false)}>
             Events
           </NavLink>
-          <a href="/#book" onClick={(e) => handleAnchorClick(e, '#book')} className="nav-link button-nav">
-            Partner With Us
+
+          {/* Gated / secondary-audience link, visually set apart */}
+          <a
+            href="https://www.linkedin.com/groups/13349223/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ed-nav-link ed-nav-gated"
+            onClick={() => setMenuOpen(false)}
+          >
+            Member Login
           </a>
         </nav>
       </div>

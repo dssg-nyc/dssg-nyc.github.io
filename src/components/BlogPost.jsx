@@ -13,16 +13,16 @@ const BlogPost = () => {
     return <p>Post not found.</p>;
   }
 
-  const pageTitle = `${post.title.slice(0, 60)}` + ' | Christopher Carroll Smith';
+  const pageTitle = `${post.title.slice(0, 60)}` + ' | NYC x DSSG';
   const pageDescription = post.excerpt.slice(0, 155) + '...';
 
   return (
     <>
-      <Seo 
+      <Seo
         title={pageTitle}
         description={pageDescription}
         type="article"
-        name="Christopher Carroll Smith"
+        name="NYC x DSSG"
       />
       <div className="blog-container">
         <article className="blog-post">

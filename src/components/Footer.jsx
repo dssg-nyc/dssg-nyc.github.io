@@ -1,97 +1,77 @@
-import PropTypes from 'prop-types';
 import './Footer.css';
 import siteProperties from '../data/siteproperties.json';
 import socialIcons from '../data/socialicons.json';
+import Illustration from './Illustration';
+import { openSegmentModal } from './SegmentModal';
 
 const Footer = () => {
-  if (Object.keys(siteProperties).length === 0 || Object.keys(socialIcons).length === 0) {
-    return (
-      <footer className="modern-footer">
-        <div className="container">
-          <p>Loading...</p>
-        </div>
-      </footer>
-    );
-  }
+  const social = siteProperties.socialProfiles || {};
 
   return (
-    <footer className="modern-footer">
-      <div className="container">
-        <div className="footer-content">
-          <div className="footer-main">
-            <div className="footer-brand">
-              <div className="footer-logo">
-                <img src="/images/logo3.png" alt="DSSG Logo" className="logo-img" />
-                <div className="brand-text">
-                  <h3>NYC DSSG</h3>
-                  <p>Data Science for Social Good</p>
-                  <p>Data Diplomats for Nonprofits</p>
-                </div>
-              </div>
-              <p className="brand-description">
-                Connecting skilled technology professionals with non-profit organizations 
-                to create meaningful social impact through data science and innovation.
-              </p>
-            </div>
-            
-            <div className="footer-links">
-              <div className="link-group">
-                <h4>Get Involved</h4>
-                <ul>
-                  <li><a href="#projects">Volunteer</a></li>
-                  <li><a href="#projects">Partner With Us</a></li>
-                  <li><a href="#writing">Success Stories</a></li>
-                  <li><a href="#book">Schedule Meeting</a></li>
-                </ul>
-              </div>
-              
-              <div className="link-group">
-                <h4>Resources</h4>
-                <ul>
-                  <li><a href="#writing">Impact Reports</a></li>
-                  <li><a href="#writing">Case Studies</a></li>
-                  <li><a href="#writing">Best Practices</a></li>
-                  <li><a href="#writing">Newsletter</a></li>
-                </ul>
-              </div>
-              
-              <div className="link-group">
-                <h4>Connect</h4>
-                <ul>
-                  <li><a href="mailto:dssgnyc@gmail.com">Contact Us</a></li>
-                  <li><a href="#about">About</a></li>
-                  <li><a href="/blog">Blog</a></li>
-                </ul>
-                <div className="social-links">
-                  {Object.entries(siteProperties.socialProfiles).map(([key, value]) => {
-                    return socialIcons[key] ? (
-                      <a href={value} target="_blank" rel="noopener noreferrer" key={key} className="social-link">
-                        <img src={socialIcons[key]} alt={key} />
-                      </a>
-                    ) : null;
-                  })}
-                </div>
-              </div>
-            </div>
+    <footer className="ed-footer">
+      {/* Footer-divider illustration — bookends the hero plate */}
+      <div className="footer-divider reveal">
+        <Illustration variant="divider" />
+      </div>
+
+      <div className="container footer-grid">
+        {/* Column 1 — brand lockup + copyright */}
+        <div className="footer-brand">
+          <span className="footer-mark">NYC&#8202;&times;&#8202;DSSG</span>
+          <p className="footer-tagline">Data Science for Social Good</p>
+          <p className="footer-note">
+            A civic-tech volunteer community led by the Data Diplomats for Nonprofits, Inc.
+            — a 501(c)(3) nonprofit. Connecting skilled technologists with NYC nonprofits
+            to create meaningful social impact.
+          </p>
+          <p className="footer-copy">
+            &copy; {new Date().getFullYear()} {siteProperties.name}. All rights reserved.
+          </p>
+        </div>
+
+        {/* Column 2 — repeated nav */}
+        <nav className="footer-nav" aria-label="Footer">
+          <h4 className="footer-col-title">Explore</h4>
+          <ul>
+            <li><a href="/#initiatives">Initiatives</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#impact">Impact stories</a></li>
+            <li><a href="/#/diplomats">Data Diplomats</a></li>
+            <li><a href="/#/events">Events</a></li>
+            <li><a href="/#/blog">Blog</a></li>
+          </ul>
+          <button type="button" className="footer-cta" onClick={openSegmentModal}>
+            Sign up &amp; register &rarr;
+          </button>
+        </nav>
+
+        {/* Column 3 — social handles */}
+        <div className="footer-social">
+          <h4 className="footer-col-title">Connect</h4>
+          <ul>
+            <li><a href="mailto:dssgnyc@gmail.com">dssgnyc@gmail.com</a></li>
+          </ul>
+          <div className="footer-handles">
+            {Object.entries(social).map(([key, value]) =>
+              socialIcons[key] ? (
+                <a
+                  key={key}
+                  href={value}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-handle"
+                  aria-label={key}
+                >
+                  <img src={socialIcons[key]} alt={key} />
+                </a>
+              ) : null
+            )}
           </div>
-          
-          <div className="footer-bottom">
-            <div className="footer-legal">
-              <p>&copy; 2026 {siteProperties.name}. All rights reserved.</p>
-            </div>
-            <div className="footer-attribution">
-              <p>Support Civic Tech in New York City</p>
-            </div>
-          </div>
+          <p className="footer-credit">Support civic tech in New York City.</p>
         </div>
       </div>
     </footer>
   );
-}
-
-Footer.propTypes = {
-  foregroundColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
 };
 
 export default Footer;

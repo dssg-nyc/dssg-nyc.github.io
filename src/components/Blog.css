@@ -1,51 +1,51 @@
 .blog-container {
-  max-width: 50rem;
+  max-width: 720px;
   margin: 0 auto;
-  padding: 1.25rem;
-  font-family: "Montserrat", sans-serif;
+  padding: var(--space-3xl) var(--space-lg);
 }
 
-.blog-container h1 {
-  font-size: 2.5rem;
-  border-bottom: 0.125rem solid #333;
-  padding-bottom: 0.625rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.875rem;
-}
-
-.blog-post-summary h2 {
-  font-size: 1.8rem;
-  padding-top: 3rem;
-  margin-bottom: 0.625rem;
-  line-height: 1.3;
-  color: black;
-}
-
-.blog-post-summary h2 a {
-  color: black;
-  text-decoration: none;
-}
-
-.blog-post-summary p {
-  font-size: 1rem;
+.blog-container > .eyebrow { margin-bottom: var(--space-sm); }
+.blog-container > h1 {
+  font-family: var(--font-display);
   font-weight: 400;
+  margin-bottom: var(--space-2xl);
 }
 
-.blog-post-summary h2 a:hover {
-  text-decoration: underline;
+.blog-post-summary {
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--rule);
 }
+.blog-post-summary h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 0.4rem;
+}
+.blog-post-summary h2 a { color: var(--ink); }
+.blog-post-summary h2 a:hover { color: var(--accent); text-decoration: none; }
+.blog-post-summary time {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-sm);
+}
+.blog-post-summary p { color: var(--ink-soft); font-size: 0.98rem; margin: 0; }
 
-@media screen and (max-width: 37.5rem) {
-  .blog-container {
-    padding: 0.625rem;
-  }
-
-  .blog-container h1 {
-    font-size: 2rem;
-  }
-
-  /* Responsive Styles for .blog-post-summary h2 */
-  .blog-post-summary h2 {
-    font-size: 1.5rem;
-  }
+/* Article body */
+.blog-post h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.blog-post time {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: var(--space-xl);
 }
