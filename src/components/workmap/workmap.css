@@ -1,0 +1,388 @@
+/* Work Map — interactive radial job/skill/benchmark explorer.
+   Self-contained; relies only on brand tokens from App.css (--primary-*). */
+
+/* ---- page wrapper (route: /work-map) ---- */
+.wm-page {
+  width: 100%;
+  padding: var(--space-2xl, 4rem) 0 var(--space-3xl, 6rem);
+  background: #fff;
+}
+.wm-page-head {
+  max-width: 1180px;
+  margin: 0 auto 0.5rem;
+  padding: 0 var(--space-lg, 2rem);
+}
+.wm-page-head h1 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(2rem, 1rem + 4vw, 3.2rem);
+  color: #1d3557;
+  margin: 0 0 0.5rem;
+}
+.wm-page-head p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #55503f;
+  max-width: 680px;
+  margin: 0;
+}
+.wm-page-note {
+  max-width: 1180px;
+  margin: 0.75rem auto 0;
+  padding: 0 var(--space-lg, 2rem);
+  font-size: 0.8rem;
+  color: #9a9484;
+}
+
+.wm {
+  --wm-navy: #1d3557;
+  --wm-ink: #24303f;
+  --wm-cream: #f4f1e8;
+  --wm-line: #e3ddce;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: var(--space-lg, 2rem);
+  color: var(--wm-ink);
+  font-family: var(--font-primary, sans-serif);
+}
+
+/* ---- top controls ---- */
+.wm-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--wm-line);
+}
+.wm-field {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.wm-field label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--wm-navy);
+}
+.wm-field select,
+.wm-field input {
+  font: inherit;
+  font-size: 0.95rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--wm-line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--wm-ink);
+  min-width: 190px;
+}
+.wm-field select:focus,
+.wm-field input:focus {
+  outline: 2px solid var(--wm-navy);
+  outline-offset: 1px;
+}
+.wm-reset {
+  font: inherit;
+  font-weight: 700;
+  padding: 0.4rem 1.1rem;
+  border: 1.5px solid var(--wm-navy);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--wm-navy);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.wm-reset:hover {
+  background: var(--wm-navy);
+  color: #fff;
+}
+.wm-caption {
+  flex: 1 1 260px;
+  margin: 0;
+  font-size: 0.82rem;
+  color: #6b6559;
+  line-height: 1.4;
+}
+.wm-caption b {
+  color: var(--wm-ink);
+}
+.wm-shapes {
+  display: block;
+  margin-top: 0.15rem;
+  letter-spacing: 0.02em;
+}
+
+/* ---- stage ---- */
+.wm-stage {
+  position: relative;
+  margin-top: 1rem;
+  border: 1px solid var(--wm-line);
+  border-radius: 14px;
+  background:
+    radial-gradient(120% 100% at 50% 22%, #faf8f2 0%, var(--wm-cream) 60%, #e7e1d2 100%);
+  overflow: hidden;
+}
+.wm-svg {
+  display: block;
+  width: 100%;
+  height: clamp(480px, 74vh, 840px);
+  cursor: grab;
+  touch-action: none; /* let drag/zoom own the gesture, not the page */
+}
+.wm-svg:active {
+  cursor: grabbing;
+}
+
+/* ---- svg typography ---- */
+.wm-group-label {
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  paint-order: stroke;
+  stroke: #f4f1e8;
+  stroke-width: 3px;
+  transition: opacity 0.2s ease;
+}
+.wm-role-label {
+  font-size: 12px;
+  font-weight: 600;
+  fill: #33404f;
+  paint-order: stroke;
+  stroke: #f7f4ec;
+  stroke-width: 2.5px;
+  pointer-events: none;
+}
+.wm-center-label {
+  font-family: var(--font-display, Georgia, serif);
+  font-weight: 700;
+  font-size: 15px;
+  fill: #fff;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+.wm-role {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+/* ---- legend ---- */
+.wm-legend {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(3px);
+  border: 1px solid var(--wm-line);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.74rem;
+  color: #4a4638;
+  max-width: 260px;
+}
+.wm-legend-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 3px 0;
+}
+.wm-lg-job,
+.wm-lg-skill,
+.wm-lg-bench,
+.wm-lg-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  flex: none;
+}
+.wm-lg-job {
+  border: 2px solid #3f6d4e;
+  border-radius: 50%;
+  background: #fff;
+}
+.wm-lg-skill {
+  background: #6b8f77;
+  transform: rotate(45deg);
+  width: 9px;
+  height: 9px;
+}
+.wm-lg-bench {
+  background: #24303f;
+  border-radius: 50%;
+}
+.wm-lg-dot {
+  border-radius: 50%;
+  background: #3f6d4e;
+}
+.wm-lg-dot.d1 {
+  opacity: 0.28;
+}
+.wm-lg-dot.d2 {
+  opacity: 0.6;
+}
+.wm-lg-dot.d3 {
+  opacity: 1;
+}
+.wm-lg-bar {
+  display: inline-block;
+  width: 22px;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #4ea8de, #1d3557);
+  flex: none;
+}
+
+/* ---- evidence panel ---- */
+.wm-panel {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: min(340px, 84%);
+  max-height: calc(100% - 28px);
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid var(--wm-line);
+  border-radius: 12px;
+  box-shadow: 0 18px 40px rgba(29, 53, 87, 0.18);
+  animation: wm-panel-in 0.22s ease;
+}
+@keyframes wm-panel-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+}
+.wm-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 3px solid;
+}
+.wm-panel-eyebrow {
+  margin: 0 0 0.2rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.wm-panel-head h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--wm-navy);
+}
+.wm-panel-cov {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: #6b6559;
+}
+.wm-panel-close {
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #9a9484;
+  padding: 0 0.2rem;
+}
+.wm-panel-close:hover {
+  color: var(--wm-ink);
+}
+.wm-skill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.6rem 1.1rem 1.1rem;
+}
+.wm-skill-list li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f0ece2;
+}
+.wm-skill-list li:last-child {
+  border-bottom: none;
+}
+.wm-skill-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+.wm-skill-name {
+  font-weight: 600;
+  color: var(--wm-ink);
+}
+.wm-skill-score {
+  font-variant-numeric: tabular-nums;
+  color: #6b6559;
+}
+.wm-skill-bar {
+  height: 6px;
+  background: #eee7d9;
+  border-radius: 4px;
+  margin: 0.4rem 0;
+  overflow: hidden;
+}
+.wm-skill-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+}
+.wm-bench-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 0.35rem;
+}
+.wm-bench-chip {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  color: var(--c);
+  white-space: nowrap;
+}
+.wm-bench-chip.direct {
+  background: color-mix(in srgb, var(--c) 16%, transparent);
+  font-weight: 600;
+}
+.wm-bench-chip.weak {
+  opacity: 0.75;
+}
+.wm-bench-none {
+  font-size: 0.74rem;
+  color: #a39c8c;
+  font-style: italic;
+}
+
+.wm-hint {
+  margin: 0.7rem 0 0;
+  font-size: 0.8rem;
+  color: #8a8474;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 720px) {
+  .wm {
+    padding: 1rem;
+  }
+  .wm-svg {
+    height: clamp(400px, 66vh, 620px);
+  }
+  .wm-legend {
+    font-size: 0.66rem;
+    max-width: 190px;
+    padding: 0.45rem 0.55rem;
+  }
+  .wm-panel {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    top: auto;
+    width: auto;
+    max-height: 58%;
+  }
+  .wm-group-label {
+    font-size: 17px;
+  }
+}

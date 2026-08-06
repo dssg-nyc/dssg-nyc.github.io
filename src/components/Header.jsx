@@ -66,6 +66,9 @@ const Header = () => {
           <NavLink to="/diplomats" className="nav-link">
             Data Diplomats
           </NavLink>
+          <NavLink to="/work-map" className="nav-link">
+            Work Map
+          </NavLink>
           <NavLink to="/events" className="nav-link">
             Events
           </NavLink>
