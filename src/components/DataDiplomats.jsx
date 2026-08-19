@@ -1,12 +1,8 @@
-import { lazy, Suspense, useState } from 'react';
 import './DataDiplomats.css';
 import diplomatsData from '../data/diplomats.json';
 import Seo from './Seo';
 
-const Experience = lazy(() => import('./experience/Experience'));
-
-// Hero copy + CTAs for the scroll-driven 3D narrative (and its static fallback).
-const HERO_TITLE = 'Data Science for Social Good';
+// Hero copy + CTAs (static — no 3D canvas).
 const HERO_DESCRIPTION =
   'Meet the Data Diplomats — trained volunteers turning idle tech talent into pro bono impact for NYC nonprofits.';
 const CTA_PRIMARY = { label: 'Become a Data Diplomat', href: diplomatsData.applyUrl };
@@ -15,24 +11,7 @@ const CTA_SECONDARY = {
   href: 'https://docs.google.com/forms/d/e/1FAIpQLScxK78KmTbbF2LnqqVvniWg21DrrU2B8WkvS6euTILKkR18bw/viewform?usp=header',
 };
 
-const prefersReducedMotion = () =>
-  typeof window !== 'undefined' &&
-  window.matchMedia &&
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-const webglSupported = () => {
-  if (typeof window === 'undefined') return false;
-  try {
-    const canvas = document.createElement('canvas');
-    return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-  } catch (e) {
-    return false;
-  }
-};
-
-// Shown for reduced-motion / no-WebGL visitors and while the 3D chunk loads.
-// Same story beat + CTAs as the narrative's final "Solution" state, no motion.
-const StaticHero = () => (
+const DiplomatsHero = () => (
   <section className="dd-hero" id="diplomats-hero">
     <div className="dd-hero-content container">
       <p className="dd-hero-eyebrow">The solution</p>
@@ -50,26 +29,6 @@ const StaticHero = () => (
   </section>
 );
 
-const DiplomatsHero = () => {
-  // Decide once on the client (SPA, no SSR): scroll-driven 3D or static fallback.
-  const [useCanvas] = useState(() => !prefersReducedMotion() && webglSupported());
-
-  if (!useCanvas) {
-    return <StaticHero />;
-  }
-
-  return (
-    <Suspense fallback={<StaticHero />}>
-      <Experience
-        title={HERO_TITLE}
-        description={HERO_DESCRIPTION}
-        primaryCta={CTA_PRIMARY}
-        secondaryCta={CTA_SECONDARY}
-      />
-    </Suspense>
-  );
-};
-
 const DataDiplomats = () => {
   return (
     <>
@@ -84,6 +43,48 @@ const DataDiplomats = () => {
 
       <section className="diplomats-section" id="diplomats">
         <div className="container">
+          <div className="dd-about-block">
+            <h2 className="dd-about-title">{diplomatsData.missionTitle}</h2>
+            <p className="dd-about-lead">{diplomatsData.missionLead}</p>
+            {diplomatsData.missionParagraphs.map((paragraph, index) => (
+              <p key={index} className="dd-about-paragraph">{paragraph}</p>
+            ))}
+            <div className="dd-values-grid">
+              {diplomatsData.values.map((value, index) => (
+                <div key={index} className="dd-value-item">
+                  <div className="dd-value-icon">{value.icon}</div>
+                  <h4>{value.title}</h4>
+                  <p>{value.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="dd-philosophy-block" id="philosophy">
+            <p className="dd-philosophy-eyebrow">{diplomatsData.philosophy.eyebrow}</p>
+            <h2 className="dd-philosophy-title">{diplomatsData.philosophy.title}</h2>
+            <p className="dd-philosophy-intro">{diplomatsData.philosophy.intro}</p>
+
+            <div className="dd-bicycle">
+              <h3 className="dd-bicycle-name">{diplomatsData.philosophy.frameworkName}</h3>
+              <p className="dd-bicycle-description">{diplomatsData.philosophy.frameworkDescription}</p>
+              <div className="dd-pillars-grid">
+                {diplomatsData.philosophy.pillars.map((pillar, index) => (
+                  <div key={index} className="dd-pillar-card">
+                    <span className="dd-pillar-wheel">{pillar.wheel}</span>
+                    <h4 className="dd-pillar-name">{pillar.name}</h4>
+                    <p className="dd-pillar-description">{pillar.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="dd-theory-block">
+              <h3 className="dd-theory-title">{diplomatsData.philosophy.theoryOfChangeTitle}</h3>
+              <p className="dd-theory-description">{diplomatsData.philosophy.theoryOfChangeDescription}</p>
+            </div>
+          </div>
+
           <div className="diplomats-header">
             <h2 className="diplomats-title">{diplomatsData.sectionTitle}</h2>
             <p className="diplomats-description">{diplomatsData.sectionDescription}</p>
@@ -103,7 +104,7 @@ const DataDiplomats = () => {
                 <span className="cohort-term">{cohort.term}</span>
               </div>
               <p className="cohort-description">{cohort.description}</p>
-              <div className="diplomats-grid">
+              <div className={`diplomats-grid${cohort.members.length === 4 ? ' diplomats-grid--four' : ''}`}>
                 {cohort.members.map((member, index) => (
                   <div key={index} className="diplomat-card">
                     <div className="diplomat-image-container">

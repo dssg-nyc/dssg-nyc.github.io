@@ -1,0 +1,62 @@
+[
+  {
+    "id": "foia-fluent",
+    "kicker": "Government transparency",
+    "title": "FOIA Fluent",
+    "url": "https://www.foiafluent.com",
+    "displayUrl": "foiafluent.com",
+    "image": "images/showcase/foia-fluent.webp",
+    "imageAlt": "FOIA Fluent transparency benchmark dashboard showing 29.3% overall success rate, 38,906 total requests, and median response time across federal agencies, with the FOIA Assistant chat panel open",
+    "what": "The complete FOIA workspace. Search MuckRock, DocumentCloud and the open web in one place, draft requests grounded in real statute text and agency eCFR rules, then track every filing from the 20-business-day statutory deadline through AI response analysis to appeal.",
+    "impact": "Public records law only works if ordinary people can use it. FOIA Fluent turns a specialist's process into a workflow any resident, reporter or nonprofit can run — with 1,600+ federal agencies and 54 state jurisdictions ranked on how they actually respond.",
+    "stats": ["1,600+ federal agencies", "54 state jurisdictions", "17 yrs of FOIA.gov data"]
+  },
+  {
+    "id": "unredacted",
+    "kicker": "Money & accountability",
+    "title": "Unredacted Monitor",
+    "url": "https://unredacted.us",
+    "displayUrl": "unredacted.us",
+    "image": "images/showcase/unredacted.webp",
+    "imageAlt": "Unredacted Monitor US geoeconomic map with pipeline, data centre and news-event layers over state-level gas price shading",
+    "what": "A live government-accountability terminal. Federal spending, campaign finance and dark-money flows stream in beside FEC, SEC, DOJ, GAO and ProPublica feeds, an interactive US geoeconomic map, and a Money Flow Galaxy tracing who is funding American politics.",
+    "impact": "Follow-the-money reporting is usually locked in PDFs and paywalled databases. Unredacted puts the public record in one continuously updating public view, so influence is visible while it is happening — not years later.",
+    "stats": ["FEC · SEC · DOJ · GAO", "5-minute refresh", "Interactive US map"]
+  },
+  {
+    "id": "grantpilot",
+    "kicker": "Nonprofit capacity",
+    "title": "GrantPilot AI",
+    "url": "https://grantpilot-snowy.vercel.app",
+    "displayUrl": "grantpilot.app",
+    "image": "images/showcase/grantpilot.webp",
+    "imageAlt": "GrantPilot AI landing page reading Your AI Fundraising Co-Pilot for Nonprofits above a row of product statistics",
+    "what": "An AI fundraising co-pilot for nonprofits. It extracts your mission from documents you already have, runs semantic matching against 10,000+ live federal and foundation opportunities daily, and ranks them by mission fit, eligibility, deadline urgency and award size in a kanban pipeline.",
+    "impact": "Small nonprofits lose weeks to grant research they cannot staff. GrantPilot gives a two-person development team the discovery capacity of a full grants office — built pro bono, free to start.",
+    "stats": ["Federal + foundation", "Synced every 4 hrs", "AI match scoring"]
+  },
+  {
+    "id": "zap-tracker",
+    "kicker": "Housing & land use",
+    "title": "NYC Land Use & ZAP Tracker",
+    "url": "https://nyc-cpc-hearing-tracker.ai.studio",
+    "displayUrl": "nyc-cpc-hearing-tracker.ai.studio",
+    "image": "images/showcase/zap-tracker.webp",
+    "imageAlt": "NYC ZAP tracker showing active review metrics beside a map of New York City with rezoning applications plotted by review stage",
+    "what": "A live window into New York's Uniform Land Use Review Procedure. It pulls the City Planning ZAP registry straight from NYC's Socrata open-data portal, maps every active rezoning to its PLUTO tax lots, and shows where each application sits across Community Board, Borough President, CPC and City Council review.",
+    "impact": "By the time most New Yorkers hear about a rezoning, the hearing has passed. This tracker pairs every application with neighborhood displacement-risk indicators — rent burden, rent-stabilized stock, market pressure — so communities can show up while the record is still open.",
+    "stats": ["41 active reviews", "25 community districts", "Displacement-risk index"]
+  },
+  {
+    "id": "city-ledger",
+    "kicker": "Government spending",
+    "title": "The City Ledger",
+    "url": "https://budget.nyc-dssg.org",
+    "displayUrl": "budget.nyc-dssg.org",
+    "image": "images/showcase/city-ledger.webp",
+    "imageAlt": "The City Ledger dashboard showing NYC's $665 million FY26 grant budget, Schedule C award totals, and a two-decade discretionary spending timeline",
+    "what": "An interactive ledger of NYC's discretionary grant budget. It maps official adopted-budget aggregates from the BetaNYC dataset against nonprofit structures, tracks total funds and average award size, and pairs an AI grant matcher with a proposal drafting assistant and filing-readiness guide.",
+    "impact": "Grant seekers usually work from scattered PDFs and stale portals. The City Ledger puts two decades of discretionary funding, award benchmarks, and trending categories like Immigrant Services in one place, helping community groups qualify for and land NYC Council and NY State funding.",
+    "stats": ["$665M FY26 budget", "6,118 Schedule C awards", "20 yrs of budget history"]
+  }
+]

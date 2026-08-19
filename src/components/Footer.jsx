@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
+import DonateModal from './DonateModal';
 import './Footer.css';
 import siteProperties from '../data/siteproperties.json';
 import socialIcons from '../data/socialicons.json';
 
 const Footer = () => {
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
+
   if (Object.keys(siteProperties).length === 0 || Object.keys(socialIcons).length === 0) {
     return (
       <footer className="modern-footer">
@@ -39,7 +43,11 @@ const Footer = () => {
                 <h4>Get Involved</h4>
                 <ul>
                   <li><a href="#projects">Volunteer</a></li>
-                  <li><a href="#projects">Partner With Us</a></li>
+                  <li>
+                    <button type="button" className="footer-link-button" onClick={() => setIsDonateOpen(true)}>
+                      Donate
+                    </button>
+                  </li>
                   <li><a href="#writing">Success Stories</a></li>
                   <li><a href="#book">Schedule Meeting</a></li>
                 </ul>
@@ -59,7 +67,7 @@ const Footer = () => {
                 <h4>Connect</h4>
                 <ul>
                   <li><a href="mailto:dssgnyc@gmail.com">Contact Us</a></li>
-                  <li><a href="#about">About</a></li>
+                  <li><a href="/#/diplomats">About</a></li>
                   <li><a href="/blog">Blog</a></li>
                 </ul>
                 <div className="social-links">
@@ -85,6 +93,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
     </footer>
   );
 }

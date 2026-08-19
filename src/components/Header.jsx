@@ -1,9 +1,11 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import DonateModal from './DonateModal';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDonateOpen, setIsDonateOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -57,26 +59,28 @@ const Header = () => {
           <a href="/#projects" onClick={(e) => handleAnchorClick(e, '#projects')} className="nav-link">
             Get Involved
           </a>
-          <a href="/#about" onClick={(e) => handleAnchorClick(e, '#about')} className="nav-link">
-            About
-          </a>
           <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
             Impact Stories
           </a>
+          <NavLink to="/portfolio" className="nav-link">
+            Our Portfolio
+          </NavLink>
           <NavLink to="/diplomats" className="nav-link">
             Data Diplomats
-          </NavLink>
-          <NavLink to="/work-map" className="nav-link">
-            Work Map
           </NavLink>
           <NavLink to="/events" className="nav-link">
             Events
           </NavLink>
-          <a href="/#book" onClick={(e) => handleAnchorClick(e, '#book')} className="nav-link button-nav">
-            Partner With Us
-          </a>
+          <button
+            type="button"
+            onClick={() => setIsDonateOpen(true)}
+            className="nav-link button-nav"
+          >
+            Donate
+          </button>
         </nav>
       </div>
+      <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
     </header>
   );
 };
