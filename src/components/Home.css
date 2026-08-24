@@ -58,6 +58,14 @@
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  /* Dark outline shadow for readability against light-green backdrop */
+  text-shadow:
+    -1px -1px 0 rgba(0, 0, 0, 0.6),
+    1px -1px 0 rgba(0, 0, 0, 0.6),
+    -1px 1px 0 rgba(0, 0, 0, 0.6),
+    1px 1px 0 rgba(0, 0, 0, 0.6),
+    0 -2px 2px rgba(0, 0, 0, 0.4),
+    0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .hero-buttons {
