@@ -2,11 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
-import About from './components/About';
-import ProjectFeature from './components/ProjectFeature';
 import Projects from './components/Projects';
 import Writing from './components/Writing';
-import OpenSource from './components/OpenSource';
 import Book from './components/Book';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
@@ -14,6 +11,7 @@ import BlogPost from './components/BlogPost';
 import Seo from './components/Seo';
 import Events from './components/Events';
 import DataDiplomats from './components/DataDiplomats';
+import Portfolio from './components/Portfolio';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -32,10 +30,7 @@ function App() {
               />
               <Home />
               <Projects />
-              <About />
-              <ProjectFeature />
               <Writing />
-              <OpenSource />
               <Book />
             </>
           } />
@@ -43,6 +38,7 @@ function App() {
           <Route path="/blog/:id" element={<BlogPost />} />
           <Route path="/diplomats" element={<DataDiplomats />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/portfolio" element={<Portfolio />} />
         </Routes>
         <Footer />
       </div>

@@ -1,4 +1,6 @@
 .modern-header {
+  /* Drives both the bar height and the mobile panel's max-height. */
+  --header-height: 80px;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,7 +24,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-  height: 80px;
+  height: var(--header-height);
 }
 
 .logo-section {
@@ -64,10 +66,12 @@
 .logo-subtitle {
   font-family: var(--font-primary);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: var(--primary-orange);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   margin-top: -2px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -113,13 +117,147 @@
   display: none;
 }
 
+/* ---- Hamburger toggle ---- */
+.nav-toggle {
+  display: none; /* Shown below the breakpoint where the nav bar stops fitting. */
+  margin-left: auto;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-toggle:hover {
+  border-color: var(--primary-blue);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  margin: 0 auto;
+  border-radius: 2px;
+  background: var(--primary-blue);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+/* Top and bottom bars converge into an X; the middle one drops out. */
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Sits under the header (z-index 1000) but over the page. */
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  background: rgba(11, 31, 66, 0.45);
+  backdrop-filter: blur(2px);
+  animation: nav-backdrop-in 0.25s ease;
+}
+
+@keyframes nav-backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 /* Mobile responsiveness */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* The bar collapses into a sheet that drops out of the header. */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
+    background: white;
+    border-bottom: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-xl);
+    max-height: calc(100vh - var(--header-height));
+    max-height: calc(100dvh - var(--header-height));
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0.3s;
+  }
+
+  .nav-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-menu .nav-link {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    padding: var(--space-sm);
+    border-radius: 0;
+  }
+
+  .nav-menu .nav-link:not(.button-nav) {
+    border-bottom: 1px solid var(--gray-100);
+  }
+
+  .nav-menu .nav-link.active {
+    color: var(--primary-blue);
+    padding-left: var(--space-md);
+    box-shadow: inset 3px 0 0 var(--primary-orange);
+  }
+
+  .nav-menu .nav-link.button-nav {
+    margin-top: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    color: white;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
+  .modern-header {
+    --header-height: 70px;
+  }
+
   .header-container {
     padding: 0 var(--space-md);
-    height: 70px;
   }
-  
+
   .logo-img {
     height: 60px;
   }
@@ -127,27 +265,20 @@
   .logo-title {
     font-size: 1.25rem;
   }
-  
+
   .logo-subtitle {
-    font-size: 0.75rem;
-  }
-  
-  .nav-menu {
-    gap: var(--space-sm);
-  }
-  
-  .nav-link {
-    font-size: 0.875rem;
-    padding: var(--space-xs);
-  }
-  
-  .nav-link.button-nav {
-    padding: var(--space-xs) var(--space-sm);
+    font-size: 0.55rem;
   }
 }
 
-@media (max-width: 640px) {
-  .nav-menu {
-    display: none; /* Will implement mobile menu later */
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu,
+  .nav-toggle,
+  .nav-toggle-bar {
+    transition: none;
+  }
+
+  .nav-backdrop {
+    animation: none;
   }
 }

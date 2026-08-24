@@ -1,0 +1,451 @@
+/**
+ * Impact Stories — 3D coverflow ring.
+ *
+ * Slide placement is driven entirely by two custom properties set in JSX:
+ *   --offset  signed ring distance from the active slide (-1, 0, 1, 2)
+ *   --dist    absolute value of the above
+ * Only transform and opacity animate, so the whole ring stays on the compositor.
+ */
+
+.impact-carousel {
+  --ic-slide-width: min(760px, 82vw);
+
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: clamp(4rem, 3rem + 5vw, 8rem) 0 clamp(3rem, 2rem + 4vw, 6rem);
+  background: linear-gradient(180deg, var(--gray-900) 0%, #0a1733 55%, var(--primary-blue) 100%);
+  color: white;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------- header -- */
+
+.ic-header {
+  max-width: 760px;
+  margin: 0 auto clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  padding: 0 var(--space-lg);
+  text-align: center;
+}
+
+.ic-eyebrow {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.1rem + 1.8vw, 2.4375rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--primary-orange);
+  line-height: 1.05;
+}
+
+/* --------------------------------------------------------------- the ring -- */
+
+/* Holds the ring plus the prev/next arrows, which are pinned to the outer
+   edges of this stage (i.e. the carousel section) rather than clustered
+   under the ring with the dots. */
+.ic-stage {
+  position: relative;
+  width: 100%;
+}
+
+/* Height tracks the frame's own ratio (chrome strip + 1440:820 screenshot) so
+   the ring never clips a card, at any width. */
+.ic-viewport {
+  position: relative;
+  height: calc(var(--ic-slide-width) * 0.5694 + 44px);
+  perspective: 1800px;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.ic-viewport:active {
+  cursor: grabbing;
+}
+
+.ic-viewport:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: -4px;
+}
+
+.ic-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.ic-slide {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: var(--ic-slide-width);
+  margin-left: calc(var(--ic-slide-width) / -2);
+  transform:
+    translateX(calc(var(--offset) * 52%))
+    translateZ(calc(var(--dist) * -160px))
+    rotateY(calc(var(--offset) * -26deg))
+    scale(calc(1 - var(--dist) * 0.16));
+  opacity: calc(1 - var(--dist) * 0.55);
+  transition:
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 700ms ease;
+}
+
+/* The fourth card parks behind the stack rather than flying across the frame. */
+.ic-slide[data-hidden='true'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------- browser mockup -- */
+
+.ic-frame {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  background: var(--gray-800);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 32px 64px -24px rgba(0, 0, 0, 0.7);
+  transition: box-shadow 300ms ease;
+}
+
+.ic-slide[data-active='true'] .ic-frame:hover,
+.ic-slide[data-active='true'] .ic-frame:focus-visible {
+  box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.85);
+}
+
+.ic-frame:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 3px;
+}
+
+.ic-chrome {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.625rem 0.875rem;
+  background: var(--gray-700);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ic-lights {
+  display: flex;
+  gap: 6px;
+  flex: none;
+}
+
+.ic-lights i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.ic-lights i:first-child {
+  background: #ff5f57;
+}
+
+.ic-lights i:nth-child(2) {
+  background: #febc2e;
+}
+
+.ic-lights i:nth-child(3) {
+  background: #28c840;
+}
+
+.ic-url {
+  flex: 1;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.32);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ic-shot {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1440 / 820;
+  object-fit: cover;
+  object-position: top center;
+  user-select: none;
+}
+
+/* ------------------------------------------------------------------ copy -- */
+
+/* One panel, swapped by remount, rather than prose on every card — keeps the
+   ring cards short and stops two half-legible paragraphs competing at the edges. */
+.ic-detail {
+  max-width: 680px;
+  margin: clamp(2rem, 1.5rem + 2vw, 3.5rem) auto 0;
+  padding: 0 var(--space-lg);
+  text-align: center;
+  animation: icDetailIn 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes icDetailIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.ic-title {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  line-height: 1.15;
+  color: white;
+}
+
+.ic-impact {
+  max-width: 620px;
+  margin: 0 auto var(--space-md);
+  padding-top: var(--space-sm);
+  border-top: 2px solid var(--primary-orange);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.ic-impact-label {
+  display: block;
+  margin-bottom: 0.125rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary-orange);
+}
+
+.ic-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  transition:
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.ic-link:hover,
+.ic-link:focus-visible {
+  color: var(--primary-orange);
+  border-bottom-color: var(--primary-orange);
+}
+
+/* -------------------------------------------------------------- controls -- */
+
+.ic-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: clamp(1.5rem, 1rem + 2vw, 3rem);
+}
+
+.ic-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: rgba(10, 23, 51, 0.55);
+  backdrop-filter: blur(6px);
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ic-arrow-prev {
+  left: clamp(0.5rem, 2vw, 2rem);
+}
+
+.ic-arrow-next {
+  right: clamp(0.5rem, 2vw, 2rem);
+}
+
+.ic-arrow:hover,
+.ic-arrow:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--primary-orange);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.ic-arrow:focus-visible,
+.ic-dot:focus-visible {
+  outline: 2px solid var(--primary-orange);
+  outline-offset: 3px;
+}
+
+.ic-dots {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ic-dot {
+  display: block;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition:
+    background-color 300ms ease,
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ic-dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.ic-dot[aria-current='true'] {
+  background: var(--primary-orange);
+  transform: scale(1.45);
+}
+
+/* ---------------------------------------------------------------- reveal -- */
+
+.ic-header,
+.ic-stage,
+.ic-controls {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  transition:
+    opacity 800ms ease,
+    transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.impact-carousel.is-revealed .ic-header,
+.impact-carousel.is-revealed .ic-stage,
+.impact-carousel.is-revealed .ic-controls {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.impact-carousel.is-revealed .ic-stage {
+  transition-delay: 120ms;
+}
+
+.impact-carousel.is-revealed .ic-controls {
+  transition-delay: 240ms;
+}
+
+/* ------------------------------------------------------------ responsive -- */
+
+@media (max-width: 1024px) {
+  .ic-slide {
+    transform:
+      translateX(calc(var(--offset) * 58%))
+      translateZ(calc(var(--dist) * -120px))
+      rotateY(calc(var(--offset) * -20deg))
+      scale(calc(1 - var(--dist) * 0.18));
+  }
+}
+
+/* Below the tablet breakpoint the ring flattens to a single card — flanking
+   slides at this width are too small to read and only steal horizontal space. */
+@media (max-width: 767px) {
+  .impact-carousel {
+    --ic-slide-width: min(440px, 88vw);
+  }
+
+  .ic-viewport {
+    perspective: none;
+  }
+
+  .ic-track {
+    transform-style: flat;
+  }
+
+  .ic-slide {
+    transform: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .ic-slide[data-active='true'] {
+    position: relative;
+    left: auto;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .ic-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .ic-arrow-prev {
+    left: 0.25rem;
+  }
+
+  .ic-arrow-next {
+    right: 0.25rem;
+  }
+}
+
+/* -------------------------------------------------------- reduced motion -- */
+
+@media (prefers-reduced-motion: reduce) {
+  .ic-slide {
+    transform: translateX(calc(var(--offset) * 52%)) scale(calc(1 - var(--dist) * 0.16));
+    transition: opacity 200ms ease;
+  }
+
+  .ic-header,
+  .ic-stage,
+  .ic-controls,
+  .impact-carousel.is-revealed .ic-header,
+  .impact-carousel.is-revealed .ic-stage,
+  .impact-carousel.is-revealed .ic-controls {
+    transform: none;
+    transition: opacity 200ms ease;
+    transition-delay: 0ms;
+  }
+
+  .ic-detail {
+    animation: none;
+  }
+
+  .ic-arrow:hover,
+  .ic-arrow:focus-visible,
+  .ic-dot[aria-current='true'] {
+    transform: none;
+  }
+}

@@ -94,6 +94,24 @@
   transform: translateX(2px);
 }
 
+.footer-link-button {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link-button:hover,
+.footer-link-button:focus-visible {
+  color: var(--primary-orange);
+  transform: translateX(2px);
+}
+
 /* Social Links */
 .social-links {
   display: flex;

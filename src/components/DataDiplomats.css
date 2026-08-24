@@ -5,6 +5,211 @@
   min-height: 100vh;
 }
 
+/* Merged About block */
+.dd-about-block {
+  max-width: 800px;
+  margin: 0 auto var(--space-3xl);
+  text-align: center;
+}
+
+.dd-about-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-lg);
+}
+
+.dd-about-lead {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+  font-weight: 500;
+  margin-bottom: var(--space-md);
+}
+
+.dd-about-paragraph {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.dd-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  text-align: left;
+}
+
+.dd-value-item {
+  padding: var(--space-lg);
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dd-value-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.dd-value-icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.dd-value-item h4 {
+  color: var(--gray-800);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.dd-value-item p {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Philosophy block (Bicycle Framework) */
+.dd-philosophy-block {
+  max-width: 900px;
+  margin: 0 auto var(--space-3xl);
+  padding: var(--space-2xl);
+  background: white;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.dd-philosophy-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-orange);
+  margin: 0 0 var(--space-sm);
+}
+
+.dd-philosophy-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--space-md);
+}
+
+.dd-philosophy-intro {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+  max-width: 700px;
+  margin: 0 auto var(--space-2xl);
+}
+
+.dd-bicycle {
+  margin-bottom: var(--space-2xl);
+}
+
+.dd-bicycle-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: var(--space-xs);
+}
+
+.dd-bicycle-description {
+  font-size: 1rem;
+  color: var(--gray-600);
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.dd-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  text-align: left;
+}
+
+.dd-pillar-card {
+  padding: var(--space-lg);
+  background: var(--gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  border-top: 3px solid var(--primary-orange);
+}
+
+.dd-pillar-wheel {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-orange);
+  margin-bottom: var(--space-xs);
+}
+
+.dd-pillar-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin: 0 0 var(--space-xs);
+}
+
+.dd-pillar-description {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.dd-theory-block {
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--gray-200);
+  text-align: left;
+}
+
+.dd-theory-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: var(--space-sm);
+  text-align: center;
+}
+
+.dd-theory-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--gray-600);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .dd-values-grid,
+  .dd-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dd-values-grid,
+  .dd-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dd-philosophy-block {
+    padding: var(--space-xl);
+  }
+}
+
 /* Header */
 .diplomats-header {
   text-align: center;
@@ -104,6 +309,15 @@
   gap: var(--space-xl);
 }
 
+.diplomats-grid--four {
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.diplomats-grid--four .diplomat-card {
+  padding: var(--space-lg) var(--space-md);
+}
+
 /* Diplomat Card */
 .diplomat-card {
   display: flex;
@@ -143,6 +357,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .diplomat-name {
@@ -267,5 +482,35 @@
 
   .diplomats-cta {
     padding: var(--space-xl);
+  }
+}
+
+/* ---- Hero: full-bleed image carousel ---- */
+.dd-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: var(--space-2xl) 0;
+  background:
+    radial-gradient(120% 120% at 50% 0%, #24507f 0%, var(--primary-blue) 55%, #0b1f42 100%);
+  color: white;
+}
+
+.dd-hero-cta-row {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .dd-hero-cta-row {
+    flex-direction: column;
+    align-items: center;
   }
 }

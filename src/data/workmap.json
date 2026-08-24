@@ -1,0 +1,228 @@
+{
+  "_note": "Illustrative sample data for the Work Map. Replace with your own or public O*NET-derived data. Schema: groups[] -> roles[] -> skills[] -> benchmarks[]. coverage/score are 0..1. benchmark.strength = direct | weak.",
+  "center": "HUMAN WORK",
+  "groups": [
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "color": "#7b4bd6",
+      "roles": [
+        {
+          "id": "registered-nurse",
+          "name": "Registered Nurse",
+          "coverage": 0.34,
+          "skills": [
+            { "name": "Patient assessment", "score": 0.31, "benchmarks": [{ "name": "MedQA", "score": 0.79, "strength": "weak" }] },
+            { "name": "Care documentation", "score": 0.58, "benchmarks": [{ "name": "Clinical note gen", "score": 0.62, "strength": "direct" }] },
+            { "name": "Medication reconciliation", "score": 0.29, "benchmarks": [{ "name": "DrugQA", "score": 0.55, "strength": "weak" }] }
+          ]
+        },
+        {
+          "id": "medical-technician",
+          "name": "Medical Technician",
+          "coverage": 0.47,
+          "skills": [
+            { "name": "Imaging triage", "score": 0.66, "benchmarks": [{ "name": "RadBench", "score": 0.74, "strength": "direct" }, { "name": "CheXpert", "score": 0.9, "strength": "direct" }] },
+            { "name": "Lab result flagging", "score": 0.52, "benchmarks": [{ "name": "LabQA", "score": 0.6, "strength": "weak" }] }
+          ]
+        },
+        {
+          "id": "psychiatrist",
+          "name": "Psychiatrist",
+          "coverage": 0.22,
+          "skills": [
+            { "name": "Diagnostic interview", "score": 0.24, "benchmarks": [{ "name": "PsychEval", "score": 0.41, "strength": "weak" }] },
+            { "name": "Treatment planning", "score": 0.33, "benchmarks": [{ "name": "MedQA", "score": 0.79, "strength": "weak" }] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "name": "Education & Library",
+      "color": "#b9a531",
+      "roles": [
+        {
+          "id": "teacher",
+          "name": "Teacher",
+          "coverage": 0.51,
+          "skills": [
+            { "name": "Lesson planning", "score": 0.72, "benchmarks": [{ "name": "EduPlan", "score": 0.78, "strength": "direct" }] },
+            { "name": "Assessment grading", "score": 0.64, "benchmarks": [{ "name": "AutoGrade", "score": 0.69, "strength": "direct" }] },
+            { "name": "Classroom management", "score": 0.12, "benchmarks": [] }
+          ]
+        },
+        {
+          "id": "librarian",
+          "name": "Librarian",
+          "coverage": 0.63,
+          "skills": [
+            { "name": "Reference retrieval", "score": 0.81, "benchmarks": [{ "name": "RetrievalQA", "score": 0.85, "strength": "direct" }] },
+            { "name": "Cataloguing", "score": 0.7, "benchmarks": [{ "name": "MetaTag", "score": 0.66, "strength": "weak" }] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "computer",
+      "name": "Computer, Data & Security",
+      "color": "#8c3b2f",
+      "roles": [
+        {
+          "id": "it-specialist",
+          "name": "IT Specialist",
+          "coverage": 0.68,
+          "skills": [
+            { "name": "Ticket triage", "score": 0.79, "benchmarks": [{ "name": "SupportBench", "score": 0.82, "strength": "direct" }] },
+            { "name": "Scripting & automation", "score": 0.74, "benchmarks": [{ "name": "HumanEval", "score": 0.88, "strength": "direct" }] }
+          ]
+        },
+        {
+          "id": "cybersecurity-engineer",
+          "name": "Cybersecurity Engineer",
+          "coverage": 0.55,
+          "skills": [
+            { "name": "Threat detection", "score": 0.61, "benchmarks": [{ "name": "CyberEval", "score": 0.64, "strength": "direct" }] },
+            { "name": "Incident response", "score": 0.38, "benchmarks": [{ "name": "IR-Bench", "score": 0.47, "strength": "weak" }] }
+          ]
+        },
+        {
+          "id": "data-scientist",
+          "name": "Data Scientist",
+          "coverage": 0.72,
+          "skills": [
+            { "name": "Exploratory analysis", "score": 0.83, "benchmarks": [{ "name": "DS-1000", "score": 0.79, "strength": "direct" }] },
+            { "name": "Model building", "score": 0.7, "benchmarks": [{ "name": "MLE-Bench", "score": 0.58, "strength": "direct" }] },
+            { "name": "Stakeholder framing", "score": 0.29, "benchmarks": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Business, Finance & Management",
+      "color": "#2f7d4f",
+      "roles": [
+        {
+          "id": "financial-analyst",
+          "name": "Financial Analyst",
+          "coverage": 0.6,
+          "skills": [
+            { "name": "Financial modeling", "score": 0.68, "benchmarks": [{ "name": "FinBench", "score": 0.71, "strength": "direct" }] },
+            { "name": "Report drafting", "score": 0.77, "benchmarks": [{ "name": "DocGen", "score": 0.8, "strength": "direct" }] }
+          ]
+        },
+        {
+          "id": "hr-manager",
+          "name": "Human Resources Manager",
+          "coverage": 0.44,
+          "skills": [
+            { "name": "Resume screening", "score": 0.71, "benchmarks": [{ "name": "ScreenBench", "score": 0.73, "strength": "weak" }] },
+            { "name": "Policy interpretation", "score": 0.4, "benchmarks": [{ "name": "PolicyQA", "score": 0.52, "strength": "weak" }] },
+            { "name": "Conflict mediation", "score": 0.14, "benchmarks": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "name": "Science & Social Service",
+      "color": "#2f9e8f",
+      "roles": [
+        {
+          "id": "forensic-scientist",
+          "name": "Forensic Scientist",
+          "coverage": 0.41,
+          "skills": [
+            { "name": "Evidence classification", "score": 0.55, "benchmarks": [{ "name": "ForensicID", "score": 0.62, "strength": "weak" }] },
+            { "name": "Report writing", "score": 0.68, "benchmarks": [{ "name": "DocGen", "score": 0.8, "strength": "direct" }] }
+          ]
+        },
+        {
+          "id": "social-worker",
+          "name": "Social Worker",
+          "coverage": 0.19,
+          "skills": [
+            { "name": "Case documentation", "score": 0.49, "benchmarks": [{ "name": "CaseNote", "score": 0.51, "strength": "weak" }] },
+            { "name": "Crisis intervention", "score": 0.08, "benchmarks": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arts",
+      "name": "Arts, Design & Media",
+      "color": "#d16a86",
+      "roles": [
+        {
+          "id": "visual-artist",
+          "name": "Visual Artist",
+          "coverage": 0.57,
+          "skills": [
+            { "name": "Concept ideation", "score": 0.7, "benchmarks": [{ "name": "ImageGen-Eval", "score": 0.76, "strength": "direct" }] },
+            { "name": "Style rendering", "score": 0.82, "benchmarks": [{ "name": "StyleBench", "score": 0.84, "strength": "direct" }] }
+          ]
+        },
+        {
+          "id": "fashion-designer",
+          "name": "Fashion Designer",
+          "coverage": 0.38,
+          "skills": [
+            { "name": "Trend synthesis", "score": 0.44, "benchmarks": [{ "name": "TrendQA", "score": 0.49, "strength": "weak" }] },
+            { "name": "Pattern drafting", "score": 0.3, "benchmarks": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trades",
+      "name": "Trades, Service & Operations",
+      "color": "#6b3fa0",
+      "roles": [
+        {
+          "id": "construction-trades",
+          "name": "Construction & Building Trades",
+          "coverage": 0.16,
+          "skills": [
+            { "name": "Blueprint reading", "score": 0.42, "benchmarks": [{ "name": "PlanQA", "score": 0.5, "strength": "weak" }] },
+            { "name": "On-site assembly", "score": 0.05, "benchmarks": [] }
+          ]
+        },
+        {
+          "id": "power-utility",
+          "name": "Power & Utility Worker",
+          "coverage": 0.23,
+          "skills": [
+            { "name": "Load forecasting", "score": 0.61, "benchmarks": [{ "name": "GridForecast", "score": 0.67, "strength": "direct" }] },
+            { "name": "Field repair", "score": 0.06, "benchmarks": [] }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales & Office Admin",
+      "color": "#2f6d8c",
+      "roles": [
+        {
+          "id": "cashier",
+          "name": "Cashier",
+          "coverage": 0.49,
+          "skills": [
+            { "name": "Transaction handling", "score": 0.72, "benchmarks": [{ "name": "POS-Bench", "score": 0.75, "strength": "direct" }] },
+            { "name": "Customer questions", "score": 0.5, "benchmarks": [{ "name": "SupportBench", "score": 0.82, "strength": "weak" }] }
+          ]
+        },
+        {
+          "id": "postal-worker",
+          "name": "Postal Worker",
+          "coverage": 0.31,
+          "skills": [
+            { "name": "Route optimization", "score": 0.64, "benchmarks": [{ "name": "RouteOpt", "score": 0.7, "strength": "direct" }] },
+            { "name": "Parcel handling", "score": 0.09, "benchmarks": [] }
+          ]
+        }
+      ]
+    }
+  ]
+}
