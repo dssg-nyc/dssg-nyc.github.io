@@ -33,59 +33,24 @@ const Footer = () => {
                 </div>
               </div>
               <p className="brand-description">
-                Connecting skilled technology professionals with non-profit organizations 
-                to create meaningful social impact through data science and innovation.
+                We're a 501(c)(3) nonprofit that trains volunteers to bring human-centered,
+                frontier AI to mission-driven organizations. IRS-registered, EIN 41-4925712.
               </p>
-            </div>
-            
-            <div className="footer-links">
-              <div className="link-group">
-                <h4>Get Involved</h4>
-                <ul>
-                  <li><a href="#projects">Volunteer</a></li>
-                  <li>
-                    <button type="button" className="footer-link-button" onClick={() => setIsDonateOpen(true)}>
-                      Donate
-                    </button>
-                  </li>
-                  <li><a href="#writing">Success Stories</a></li>
-                  <li><a href="#book">Schedule Meeting</a></li>
-                </ul>
-              </div>
-              
-              <div className="link-group">
-                <h4>Resources</h4>
-                <ul>
-                  <li><a href="#writing">Impact Reports</a></li>
-                  <li><a href="#writing">Case Studies</a></li>
-                  <li><a href="#writing">Best Practices</a></li>
-                  <li><a href="#writing">Newsletter</a></li>
-                </ul>
-              </div>
-              
-              <div className="link-group">
-                <h4>Connect</h4>
-                <ul>
-                  <li><a href="mailto:dssgnyc@gmail.com">Contact Us</a></li>
-                  <li><a href="/#/diplomats">About</a></li>
-                  <li><a href="/blog">Blog</a></li>
-                </ul>
-                <div className="social-links">
-                  {Object.entries(siteProperties.socialProfiles).map(([key, value]) => {
-                    return socialIcons[key] ? (
-                      <a href={value} target="_blank" rel="noopener noreferrer" key={key} className="social-link">
-                        <img src={socialIcons[key]} alt={key} />
-                      </a>
-                    ) : null;
-                  })}
-                </div>
+              <div className="social-links">
+                {Object.entries(siteProperties.socialProfiles).map(([key, value]) => {
+                  return socialIcons[key] ? (
+                    <a href={value} target="_blank" rel="noopener noreferrer" key={key} className="social-link">
+                      <img src={socialIcons[key]} alt={key} />
+                    </a>
+                  ) : null;
+                })}
               </div>
             </div>
           </div>
           
           <div className="footer-bottom">
             <div className="footer-legal">
-              <p>&copy; 2026 {siteProperties.name}. All rights reserved.</p>
+              <p>&copy; 2026 Data Diplomats for Nonprofits, Inc. — 501(c)(3) IRS-registered organization. All rights reserved.</p>
             </div>
             <div className="footer-attribution">
               <p>Support Civic Tech in New York City</p>

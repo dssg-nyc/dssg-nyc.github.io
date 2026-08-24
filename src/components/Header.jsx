@@ -1,11 +1,9 @@
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import DonateModal from './DonateModal';
 import './Header.css';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDonateOpen, setIsDonateOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -46,8 +44,8 @@ const Header = () => {
           <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="logo-link">
             <img src="/images/logo3.png" alt="DSSG Logo" className="logo-img" />
             <div className="logo-text">
-              <span className="logo-title">DSSG</span>
-              <span className="logo-subtitle">NYC</span>
+              <span className="logo-title">NYC-DSSG</span>
+              <span className="logo-subtitle">Data Diplomats</span>
             </div>
           </a>
         </div>
@@ -59,28 +57,28 @@ const Header = () => {
           <a href="/#projects" onClick={(e) => handleAnchorClick(e, '#projects')} className="nav-link">
             Get Involved
           </a>
+          <NavLink to="/diplomats" className="nav-link">
+            Data Diplomats
+          </NavLink>
           <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
             Impact Stories
           </a>
           <NavLink to="/portfolio" className="nav-link">
             Our Portfolio
           </NavLink>
-          <NavLink to="/diplomats" className="nav-link">
-            Data Diplomats
-          </NavLink>
           <NavLink to="/events" className="nav-link">
             Events
           </NavLink>
-          <button
-            type="button"
-            onClick={() => setIsDonateOpen(true)}
+          <a
+            href="https://givebutter.com/aiforgood"
+            target="_blank"
+            rel="noopener noreferrer"
             className="nav-link button-nav"
           >
             Donate
-          </button>
+          </a>
         </nav>
       </div>
-      <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
     </header>
   );
 };

@@ -125,14 +125,22 @@ const Writing = () => {
         
         <div className="writing-grid">
           {writingData
-            .filter(writing => 
-              writing.title !== "DSSG Berlin Chapter" && 
-              writing.title !== "DSSG Portugal Chapter" && 
+            .filter(writing =>
+              writing.title !== "DSSG Berlin Chapter" &&
+              writing.title !== "DSSG Portugal Chapter" &&
               writing.title !== "DSSG Florida Chapter"
             )
             .map((writing, index) => (
               <Card key={index} project={writing} />
             ))}
+        </div>
+
+        <h3 className="partner-logos-heading">Our Partners</h3>
+        <div className="partner-logos">
+          <img src="/images/social/FSS.png" alt="Families for Safe Streets" />
+          <img src="/images/social/TA.png" alt="Transportation Alternatives" />
+          <img src="/images/social/BetaNYC.png" alt="BetaNYC" className="logo-betanyc" />
+          <img src="/images/social/give.png" alt="G.I.V.E. Inc." />
         </div>
       </div>
     </section>

@@ -1,0 +1,117 @@
+.dc-carousel {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  margin-bottom: var(--space-xl);
+  padding: 0 var(--space-lg);
+  box-sizing: border-box;
+}
+
+.dc-viewport {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  height: min(85vh, 62.5vw);
+  max-height: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  outline-offset: 4px;
+}
+
+.dc-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dc-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-100, #f5f5f5);
+}
+
+.dc-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dc-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--primary-blue, #002d72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dc-arrow:hover,
+.dc-arrow:focus-visible {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.dc-arrow-prev {
+  left: var(--space-md, 1rem);
+}
+
+.dc-arrow-next {
+  right: var(--space-md, 1rem);
+}
+
+.dc-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  list-style: none;
+  margin: var(--space-md, 1rem) 0 0;
+  padding: 0;
+}
+
+.dc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gray-300, #d0d0d0);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dc-dot[aria-current='true'] {
+  background: var(--primary-blue, #002d72);
+  transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dc-track {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dc-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.25rem;
+  }
+}

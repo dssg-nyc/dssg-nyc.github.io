@@ -38,8 +38,7 @@
     "theoryOfChangeDescription": "We treat two problems as one: nonprofits priced out of technical talent, and skilled professionals — often immigrants, career-changers, and job-seekers — priced out of career-building work. Matching trained volunteers with under-resourced nonprofits for pro bono IT, AI, and data consulting builds career-ready professionals on one side and more resilient, tech-enabled nonprofits on the other."
   },
   "sectionTitle": "Our Data Diplomats",
-  "sectionDescription": "Data Diplomats for Nonprofits, Inc. is the 501(c)(3) nonprofit organization behind NYC x DSSG. Our Data Diplomats are trained volunteers who serve in cohorts, partnering directly with nonprofit organizations on data science, AI, and technology projects.",
-  "entityNote": "Data Diplomats for Nonprofits, Inc. is the legal entity that operates DSSG NYC — our flagship civic tech volunteer program uniting data scientists, AI engineers, and IT professionals for pro bono nonprofit work.",
+  "entityNote": "Data Diplomats for Nonprofits is a registered 501(c)(3) charity that organizes NYC-DSSG volunteers to deliver pro bono AI strategy and governance for nonprofits. We also have internal Impact Unit that provides AI workshops, training, and consulting for implementing ethical human-centered AI to mission-driven nonprofit organizations.",
   "applyUrl": "https://forms.gle/nKTURDV5PWRRv3Gb9",
   "cohorts": [
     {
@@ -81,28 +80,28 @@
           "name": "Aarya",
           "image": "/images/aarya_headshot.png",
           "role": "AI/ML Engineer",
-          "bio": "Aarya builds AI systems that ship — from compliance automation to trading terminals. As an AI Developer for Mexico's national education ministry, she built teacher-onboarding verification platforms at national scale. As Chairperson of IEEE SCET she led 30+ initiatives growing technical talent, and brings that drive to DSSG NYC's nonprofit data challenges.",
+          "bio": "AI systems & compliance automation, trading terminals, national-scale ed-tech verification platforms (Mexico), IEEE SCET chair — 30+ initiatives, technical talent development, nonprofit data challenges.",
           "linkedin": ""
         },
         {
           "name": "Mia",
           "image": "/images/mia_headshot.png",
           "role": "Research & Data Strategy Lead",
-          "bio": "Mia is a research leader with a PhD in Social Psychology, using rigorous data to move mission-driven organizations forward. As Senior Research Director at NewWorld, she designed studies behind campaigns for philanthropies and nonprofits, and led two research teams smoothly through a merger. An adjunct professor teaching graduate statistics, she translates findings into strategy nonprofits can act on.",
+          "bio": "PhD Social Psychology, mission-driven org research, Senior Research Director at NewWorld — nonprofit & philanthropy campaign studies, merger-era team leadership, adjunct professor of graduate statistics, data-to-strategy translation.",
           "linkedin": ""
         },
         {
           "name": "Franklin",
           "image": "/images/franklin_headshot.png",
           "role": "Computer Vision Engineer",
-          "bio": "Franklin has spent his career pointing computer vision at hard problems — tracking ocean carbon sequestration at Running Tide, co-founding Breathily to bring lung-function testing to ALS patients via an RGB-D camera, and publishing research at UCSF and UC Berkeley. He holds a co-invented U.S. patent and has taken ideas from research bench to funded, deployed product.",
+          "bio": "Computer vision engineering, worked in ocean carbon sequestration (Running Tide), Breathily co-founder — RGB-D lung-function testing for ALS, interested in mental health tech and democracy tech, published research at UCSF & UC Berkeley, Founder of FOIA-FLUENT.",
           "linkedin": ""
         },
         {
           "name": "Tony",
           "image": "/images/tony_headshot.png",
-          "role": "Customer Success & Nonprofit Strategy Lead",
-          "bio": "Tony turns relationships into results. As Workday's Customer Success Manager for nonprofit accounts, he drives enterprise adoption for mission-driven organizations, and organized Workday's first NYC Parks volunteer event through the Green Team, securing a $5,000 grant. Earlier at insightsoftware, he led a $7.5M portfolio, earning a Q4 Spot Award for $645k in new opportunities. He brings that leadership to DSSG NYC's nonprofit partners.",
+          "role": "Pro Bono Client Success",
+          "bio": "Customer Success Manager, Workday nonprofit accounts, enterprise adoption for mission-driven orgs, NYC Parks volunteer event organizer, leads the Nonprofit Success Portal and Agentic Onboarding Design.",
           "linkedin": ""
         }
       ]

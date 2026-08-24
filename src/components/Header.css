@@ -64,10 +64,12 @@
 .logo-subtitle {
   font-family: var(--font-primary);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.7rem;
   color: var(--primary-orange);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.03em;
   margin-top: -2px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -127,9 +129,9 @@
   .logo-title {
     font-size: 1.25rem;
   }
-  
+
   .logo-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.55rem;
   }
   
   .nav-menu {

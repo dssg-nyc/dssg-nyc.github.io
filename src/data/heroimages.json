@@ -1,7 +1,7 @@
 [
   {
     "name": "home",
-    "src": "images/nyc_landing.jpg",
+    "src": "images/social/nyc-hero.jpeg",
     "shade": "dark",
     "adjustment": "-20%",
     "alt": "Photograph of NYC"

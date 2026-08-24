@@ -1,6 +1,19 @@
 import './Projects.css';
+import DiplomatsCarousel from './carousel/DiplomatsCarousel';
+import useInViewReveal from './carousel/useInViewReveal';
+import StatCounter from './StatCounter';
+
+const STATS = [
+  { value: '260+', label: 'Registered Volunteers' },
+  { value: '8+', label: 'Partner Organizations' },
+  { value: '8+', label: 'Projects Completed' },
+  { value: '$40k+', label: 'Pro Bono Value Delivered' }
+];
 
 const Projects = () => {
+  const [gridRef, isSplit] = useInViewReveal();
+  const [statsRef, areStatsRevealed] = useInViewReveal();
+
   return (
     <section className="projects-section white" id="projects">
       <div className="container">
@@ -11,7 +24,7 @@ const Projects = () => {
           </p>
         </div>
         
-        <div className="involvement-grid">
+        <div className={`involvement-grid${isSplit ? ' is-split' : ''}`} ref={gridRef}>
           {/* Data & IT Professionals Section */}
           <div className="involvement-card professionals-card">
             <div className="card-header">
@@ -153,34 +166,22 @@ const Projects = () => {
         </div>
         
         <div className="projects-bottom">
-          <div className="stats-section">
-            <div className="stat-item">
-              <div className="stat-number">260+</div>
-              <div className="stat-label">Registered Volunteers</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">8+</div>
-              <div className="stat-label">Partner Organizations</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">8+</div>
-              <div className="stat-label">Projects Completed</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">$40k+</div>
-              <div className="stat-label">Pro Bono Value Delivered</div>
-            </div>
+          <div className="stats-section" ref={statsRef}>
+            {STATS.map((stat) => (
+              <div className="stat-item" key={stat.label}>
+                <div className="stat-number">
+                  <StatCounter value={stat.value} isActive={areStatsRevealed} />
+                </div>
+                <div className="stat-label">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Data Diplomats Link */}
         <div className="data-diplomats-section">
           <div className="data-diplomats-content" style={{ textAlign: 'center' }}>
-            <img
-              src="/images/Calling for Data Diplomats.png"
-              alt="Calling for Data Diplomats"
-              className="data-diplomats-image"
-            />
+            <DiplomatsCarousel />
             <div className="data-diplomats-button-container">
               <a
                 href="/#/diplomats"
