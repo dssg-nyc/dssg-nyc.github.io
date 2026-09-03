@@ -135,7 +135,7 @@ const Writing = () => {
             ))}
         </div>
 
-        <h3 className="partner-logos-heading">Our Partners</h3>
+        <h3 className="partner-logos-heading">Our Event Collaborators</h3>
         <div className="partner-logos">
           <img src="/images/social/FSS.png" alt="Families for Safe Streets" />
           <img src="/images/social/TA.png" alt="Transportation Alternatives" />
