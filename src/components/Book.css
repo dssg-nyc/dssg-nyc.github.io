@@ -37,7 +37,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-3xl);
-  align-items: start;
+  align-items: stretch;
 }
 
 .partnership-info {
@@ -46,7 +46,9 @@
   padding: var(--space-2xl);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--gray-200);
-  height: fit-content;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .partnership-info h3 {
@@ -97,10 +99,33 @@
   margin-bottom: 0;
 }
 
+.info-features {
+  list-style: none;
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+}
+
+.info-features li {
+  position: relative;
+  padding-left: var(--space-md);
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.info-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
 /* Contact Alternatives */
 .contact-alternatives {
   padding-top: var(--space-lg);
   border-top: 1px solid var(--gray-200);
+  margin-top: auto;
 }
 
 .contact-alternatives h4 {
@@ -126,28 +151,23 @@
 .calendly-container {
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 
 .calendly-wrapper {
   width: 100%;
   max-width: 600px;
+  height: 100%;
   background: white;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
   overflow: hidden;
   border: 1px solid var(--gray-200);
+  display: flex;
 }
 
-/* Hide organizer name in Google Calendar iframe */
 .calendly-wrapper iframe {
-  pointer-events: none;
-  pointer-events: auto;
-}
-
-.calendly-wrapper [data-organizer-name],
-.calendly-wrapper .goog-calendar-organizer,
-.calendly-wrapper .goog-calendar-host {
-  display: none !important;
+  height: 100% !important;
 }
 
 /* Responsive Design */
