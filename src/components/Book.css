@@ -99,6 +99,28 @@
   margin-bottom: 0;
 }
 
+.info-features {
+  list-style: none;
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+}
+
+.info-features li {
+  position: relative;
+  padding-left: var(--space-md);
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.info-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
 /* Contact Alternatives */
 .contact-alternatives {
   padding-top: var(--space-lg);
