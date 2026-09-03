@@ -138,6 +138,18 @@
   border: 1px solid var(--gray-200);
 }
 
+/* Hide organizer name in Google Calendar iframe */
+.calendly-wrapper iframe {
+  pointer-events: none;
+  pointer-events: auto;
+}
+
+.calendly-wrapper [data-organizer-name],
+.calendly-wrapper .goog-calendar-organizer,
+.calendly-wrapper .goog-calendar-host {
+  display: none !important;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .partnership-grid {
