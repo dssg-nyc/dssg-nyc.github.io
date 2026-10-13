@@ -51,6 +51,11 @@ const Footer = () => {
           <div className="footer-bottom">
             <div className="footer-legal">
               <p>&copy; 2026 Data Diplomats for Nonprofits, Inc. — 501(c)(3) IRS-registered organization. All rights reserved.</p>
+              <nav className="footer-links" aria-label="Legal">
+                <a href="/privacy/">Privacy Policy</a>
+                <a href="/terms/">Terms of Use</a>
+                <a href="/contact/">Contact</a>
+              </nav>
             </div>
             <div className="footer-attribution">
               <p>Support Civic Tech in New York City</p>
