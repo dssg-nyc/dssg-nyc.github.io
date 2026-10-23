@@ -102,7 +102,7 @@ const Header = () => {
               <img src="/images/logo3.png" alt="" className="logo-img" />
               <span className="logo-text">
                 <span className="logo-title">NYC-DSSG</span>
-                <span className="logo-subtitle">Data Science for Social Good</span>
+                <span className="logo-subtitle">Data Diplomats</span>
               </span>
             </a>
           </div>

@@ -431,7 +431,7 @@ const DataDiplomats = () => {
               </div>
               <h3 className="dd-way-title">Volunteer network</h3>
               <p className="dd-way-body">
-                Join 260+ data, AI, and IT professionals who take on pro bono projects, hackathons, and
+                Join 450+ data, AI, and IT professionals who take on pro bono projects, hackathons, and
                 office hours with nonprofits — pick up work when you have the time.
               </p>
               <ul className="dd-way-skills" aria-label="Skills you can put to work">

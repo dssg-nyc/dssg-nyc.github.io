@@ -10,7 +10,7 @@ const ADVICE_FORM_URL = siteProperties.adviceFormUrl;
 const VOLUNTEER_FORM_URL = siteProperties.volunteerFormUrl;
 
 const STATS = [
-  { value: '260+', label: 'Registered volunteers' },
+  { value: '450+', label: 'Registered volunteers' },
   { value: '8+', label: 'Partner organizations' },
   { value: '8+', label: 'Projects completed' },
   { value: '$40k+', label: 'Pro bono value delivered' },

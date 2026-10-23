@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import SectionLink from './SectionLink';
 
 const PROOF_POINTS = [
-  { value: '260+', label: 'trained volunteers' },
+  { value: '450+', label: 'trained volunteers' },
   { value: '8+', label: 'nonprofit partners' },
   { value: '$40k+', label: 'pro bono value delivered' },
 ];
@@ -16,7 +16,7 @@ const Home = () => {
     <section className="home-hero" id="home">
       <div className="home-hero-inner">
         <div className="home-hero-copy">
-          <p className="eyebrow">A nonprofit organization in New York City</p>
+          <p className="eyebrow">NYC Data Science for Social Good (DSSG) is a civic tech volunteering group in NYC</p>
           <h1 className="home-hero-title">
             Technology that serves your mission,{' '}
             <span className="home-hero-accent">built with you.</span>
