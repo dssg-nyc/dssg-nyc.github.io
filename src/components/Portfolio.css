@@ -1,0 +1,198 @@
+/* Our Work — showcase carousel (navy band) followed by a scannable grid
+   of every project on the warm ground. */
+
+.portfolio-page {
+  background: var(--paper);
+}
+
+section.portfolio-list {
+  display: block;
+  padding: var(--space-3xl) 0;
+  overflow: visible;
+}
+
+.portfolio-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.portfolio-list-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.portfolio-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.portfolio-shot {
+  display: block;
+  aspect-ratio: 1440 / 820;
+  overflow: hidden;
+  background: var(--paper-deep);
+  border-bottom: 1px solid var(--surface-border);
+}
+
+.portfolio-shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-card:hover .portfolio-shot img {
+  transform: scale(1.03);
+}
+
+.portfolio-body {
+  flex: 1;
+  padding: 1.6rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.portfolio-kicker {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.portfolio-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.portfolio-impact {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--gray-600);
+}
+
+.portfolio-stats {
+  list-style: none;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.portfolio-stats li {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--paper);
+  border: 1px solid var(--surface-border);
+  color: var(--gray-700);
+}
+
+.portfolio-link {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--surface-border);
+  font-weight: 600;
+  color: var(--accent-orange);
+  word-break: break-word;
+}
+
+.portfolio-link:hover {
+  color: #A8440B;
+}
+
+.portfolio-cta {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-left: 6px solid var(--primary-orange);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+}
+
+.portfolio-cta-title {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.portfolio-cta-body {
+  margin: 0;
+  font-size: 1.0625rem;
+  color: var(--gray-600);
+}
+
+/* An odd card out spans the row side by side instead of leaving a gap. */
+.portfolio-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  flex-direction: row;
+}
+
+.portfolio-card:last-child:nth-child(odd) .portfolio-shot {
+  flex: 0 0 52%;
+  aspect-ratio: auto;
+  border-bottom: none;
+  border-right: 1px solid var(--surface-border);
+}
+
+@media (max-width: 900px) {
+  .portfolio-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portfolio-card:last-child:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .portfolio-card:last-child:nth-child(odd) .portfolio-shot {
+    flex: none;
+    aspect-ratio: 1440 / 820;
+    border-right: none;
+    border-bottom: 1px solid var(--surface-border);
+  }
+}
+
+@media (max-width: 768px) {
+  section.portfolio-list {
+    padding: var(--space-2xl) 0;
+  }
+
+  .portfolio-wrap {
+    padding: 0 var(--space-md);
+  }
+
+  .portfolio-cta {
+    padding: var(--space-lg);
+  }
+}

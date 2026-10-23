@@ -13,8 +13,8 @@
   display: block;
   position: relative;
   width: 100%;
-  padding: clamp(4rem, 3rem + 5vw, 8rem) 0 clamp(3rem, 2rem + 4vw, 6rem);
-  background: linear-gradient(180deg, var(--gray-900) 0%, #0a1733 55%, var(--primary-blue) 100%);
+  padding: clamp(3rem, 2rem + 4vw, 5rem) 0 clamp(3rem, 2rem + 4vw, 5rem);
+  background: var(--gradient-primary);
   color: white;
   overflow: hidden;
 }

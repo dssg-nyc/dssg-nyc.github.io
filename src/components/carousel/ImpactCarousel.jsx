@@ -110,16 +110,12 @@ const ImpactCarousel = () => {
     <section
       className={`impact-carousel ${isRevealed ? 'is-revealed' : ''}`}
       id="impact-stories"
-      aria-labelledby="impact-stories-heading"
+      aria-label="Project showcase"
       ref={sectionRef}
       onMouseEnter={pause}
       onMouseLeave={resume}
       onFocusCapture={pause}
     >
-      <header className="ic-header">
-        <p className="ic-eyebrow" id="impact-stories-heading">Open source civic tech</p>
-      </header>
-
       <div className="ic-stage">
         <button
           type="button"

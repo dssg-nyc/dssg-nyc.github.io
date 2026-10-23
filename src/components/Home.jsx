@@ -1,45 +1,56 @@
 import './Home.css';
-import siteProperties from '../data/siteproperties.json';
 import heroData from '../data/heroimages.json';
 
-const Home = () => {
-  const hero = heroData.find(h => h.name === 'home');
+const PROOF_POINTS = [
+  { value: '260+', label: 'trained volunteers' },
+  { value: '8+', label: 'nonprofit partners' },
+  { value: '$40k+', label: 'pro bono value delivered' },
+];
 
-  if (Object.keys(siteProperties).length === 0 || Object.keys(hero).length === 0) {
-    return <p>Loading...</p>;
-  }
+const Home = () => {
+  const hero = heroData.find((h) => h.name === 'home');
 
   return (
-    <section className="hero-section" id="home">
-      {hero.src && (
-        <img
-          className="background"
-          src={hero.src}
-          alt={hero.alt}
-        />
-      )}
-      <div className="hero-overlay" />
-      <div className="hero-content container">
-        <div className="hero-text">
-          <h1 className="hero-title">
-            {siteProperties.name}
+    <section className="home-hero" id="home">
+      <div className="home-hero-inner">
+        <div className="home-hero-copy">
+          <p className="eyebrow">A nonprofit organization in New York City</p>
+          <h1 className="home-hero-title">
+            Technology that serves your mission,{' '}
+            <span className="home-hero-accent">built with you.</span>
           </h1>
-          <p className="hero-subtitle lead">
-            
+          <p className="home-hero-sub">
+            We pair nonprofits with trained volunteers for free data, AI, and IT support — grounded in
+            community organizing, so the tools fit the people you serve.
           </p>
-          <p className="hero-description">
-            NYC Data Science for Social Good (DSSG) is a civic tech volunteer group led by the Data Diplomats for Nonprofits. We’re NYC grassroot organizers uniting data scientists, AI engineers, and IT professionals to drive social impact through pro bono nonprofit work. </p>
+          <div className="home-hero-ctas">
+            <a className="button accent" href="/#book">
+              Get pro bono support
+            </a>
+            <a className="button quiet" href="/#writing">
+              See our impact
+            </a>
+          </div>
+          <dl className="home-proof">
+            {PROOF_POINTS.map((point) => (
+              <div key={point.label}>
+                <dt>{point.value}</dt>
+                <dd>{point.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
-      </div>
-      <div className="scroll-indicator">
-        <div className="scroll-arrow">
-          <span></span>
-          <span></span>
-          <span></span>
+
+        <div className="home-hero-media">
+          {hero?.src && <img src={`/${hero.src}`} alt="Illustration of Central Park and the Manhattan skyline" />}
+          <a className="home-hero-tag" href="/#/diplomats">
+            <span className="home-hero-tag-label">Volunteering?</span>
+            <span className="home-hero-tag-text">Meet the Data Diplomats Program →</span>
+          </a>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Home;

@@ -80,16 +80,17 @@ const Book = () => {
       <div className="container">
         <div className="book-content">
           <div className="book-header">
-            <h2 className="section-title">Partner With Us</h2>
+            <p className="eyebrow">Partner with us</p>
+            <h2 className="display-heading">Book a free call with our team</h2>
             <p className="section-subtitle">
-              Ready to make a difference? Whether you're a skilled professional looking to volunteer
-              or a non-profit seeking data-driven solutions, let's start a conversation about how we can work together.
+              Thirty minutes to talk through what your organization needs. No cost, no commitment —
+              just a conversation about where technology could take work off your plate.
             </p>
           </div>
 
           <div className="partnership-grid">
             <div className="partnership-info" ref={infoRef}>
-              <h3>Become a Member</h3>
+              <h3>What membership includes</h3>
               <div className="info-list">
                 {benefits.map((benefit) => (
                   <div className="info-item" key={benefit.title}>
@@ -103,12 +104,11 @@ const Book = () => {
               </div>
 
               <div className="contact-alternatives">
-                <h4>Prefer a Different Way to Connect?</h4>
+                <h4>Prefer email?</h4>
                 <div className="contact-options">
-                <h5>Contact: dssgnyc@gmail.com</h5>
-                  <a href="mailto:dssgnyc@gmail.com"
-                     className="button outline">
-                    Email Us
+                  <p className="contact-address">dssgnyc@gmail.com</p>
+                  <a href="mailto:dssgnyc@gmail.com" className="button quiet">
+                    Email us
                   </a>
                 </div>
               </div>
