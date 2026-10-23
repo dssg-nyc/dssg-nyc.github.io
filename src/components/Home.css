@@ -1,140 +1,191 @@
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
+/* Homepage hero — the same split layout as the Data Diplomats program hero,
+   so landing on either page feels like the same site. */
+
+section.home-hero {
+  display: block;
+  background: var(--paper);
+  padding: calc(80px + var(--space-2xl)) 0 var(--space-3xl);
+  overflow: visible;
+}
+
+.home-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: var(--space-2xl);
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 0;
 }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+.home-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  max-width: 900px;
-  padding: var(--space-2xl) var(--space-lg);
-}
-
-.hero-text {
-  animation: fadeInUp 1s ease-out;
-}
-
-.hero-title {
+.home-hero-title {
+  margin: 0;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(3rem, 8vw, 5rem);
-  line-height: 1;
-  margin-bottom: var(--space-md);
-  color: white;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--primary-blue);
 }
 
-.hero-subtitle {
-  font-family: var(--font-display);
-  font-weight: 400;
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
-  margin-bottom: var(--space-lg);
-  color: white;
-  text-shadow: 0 2px 8px white;
+.home-hero-accent {
+  color: var(--accent-orange);
+  font-style: italic;
 }
 
-.hero-description {
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  line-height: 1.6;
-  margin-bottom: var(--space-xl);
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  /* Dark outline shadow for readability against light-green backdrop */
-  text-shadow:
-    -1px -1px 0 rgba(0, 0, 0, 0.6),
-    1px -1px 0 rgba(0, 0, 0, 0.6),
-    -1px 1px 0 rgba(0, 0, 0, 0.6),
-    1px 1px 0 rgba(0, 0, 0, 0.6),
-    0 -2px 2px rgba(0, 0, 0, 0.4),
-    0 2px 2px rgba(0, 0, 0, 0.4);
+.home-hero-sub {
+  margin: 0;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.5;
+  max-width: 34rem;
+  color: var(--gray-600);
 }
 
-.hero-buttons {
+.home-hero-ctas {
   display: flex;
-  gap: var(--space-md);
-  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+}
+
+.home-hero-ctas .button {
+  padding: 0.95rem 1.75rem;
+}
+
+.home-proof {
+  margin: var(--space-sm) 0 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--surface-border);
+  display: flex;
+  gap: var(--space-xl);
   flex-wrap: wrap;
 }
 
-.scroll-indicator {
-  position: absolute;
-  bottom: var(--space-xl);
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
+.home-proof div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
 }
 
-.scroll-arrow {
-  width: 24px;
-  height: 24px;
+.home-proof dt {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary-blue);
+}
+
+.home-proof dd {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.home-hero-media {
   position: relative;
-  cursor: pointer;
 }
 
-.scroll-arrow span {
+.home-hero-media img {
   display: block;
-  width: 1px;
-  height: 1px;
-  border-top: 2px solid white;
-  border-right: 2px solid white;
-  transform: rotate(135deg);
-  margin: -10px;
-  animation: scroll-arrow-animate 2s infinite;
+  width: 100%;
+  aspect-ratio: 4 / 4.4;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  border: 6px solid var(--surface);
 }
 
-.scroll-arrow span:nth-child(2) {
-  animation-delay: -0.2s;
+/* Small signpost for volunteers who land on the nonprofit homepage. */
+.home-hero-tag {
+  position: absolute;
+  left: -1.75rem;
+  bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border-left: 5px solid var(--primary-orange);
+  transition: transform 0.25s ease;
 }
 
-.scroll-arrow span:nth-child(3) {
-  animation-delay: -0.4s;
+.home-hero-tag:hover {
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
 }
 
-@keyframes scroll-arrow-animate {
-  0% {
-    opacity: 0;
-    transform: rotate(135deg) translate(-20px, -20px);
+.home-hero-tag-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-sand);
+}
+
+.home-hero-tag-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+  .home-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
   }
-  50% {
-    opacity: 1;
+
+  .home-hero-media {
+    max-width: 36rem;
   }
-  100% {
-    opacity: 0;
-    transform: rotate(135deg) translate(20px, 20px);
+
+  .home-hero-tag {
+    left: 1rem;
   }
 }
 
-/* Mobile optimizations */
 @media (max-width: 768px) {
-  .hero-content {
-    padding: var(--space-xl) var(--space-md);
+  section.home-hero {
+    padding: calc(70px + var(--space-xl)) 0 var(--space-2xl);
   }
-  
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
+
+  .home-hero-inner {
+    padding: 0 var(--space-md);
   }
-  
-  .hero-buttons .button {
-    min-width: 200px;
+
+  .home-hero-media img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* On a phone the signpost would cover the picture, so it sits below it. */
+  .home-hero-tag {
+    position: static;
+    margin-top: var(--space-sm);
+  }
+
+  .home-proof {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .home-proof dt {
+    font-size: 1.6rem;
+  }
+
+  .home-proof dd {
+    font-size: 0.8125rem;
+    line-height: 1.3;
+  }
+
+  .home-hero-ctas .button {
+    width: 100%;
   }
 }

@@ -4,7 +4,7 @@ import './Header.css';
 
 // Above this width the full nav bar fits and the hamburger is hidden.
 // Kept in sync with the breakpoint in Header.css.
-const DESKTOP_QUERY = '(min-width: 901px)';
+const DESKTOP_QUERY = '(min-width: 1001px)';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -99,11 +99,11 @@ const Header = () => {
         <div className="header-container">
           <div className="logo-section">
             <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="logo-link">
-              <img src="/images/logo3.png" alt="DSSG Logo" className="logo-img" />
-              <div className="logo-text">
+              <img src="/images/logo3.png" alt="" className="logo-img" />
+              <span className="logo-text">
                 <span className="logo-title">NYC-DSSG</span>
                 <span className="logo-subtitle">Data Diplomats</span>
-              </div>
+              </span>
             </a>
           </div>
 
@@ -125,23 +125,24 @@ const Header = () => {
             className={`nav-menu ${isMenuOpen ? 'is-open' : ''}`}
             aria-label="Main navigation"
           >
-            <a href="/#home" onClick={(e) => handleAnchorClick(e, '#home')} className="nav-link">
-              Home
-            </a>
+            {/* Left group: the nonprofit path through the site. */}
             <a href="/#projects" onClick={(e) => handleAnchorClick(e, '#projects')} className="nav-link">
-              Get Involved
+              For Nonprofits
             </a>
-            <NavLink to="/diplomats" className="nav-link" onClick={closeMenu}>
-              Data Diplomats
-            </NavLink>
             <a href="/#writing" onClick={(e) => handleAnchorClick(e, '#writing')} className="nav-link">
               Impact Stories
             </a>
             <NavLink to="/portfolio" className="nav-link" onClick={closeMenu}>
-              Our Portfolio
+              Our Work
             </NavLink>
             <NavLink to="/events" className="nav-link" onClick={closeMenu}>
               Events
+            </NavLink>
+
+            {/* Right group: the volunteer path, set apart so it reads as its own track. */}
+            <span className="nav-divider" aria-hidden="true" />
+            <NavLink to="/diplomats" className="nav-link nav-link-program" onClick={closeMenu}>
+              Data Diplomats
             </NavLink>
             <a
               href="https://givebutter.com/aiforgood"

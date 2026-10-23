@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const DEFAULT_DURATION_MS = 1500;
 
-// Splits a display value like "260+", "8+", or "$40k+" into the parts around
+// Splits a display value like "450+", "8+", or "$40k+" into the parts around
 // its number so only the number animates and the decoration stays put.
 const VALUE_PATTERN = /^(\D*?)(\d+(?:\.\d+)?)(.*)$/;
 

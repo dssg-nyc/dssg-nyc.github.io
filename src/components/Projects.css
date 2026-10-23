@@ -1,453 +1,330 @@
-.projects-section {
+/* "For nonprofits" — the homepage's main section. Numbered steps follow
+   Girls Who Code's program pages; the volunteer band hands off to the
+   Data Diplomats program page. */
+
+section.np-section {
+  display: block;
+  background: var(--paper-deep);
+  border-top: 1px solid rgba(30, 41, 59, 0.1);
   padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, var(--gray-50) 0%, white 100%);
+  overflow: visible;
 }
 
-.projects-header {
-  text-align: center;
-  margin-bottom: var(--space-3xl);
-}
-
-.section-title {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-md);
-  line-height: 1.1;
-}
-
-.section-subtitle {
-  font-size: 1.25rem;
-  color: var(--gray-600);
-  max-width: 600px;
+.np-wrap {
+  max-width: 1200px;
   margin: 0 auto;
-  line-height: 1.6;
+  padding: 0 var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
 }
 
-/* Main Grid Layout */
-.involvement-grid {
+.np-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-xl);
+}
+
+.np-head > div {
+  flex: 1 1 auto;
+}
+
+.np-title {
+  max-width: 44rem;
+}
+
+.np-head-sub {
+  flex: 0 0 auto;
+}
+
+.np-head .eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.np-head-sub {
+  margin: 0 0 0.4rem;
+  max-width: 27rem;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  color: var(--gray-600);
+}
+
+.np-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: var(--space-2xl);
-  align-items: stretch;
-  margin-bottom: var(--space-3xl);
-
-  /* Drives the split entrance below. --divider-width is also applied to
-     .section-divider, so the two stay in sync and the cards meet exactly. */
-  --divider-width: 68px;
-  --split-shift: calc(var(--space-2xl) + var(--divider-width) / 2);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
 }
 
-/* Split entrance: the two cards start edge to edge in the middle and glide
-   out to their columns once the grid scrolls into view. */
-.involvement-grid .involvement-card {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+.np-step {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 6px solid var(--primary-blue);
 }
 
-.involvement-grid .professionals-card {
-  transform: translateX(var(--split-shift));
+.np-step:nth-child(2) { border-top-color: var(--accent-orange); }
+.np-step:nth-child(3) { border-top-color: var(--accent-green); }
+
+.np-step-number {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary-orange);
 }
 
-.involvement-grid .nonprofits-card {
-  transform: translateX(calc(-1 * var(--split-shift)));
+.np-step:nth-child(1) .np-step-number { color: var(--primary-blue); }
+.np-step:nth-child(2) .np-step-number { color: var(--accent-orange); }
+.np-step:nth-child(3) .np-step-number { color: var(--accent-green); }
+
+.np-step-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
 }
 
-.involvement-grid.is-split .professionals-card,
-.involvement-grid.is-split .nonprofits-card {
-  transform: translateX(0);
+.np-step-body {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--gray-600);
 }
 
-/* Restated so the hover lift outranks the split rules above. */
-.involvement-grid.is-split .professionals-card:hover,
-.involvement-grid.is-split .nonprofits-card:hover {
-  transform: translateY(-6px);
-}
-
-/* Individual Cards */
-.involvement-card {
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+.np-services {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
   padding: var(--space-xl);
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  border: 1px solid var(--gray-200);
-  position: relative;
-  overflow: hidden;
+  gap: var(--space-lg);
 }
 
-.involvement-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-secondary);
+.np-services-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
-.involvement-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-xl);
+.np-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg) var(--space-xl);
 }
 
-.professionals-card::before {
-  background: var(--gradient-primary);
+.np-service {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-.nonprofits-card::before {
-  background: var(--gradient-secondary);
-}
-
-/* Card Headers */
-.card-header {
-  text-align: center;
-  margin-bottom: var(--space-lg);
-}
-
-.card-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.np-service-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto var(--space-md);
-  font-size: 2rem;
-  transition: all 0.3s ease;
-}
-
-.professionals-icon {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-  color: white;
-}
-
-.nonprofits-icon {
-  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--secondary-orange) 100%);
-  color: white;
-}
-
-.card-header h3 {
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--gray-800);
-  margin-bottom: var(--space-xs);
-}
-
-.card-tagline {
-  color: var(--gray-500);
-  font-size: 1rem;
-  font-style: italic;
-}
-
-/* Card Content */
-.card-content {
-  flex: 1;
-  margin-bottom: var(--space-lg);
-}
-
-.card-description {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--gray-700);
-  margin-bottom: var(--space-lg);
-}
-
-/* Benefits List */
-.benefits-list {
-  margin-bottom: var(--space-lg);
-}
-
-.benefit-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: var(--space-sm);
-  padding: var(--space-sm);
-  background: var(--gray-50);
   border-radius: var(--radius-md);
-  transition: all 0.2s ease;
+  background: #E7EDF7;
+  color: var(--primary-blue);
 }
 
-.benefit-item:hover {
-  background: var(--gray-100);
-  transform: translateX(4px);
+.np-service:nth-child(3n + 2) .np-service-icon { background: #F8E6DA; color: var(--accent-orange); }
+.np-service:nth-child(3n) .np-service-icon { background: #E1EAE4; color: var(--accent-green); }
+
+.np-service-icon svg {
+  width: 1.4rem;
+  height: 1.4rem;
 }
 
-.benefit-icon {
-  font-size: 1.25rem;
-  margin-right: var(--space-sm);
-  min-width: 30px;
-}
-
-.benefit-item span {
-  font-weight: 500;
-  color: var(--gray-700);
-}
-
-/* Skills Tags */
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-lg);
-}
-
-.skill-tag {
-  background: var(--gradient-primary);
-  color: white;
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-/* Services List */
-.services-list {
-  background: var(--gray-50);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-}
-
-.service-category h4 {
-  color: var(--primary-orange);
-  font-weight: 600;
-  margin-bottom: var(--space-sm);
-}
-
-.service-category ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.service-category li {
-  padding: var(--space-xs) 0;
-  color: var(--gray-700);
-  position: relative;
-  padding-left: var(--space-md);
-}
-
-.service-category li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: var(--primary-orange);
-  font-weight: bold;
-}
-
-/* Card Footer */
-.card-footer {
-  text-align: center;
-  padding-top: var(--space-lg);
-  border-top: 1px solid var(--gray-200);
-}
-
-/* Visual Separator */
-.section-divider {
+.np-service-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 200px;
-  position: relative;
-  width: var(--divider-width);
-  opacity: 0;
-  transform: scale(0.6);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 0.2rem;
 }
 
-/* Waits for the cards to finish parting before filling the gap they left. */
-.involvement-grid.is-split .section-divider {
-  opacity: 1;
-  transform: scale(1);
-  transition-delay: 0.7s;
-}
-
-.divider-line {
-  width: 1px;
-  height: 80px;
-  background: linear-gradient(to bottom, transparent, var(--gray-300), transparent);
-}
-
-.divider-icon {
-  background: white;
-  border: 2px solid var(--gray-200);
-  border-radius: 50%;
-  padding: var(--space-sm);
-  margin: var(--space-sm) 0;
-  box-shadow: var(--shadow-md);
-}
-
-/* Bottom Stats Section */
-.projects-bottom {
-  margin-top: var(--space-3xl);
-  padding-top: var(--space-3xl);
-  border-top: 1px solid var(--gray-200);
-}
-
-.stats-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-  text-align: center;
-}
-
-.stat-item {
-  padding: var(--space-lg);
-  background: white;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-  transition: all 0.3s ease;
-}
-
-.stat-item:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-}
-
-.stat-number {
-  font-family: var(--font-display);
-  font-size: 2.5rem;
+.np-service-title {
+  font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-xs);
+  color: var(--ink);
 }
 
-.stat-label {
-  font-size: 0.95rem;
+.np-service-body {
+  font-size: 0.9375rem;
+  line-height: 1.45;
   color: var(--gray-600);
-  font-weight: 500;
 }
 
-/* Responsive Design */
-@media (prefers-reduced-motion: reduce) {
-  .involvement-grid .professionals-card,
-  .involvement-grid .nonprofits-card,
-  .section-divider {
-    transform: none;
-    transition: none;
-  }
-
-  .section-divider {
-    opacity: 1;
-  }
+.np-ctas {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--surface-border);
 }
 
-@media (max-width: 1024px) {
-  .involvement-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-
-    /* Single column — there is no horizontal gap left to close. */
-    --split-shift: 0px;
-  }
-
-  .section-divider {
-    display: none;
-  }
-  
-  .stats-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.np-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid rgba(30, 41, 59, 0.18);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.18);
 }
 
-@media (max-width: 768px) {
-  .projects-section {
-    padding: var(--space-2xl) 0;
-  }
-  
-  .involvement-card {
-    padding: var(--space-lg);
-  }
-  
-  .card-icon {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .stats-section {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-  
-  .stat-number {
-    font-size: 2rem;
-  }
+.np-stat {
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-right: 1px solid rgba(30, 41, 59, 0.18);
 }
 
-/* Data Diplomats Section */
-.data-diplomats-section {
-  margin-top: var(--space-3xl);
-  padding-top: var(--space-3xl);
-  border-top: 1px solid var(--gray-200);
-  text-align: center;
+.np-stat:last-child {
+  border-right: none;
 }
 
-.data-diplomats-content {
-  max-width: 800px;
-  margin: 0 auto;
+.np-stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--primary-blue);
 }
 
-.data-diplomats-button-container {
-  margin-top: var(--space-lg);
+.np-stat-label {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
 }
 
-.data-diplomats-button {
+.np-volunteer {
   background: var(--gradient-primary);
-  border: none;
-  padding: var(--space-md) var(--space-2xl);
-  font-size: 1.25rem;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 45, 114, 0.3);
-  display: inline-block;
-  text-decoration: none;
+  color: white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.np-volunteer-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.np-volunteer-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.15;
   color: white;
 }
 
-.data-diplomats-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 45, 114, 0.4);
+.np-volunteer-body {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
 }
 
-.data-diplomats-button:active {
-  transform: translateY(0);
+.np-volunteer-ctas {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
 }
 
-/* Responsive Design */
+.np-volunteer-link {
+  color: var(--accent-sand);
+  font-weight: 600;
+}
+
+.np-volunteer-link:hover {
+  color: white;
+}
+
+.np-volunteer-faces {
+  display: flex;
+}
+
+/* Duotone faces; multiply is dropped here because it would muddy them on navy. */
+.np-volunteer-faces .duotone {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  mix-blend-mode: normal;
+  border: 3px solid var(--primary-blue);
+  box-shadow: 0 0 0 2px var(--accent-sand);
+  margin-left: -1rem;
+}
+
+.np-volunteer-faces .duotone:first-child {
+  margin-left: 0;
+}
+
+@media (max-width: 1000px) {
+  .np-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .np-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .np-volunteer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .data-diplomats-section {
-    margin-top: var(--space-2xl);
-    padding-top: var(--space-2xl);
+  section.np-section {
+    padding: var(--space-2xl) 0;
   }
-  
-  .data-diplomats-button {
-    padding: var(--space-sm) var(--space-xl);
-    font-size: 1.1rem;
-  }
-}
 
-@media (max-width: 480px) {
-  .skills-tags {
-    justify-content: center;
+  .np-wrap {
+    padding: 0 var(--space-md);
   }
-  
-  .benefits-list {
-    margin-bottom: var(--space-md);
+
+  .np-steps,
+  .np-services-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
-  
-  .benefit-item {
-    padding: var(--space-xs);
+
+  .np-services,
+  .np-volunteer {
+    padding: var(--space-lg);
   }
-  
-  .data-diplomats-button {
-    padding: var(--space-sm) var(--space-lg);
-    font-size: 1rem;
-    width: 100%;
-    max-width: 200px;
+
+  .np-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .np-stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .np-stat:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(30, 41, 59, 0.18);
+  }
+
+  .np-volunteer-faces .duotone {
+    width: 3.5rem;
+    height: 3.5rem;
   }
 }

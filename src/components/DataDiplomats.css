@@ -1,516 +1,1284 @@
-/* Data Diplomats Page */
-.diplomats-section {
-  padding: var(--space-3xl) 0;
-  background: linear-gradient(135deg, white 0%, var(--gray-50) 100%);
-  min-height: 100vh;
+/* Data Diplomats program page.
+   Built on the shared warm-paper system in App.css: navy #002D72, accent
+   orange #C9530E, green #2F6B52, Playfair Display over Inter. Layout cues
+   come from Girls Who Code (labelled program facts, punchy headings) and
+   Mozilla's fellows page (breadcrumb, portrait-led hero). */
+
+.dd-page {
+  background: var(--paper);
+  /* Clears the fixed header. */
+  padding-top: 80px;
 }
 
-/* Merged About block */
-.dd-about-block {
-  max-width: 800px;
-  margin: 0 auto var(--space-3xl);
-  text-align: center;
+/* App.css gives every <section> a flex centre and 6rem padding; these
+   sections manage their own rhythm. :where() keeps this at single-class
+   specificity so each section's own display and padding still win. */
+:where(.dd-page) .dd-section {
+  display: block;
+  padding: 0;
+  overflow: visible;
 }
 
-.dd-about-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-lg);
-}
-
-.dd-about-lead {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  color: var(--gray-700);
-  font-weight: 500;
-  margin-bottom: var(--space-md);
-}
-
-.dd-about-paragraph {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--gray-600);
-  margin-bottom: var(--space-md);
-  text-align: left;
-}
-
-.dd-values-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-  margin-top: var(--space-xl);
-  text-align: left;
-}
-
-.dd-value-item {
-  padding: var(--space-lg);
-  background: white;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--gray-200);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dd-value-item:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.dd-value-icon {
-  font-size: 2rem;
-  margin-bottom: var(--space-sm);
-}
-
-.dd-value-item h4 {
-  color: var(--gray-800);
-  font-weight: 600;
-  margin-bottom: var(--space-xs);
-}
-
-.dd-value-item p {
-  font-size: 0.95rem;
-  color: var(--gray-600);
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-
-/* Philosophy block (Bicycle Framework) */
-.dd-philosophy-block {
-  max-width: 900px;
-  margin: 0 auto var(--space-3xl);
-  padding: var(--space-2xl);
-  background: white;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--gray-200);
-  box-shadow: var(--shadow-md);
-  text-align: center;
-}
-
-.dd-philosophy-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: var(--primary-orange);
-  margin: 0 0 var(--space-sm);
-}
-
-.dd-philosophy-title {
-  font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-md);
-}
-
-.dd-philosophy-intro {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--gray-600);
-  max-width: 700px;
-  margin: 0 auto var(--space-2xl);
-}
-
-.dd-bicycle {
-  margin-bottom: var(--space-2xl);
-}
-
-.dd-bicycle-name {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--gray-800);
-  margin-bottom: var(--space-xs);
-}
-
-.dd-bicycle-description {
-  font-size: 1rem;
-  color: var(--gray-600);
-  max-width: 600px;
-  margin: 0 auto var(--space-xl);
-}
-
-.dd-pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-  text-align: left;
-}
-
-.dd-pillar-card {
-  padding: var(--space-lg);
-  background: var(--gray-50);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--gray-200);
-  border-top: 3px solid var(--primary-orange);
-}
-
-.dd-pillar-wheel {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--primary-orange);
-  margin-bottom: var(--space-xs);
-}
-
-.dd-pillar-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--gray-800);
-  margin: 0 0 var(--space-xs);
-}
-
-.dd-pillar-description {
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--gray-600);
-  margin: 0;
-}
-
-.dd-theory-block {
-  padding-top: var(--space-xl);
-  border-top: 1px solid var(--gray-200);
-  text-align: left;
-}
-
-.dd-theory-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--gray-800);
-  margin-bottom: var(--space-sm);
-  text-align: center;
-}
-
-.dd-theory-description {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--gray-600);
-  max-width: 720px;
+.dd-wrap {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--space-lg);
 }
 
-@media (max-width: 1024px) {
-  .dd-values-grid,
-  .dd-pillars-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .dd-values-grid,
-  .dd-pillars-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .dd-philosophy-block {
-    padding: var(--space-xl);
-  }
-}
-
-/* Header */
-.diplomats-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto var(--space-3xl);
-}
-
-.diplomats-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: var(--space-lg);
-}
-
-.diplomats-description {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: var(--gray-600);
-  margin-bottom: var(--space-xl);
-}
-
-.diplomats-entity-note {
-  background: white;
-  border: 1px solid var(--gray-200);
-  border-left: 4px solid var(--primary-orange);
-  border-radius: var(--radius-md);
-  padding: var(--space-lg);
-  text-align: left;
-}
-
-.entity-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: var(--gradient-primary);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: var(--space-sm);
-}
-
-.entity-icon {
-  font-size: 1rem;
-}
-
-.diplomats-entity-note p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--gray-700);
-  margin: 0;
-}
-
-/* Cohort Block */
-.cohort-block {
-  margin-bottom: var(--space-3xl);
-}
-
-.cohort-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  margin-bottom: var(--space-sm);
-}
-
-.cohort-name {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin: 0;
-}
-
-.cohort-term {
-  display: inline-block;
-  background: var(--gradient-secondary);
-  color: white;
-  padding: 0.25rem 1rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.cohort-description {
-  font-size: 1.05rem;
-  color: var(--gray-600);
-  margin-bottom: var(--space-xl);
-  max-width: 700px;
-}
-
-/* Diplomats Grid */
-.diplomats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl);
-}
-
-.diplomats-grid--four {
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-md);
-}
-
-.diplomats-grid--four .diplomat-card {
-  padding: var(--space-lg) var(--space-md);
-}
-
-/* Diplomat Card */
-.diplomat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: var(--space-xl);
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--gray-200);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.diplomat-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-}
-
-.diplomat-image-container {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
   overflow: hidden;
-  margin-bottom: var(--space-md);
-  border: 4px solid var(--primary-blue);
-  flex-shrink: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.diplomat-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+/* ---------- Sub bar: breadcrumb + in-page nav ---------- */
+
+.dd-subbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-border);
 }
 
-.diplomat-info {
+.dd-subbar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.85rem var(--space-lg);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  width: 100%;
-}
-
-.diplomat-name {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--gray-800);
-  margin: 0 0 0.25rem;
-}
-
-.diplomat-role {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--primary-orange);
-  margin-bottom: var(--space-sm);
-}
-
-.diplomat-bio {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: var(--gray-600);
-  margin: 0;
-}
-
-.diplomat-linkedin {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  margin-top: var(--space-sm);
-  color: var(--secondary-blue);
-  font-weight: 500;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.diplomat-linkedin:hover {
-  text-decoration: underline;
-}
-
-/* CTA Section */
-.diplomats-cta {
-  text-align: center;
-  padding: var(--space-2xl);
-  background: var(--gradient-primary);
-  border-radius: var(--radius-xl);
-  color: white;
-}
-
-.diplomats-cta h3 {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: var(--space-sm);
-}
-
-.diplomats-cta p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: var(--space-lg);
-}
-
-.diplomats-cta .button {
-  background: var(--gradient-secondary);
-  color: white;
-  padding: 0.75rem 2rem;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-block;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.diplomats-cta .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(244, 126, 45, 0.4);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .diplomats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .diplomats-section {
-    padding: var(--space-2xl) 0;
-  }
-
-  .diplomats-title {
-    font-size: 2rem;
-  }
-
-  .cohort-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-xs);
-  }
-
-  .cohort-name {
-    font-size: 1.6rem;
-  }
-
-  .diplomat-image-container {
-    width: 100px;
-    height: 100px;
-  }
-
-  .diplomats-cta h3 {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .diplomats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .diplomat-card {
-    padding: var(--space-lg);
-  }
-
-  .diplomats-cta {
-    padding: var(--space-xl);
-  }
-}
-
-/* ---- Hero: full-bleed image carousel ---- */
-.dd-hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-  padding: var(--space-2xl) 0;
-  background:
-    radial-gradient(120% 120% at 50% 0%, #24507f 0%, var(--primary-blue) 55%, #0b1f42 100%);
-  color: white;
-}
-
-.dd-hero-cta-row {
-  display: flex;
+  justify-content: space-between;
   gap: var(--space-md);
-  justify-content: center;
   flex-wrap: wrap;
 }
 
-@media (max-width: 480px) {
-  .dd-hero-cta-row {
+.dd-breadcrumb,
+.dd-jump {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8125rem;
+  flex-wrap: wrap;
+}
+
+.dd-jump {
+  gap: 1.4rem;
+}
+
+.dd-breadcrumb a,
+.dd-breadcrumb span {
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.dd-breadcrumb [aria-current='page'] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.dd-jump a {
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+/* ---------- Hero ---------- */
+
+.dd-hero {
+  padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.dd-hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.dd-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dd-hero-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5.2vw, 4.5rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+}
+
+/* The cycling block is absolutely stacked, so it needs a reserved height
+   equal to its two lines. */
+.dd-cycle {
+  position: relative;
+  display: block;
+  height: 2.12em;
+}
+
+.dd-cycle > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  color: var(--accent-orange);
+  font-style: italic;
+  opacity: 0;
+  animation: dd-word-cycle 11.2s cubic-bezier(0.2, 0.7, 0.2, 1) infinite both;
+}
+
+@keyframes dd-word-cycle {
+  0% { opacity: 0; transform: translateY(0.3em); }
+  4% { opacity: 1; transform: translateY(0); }
+  21.5% { opacity: 1; transform: translateY(0); }
+  25% { opacity: 0; transform: translateY(-0.3em); }
+  100% { opacity: 0; transform: translateY(-0.3em); }
+}
+
+.dd-cycle > span:nth-child(1) { animation-delay: 0s; }
+.dd-cycle > span:nth-child(2) { animation-delay: 2.8s; }
+.dd-cycle > span:nth-child(3) { animation-delay: 5.6s; }
+.dd-cycle > span:nth-child(4) { animation-delay: 8.4s; }
+
+.dd-hero-sub {
+  margin: 0;
+  font-size: clamp(1.125rem, 1.6vw, 1.4rem);
+  line-height: 1.45;
+  max-width: 36rem;
+  color: var(--gray-600);
+}
+
+.dd-cta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+  margin-top: var(--space-xs);
+}
+
+.dd-cta-row .button {
+  padding: 0.95rem 1.75rem;
+  font-size: 1rem;
+}
+
+.dd-hero-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.dd-portrait-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+}
+
+/* Duotone tiles, as in the design's hero grid. No shadow: the multiply
+   blend is meant to read as ink printed on the paper. */
+.dd-portrait {
+  aspect-ratio: 1 / 1;
+}
+
+.dd-group-photo {
+  margin: 0;
+  position: relative;
+  aspect-ratio: 16 / 7;
+}
+
+.dd-group-photo-image {
+  width: 100%;
+  height: 100%;
+}
+
+.dd-group-photo-image img {
+  object-position: center 30%;
+}
+
+.dd-group-photo figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.5rem 1rem 0.65rem;
+  background: linear-gradient(transparent, rgba(0, 29, 74, 0.82));
+  color: white;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.dd-hero-alt {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+}
+
+.dd-hero-alt a {
+  font-weight: 600;
+  color: var(--accent-green);
+}
+
+.dd-hero-alt a:hover {
+  color: var(--primary-blue);
+}
+
+/* ---------- At a glance ---------- */
+
+.dd-glance-section {
+  padding: 0 0 var(--space-2xl);
+}
+
+.dd-glance {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-top: 4px solid var(--primary-blue);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.dd-glance-item {
+  padding: 1.6rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border-right: 1px solid var(--surface-border);
+}
+
+.dd-glance-item:last-child {
+  border-right: none;
+}
+
+.dd-glance-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+}
+
+.dd-glance-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.dd-glance-detail {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--gray-600);
+}
+
+/* ---------- Two ways to volunteer ---------- */
+
+.dd-ways {
+  padding: 0 0 var(--space-3xl);
+}
+
+.dd-ways .eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.dd-ways-title {
+  margin-bottom: var(--space-lg);
+}
+
+.dd-ways-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.dd-way {
+  padding: 2rem 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.dd-way-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.dd-way-tag,
+.dd-way-meta {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dd-way-meta {
+  color: var(--gray-500);
+}
+
+.dd-way-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.dd-way-body {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--gray-600);
+}
+
+.dd-way-points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dd-way-points li {
+  position: relative;
+  padding: 0.6rem 0 0.6rem 1.4rem;
+  border-top: 1px solid var(--surface-border);
+  font-size: 0.975rem;
+  line-height: 1.45;
+  color: var(--gray-700);
+}
+
+.dd-way-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+}
+
+.dd-way-skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dd-way-skills li {
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: #E1EAE4;
+  color: var(--accent-green);
+}
+
+.dd-way-ctas {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.dd-way-ctas .button {
+  padding: 0.85rem 1.5rem;
+}
+
+.dd-way-link {
+  font-weight: 600;
+  color: var(--primary-blue);
+}
+
+/* ---------- Why this exists ---------- */
+
+.dd-why {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--space-3xl) 0;
+}
+
+.dd-why-inner {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.dd-why-rule {
+  width: 10px;
+  flex-shrink: 0;
+  background: var(--primary-orange);
+  border-radius: 2px;
+}
+
+.dd-why-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dd-why-lead {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: white;
+}
+
+.dd-why-body {
+  margin: 0;
+  font-size: clamp(1.0625rem, 1.5vw, 1.375rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ---------- Who it's for ---------- */
+
+.dd-who {
+  padding: var(--space-3xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  overflow: hidden;
+}
+
+.dd-who .eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.dd-who-title {
+  max-width: 100%;
+}
+
+.dd-marquees {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* min-width: 0 stops the max-content track from widening its flex parent. */
+.dd-marquees,
+.dd-cohort-block,
+.dd-marquee {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.dd-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.dd-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0.875rem;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.dd-marquee-group {
+  display: flex;
+  gap: 0.875rem;
+  padding-left: 0.875rem;
+}
+
+.dd-marquee-left { animation-name: dd-slide-left; }
+.dd-marquee-right { animation-name: dd-slide-right; }
+
+@keyframes dd-slide-left {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes dd-slide-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+.dd-chip {
+  font-size: clamp(1rem, 1.6vw, 1.5rem);
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(30, 41, 59, 0.22);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.dd-chip-orange { background: var(--accent-orange); color: white; border-color: transparent; }
+.dd-chip-blue { background: var(--primary-blue); color: white; border-color: transparent; }
+.dd-chip-green { background: var(--accent-green); color: white; border-color: transparent; }
+
+.dd-who-cards {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+.dd-especially {
+  padding: 1.9rem 2.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.dd-especially-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.dd-especially-text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.1vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.dd-promise {
+  background: var(--primary-blue);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 1.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dd-promise-top,
+.dd-promise-bottom {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.dd-promise-top { font-size: 1.5rem; color: white; }
+.dd-promise-bottom { font-size: 2rem; color: var(--accent-sand); }
+
+/* ---------- What you'll learn ---------- */
+
+.dd-program {
+  background: var(--paper-deep);
+  border-top: 1px solid rgba(30, 41, 59, 0.1);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+  padding: var(--space-3xl) 0;
+}
+
+.dd-program-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.dd-program-head .eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.dd-program-note {
+  margin: 0 0 0.4rem;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  max-width: 25rem;
+  color: var(--gray-600);
+}
+
+.dd-kickoff {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  background: var(--primary-blue);
+  color: white;
+  padding: 1.1rem 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.dd-kickoff-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-sand);
+}
+
+.dd-kickoff-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.dd-kickoff-detail {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.dd-phases {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.dd-phase {
+  padding: 1.75rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  height: 100%;
+}
+
+.dd-phase-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.dd-phase-label,
+.dd-phase-meta {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.dd-phase-meta {
+  color: var(--gray-500);
+}
+
+.tint-blue { color: var(--primary-blue); }
+.tint-orange { color: var(--accent-orange); }
+.tint-green { color: var(--accent-green); }
+
+.dd-phase-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  color: var(--ink);
+}
+
+.dd-phase-summary {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--gray-600);
+}
+
+.dd-week-list {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dd-week-list li {
+  display: flex;
+  gap: 0.875rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid rgba(30, 41, 59, 0.14);
+}
+
+.dd-week-marker {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 2.875rem;
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+}
+
+.dd-week-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.dd-week-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.dd-week-detail {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--gray-600);
+}
+
+.dd-phase-note {
+  margin-top: auto;
+  padding: 1rem 1.125rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.dd-phase-note.tint-blue { background: #E7EDF7; }
+.dd-phase-note.tint-green { background: #E1EAE4; }
+
+.dd-phase-note-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.dd-phase-note-body {
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--gray-700);
+}
+
+.dd-beyond {
+  margin-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.dd-beyond-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.dd-beyond-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-sm);
+}
+
+.dd-beyond-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dd-beyond-card.tint-blue { border-left: 4px solid var(--primary-blue); }
+.dd-beyond-card.tint-orange { border-left: 4px solid var(--accent-orange); }
+.dd-beyond-card.tint-green { border-left: 4px solid var(--accent-green); }
+
+.dd-beyond-card-title {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dd-beyond-card-body {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--gray-600);
+}
+
+.dd-program-cta {
+  margin-top: var(--space-lg);
+}
+
+.dd-cta-note {
+  font-size: 1.0625rem;
+  color: var(--gray-600);
+}
+
+/* ---------- Requirements ---------- */
+
+.dd-requirements {
+  padding: var(--space-3xl) 0;
+}
+
+.dd-requirements-inner {
+  display: grid;
+  grid-template-columns: 26rem minmax(0, 1fr);
+  gap: var(--space-2xl);
+}
+
+.dd-requirements-head {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dd-requirements-sub {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--gray-600);
+}
+
+.dd-requirements-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: none;
+}
+
+.dd-requirements-list li {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.4rem 0;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.22);
+}
+
+.dd-requirements-list li:last-child {
+  border-bottom: none;
+}
+
+.dd-requirements-number {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--accent-orange);
+  width: 2.125rem;
+  flex-shrink: 0;
+  padding-top: 0.4rem;
+}
+
+.dd-requirements-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.dd-requirements-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.dd-requirements-detail {
+  font-size: 1.125rem;
+  line-height: 1.45;
+  color: var(--gray-600);
+}
+
+/* ---------- The diplomats ---------- */
+
+.dd-cohort {
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--space-3xl) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  overflow: hidden;
+}
+
+.dd-cohort .eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.dd-cohort-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.dd-cohort-label {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-sand);
+}
+
+.dd-cohort-rule {
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(243, 236, 221, 0.25);
+}
+
+.dd-diplomat {
+  width: 23rem;
+  flex-shrink: 0;
+  padding: 1.4rem;
+  display: flex;
+  gap: 1.1rem;
+  color: var(--ink);
+}
+
+.dd-diplomat-photo {
+  width: 6rem;
+  height: 6rem;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+}
+
+.dd-diplomat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dd-diplomat-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.dd-diplomat-role {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.dd-diplomat-motivation {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.42;
+  color: var(--gray-600);
+}
+
+/* ---------- Where they go next ---------- */
+
+.dd-outcomes {
+  background: var(--paper-deep);
+  border-bottom: 1px solid rgba(30, 41, 59, 0.1);
+  padding: var(--space-2xl) 0;
+}
+
+.dd-outcomes .eyebrow {
+  margin-bottom: var(--space-md);
+}
+
+.dd-outcomes-title {
+  margin: 0 0 var(--space-lg);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.6vw, 2.375rem);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  max-width: 56rem;
+  color: var(--primary-blue);
+}
+
+.dd-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.dd-outcome {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.dd-outcome svg {
+  width: 2.875rem;
+  height: 2.875rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Apply ---------- */
+
+.dd-apply {
+  padding: var(--space-3xl) 0;
+}
+
+.dd-apply-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 24rem;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.dd-apply-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.dd-apply-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--primary-blue);
+}
+
+.dd-apply-title span {
+  color: var(--accent-orange);
+}
+
+.dd-apply-sub {
+  margin: 0;
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.5;
+  max-width: 35rem;
+  color: var(--gray-600);
+}
+
+.dd-apply-note {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--gray-500);
+}
+
+.dd-dates {
+  background: var(--accent-green);
+  color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 1.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.dd-dates-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dd-dates-list {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.dd-dates-list > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.875rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(243, 236, 221, 0.3);
+}
+
+.dd-dates-list > div:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.dd-dates-list dt,
+.dd-dates-list dd {
+  margin: 0;
+  font-size: 1.0625rem;
+}
+
+.dd-dates-list dd {
+  font-weight: 700;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 1100px) {
+  .dd-hero-inner,
+  .dd-requirements-inner,
+  .dd-apply-inner,
+  .dd-who-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dd-phases,
+  .dd-beyond-grid,
+  .dd-outcomes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dd-glance {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dd-glance-item:nth-child(2n) {
+    border-right: none;
+  }
+
+  .dd-glance-item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--surface-border);
+  }
+
+  .dd-program-head {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .dd-page {
+    padding-top: 70px;
+  }
+
+  .dd-wrap,
+  .dd-subbar-inner {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .dd-hero,
+  .dd-who,
+  .dd-program,
+  .dd-requirements,
+  .dd-cohort,
+  .dd-apply,
+  .dd-why {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+  }
+
+  .dd-phases,
+  .dd-beyond-grid,
+  .dd-outcomes-grid,
+  .dd-glance,
+  .dd-ways-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .dd-ways {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .dd-way {
+    padding: 1.5rem;
+  }
+
+  .dd-glance-item {
+    border-right: none;
+    border-bottom: 1px solid var(--surface-border);
+  }
+
+  .dd-glance-item:last-child {
+    border-bottom: none;
+  }
+
+  .dd-jump {
+    display: none;
+  }
+
+  /* One row of four keeps the faces without pushing the page down a screen. */
+  .dd-portrait-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .dd-hero-media {
+    gap: 0.5rem;
+  }
+
+  .dd-why-inner {
+    gap: var(--space-md);
+  }
+
+  .dd-why-rule {
+    width: 6px;
+  }
+
+  /* Photo beside name and role; the motivation gets the card's full width. */
+  .dd-diplomat {
+    width: 18rem;
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    column-gap: 1rem;
+    row-gap: 0.2rem;
+    align-items: start;
+  }
+
+  .dd-diplomat-body {
+    display: contents;
+  }
+
+  .dd-diplomat-photo {
+    grid-row: 1 / span 2;
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .dd-diplomat-name {
+    grid-column: 2;
+    align-self: end;
+  }
+
+  .dd-diplomat-role {
+    grid-column: 2;
+  }
+
+  .dd-diplomat-motivation {
+    grid-column: 1 / -1;
+    margin-top: 0.75rem;
+  }
+
+  .dd-cta-row .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dd-marquee-track {
+    animation: none;
+    /* Without the loop the duplicate half is dead weight, so drop it. */
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .dd-marquee-group[aria-hidden='true'] {
+    display: none;
+  }
+
+  .dd-cycle > span {
+    animation: none;
+    opacity: 0;
+  }
+
+  .dd-cycle > span:first-child {
+    opacity: 1;
+    transform: none;
   }
 }

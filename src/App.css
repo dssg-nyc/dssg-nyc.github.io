@@ -11,7 +11,19 @@
   --primary-blue: #002D72;
   --secondary-orange: #FF6B35;
   --secondary-blue: #0056B3;
-  
+
+  /* Warm paper palette — shared by the homepage and the Data Diplomats program page.
+     --accent-orange is the text/button-safe orange; --primary-orange stays decorative
+     because white on it fails contrast. */
+  --paper: #F3ECDD;
+  --paper-deep: #EAE0CB;
+  --surface: #FFFDF8;
+  --surface-border: #E5DCC8;
+  --accent-orange: #C9530E;
+  --accent-green: #2F6B52;
+  --accent-sand: #F9B27A;
+  --ink: #1E293B;
+
   /* Modern Gradients */
   --gradient-primary: linear-gradient(135deg, #002D72 0%, #0056B3 100%);
   --gradient-secondary: linear-gradient(135deg, #F47E2D 0%, #FF6B35 100%);
@@ -68,6 +80,7 @@ body {
   font-family: var(--font-primary);
   line-height: 1.6;
   color: var(--gray-800);
+  background: var(--paper);
   scroll-behavior: smooth;
 }
 
@@ -102,12 +115,12 @@ section.hero {
 }
 
 section.light {
-  background: var(--gray-50);
+  background: var(--paper-deep);
   color: var(--gray-800);
 }
 
 section.white {
-  background: white;
+  background: var(--paper);
   color: var(--gray-800);
 }
 
@@ -371,4 +384,235 @@ hr {
 
 .accent-gradient {
   background: var(--gradient-secondary);
+}
+/* ============================================================
+   Unified primitives
+   Shared by the homepage and the Data Diplomats program page so
+   the two read as one site. Borrowed structure: Girls Who Code's
+   labelled program facts, Mozilla's marker-highlighted headings.
+   ============================================================ */
+
+/* Eyebrow — short tracked label over a section heading, preceded by a rule. */
+.eyebrow {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5;
+  gap: 0.75rem;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-orange);
+  margin: 0;
+}
+
+.eyebrow::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 3px;
+  flex-shrink: 0;
+  /* Sits on the first line's midline even when the label wraps. */
+  margin-top: calc(0.75em - 1.5px);
+  background: var(--primary-orange);
+}
+
+/* On the navy bands the orange drops below contrast, so switch to sand. */
+.eyebrow.on-dark {
+  color: var(--accent-sand);
+}
+
+.eyebrow.on-dark::before {
+  background: var(--accent-sand);
+}
+
+/* Display heading — Playfair, tight, navy. The site's section workhorse. */
+.display-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 4.2vw, 3.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  color: var(--primary-blue);
+  margin: 0;
+}
+
+.display-heading.on-dark {
+  color: white;
+}
+
+/* Marker highlight behind a heading, after Mozilla's fellows page. */
+.marker-highlight {
+  background: linear-gradient(transparent 58%, var(--accent-sand) 58%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Paper card — the cream card on the warm ground, with an optional ink top rule. */
+.paper-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.paper-card.accent-blue { border-top: 6px solid var(--primary-blue); }
+.paper-card.accent-orange { border-top: 6px solid var(--accent-orange); }
+.paper-card.accent-green { border-top: 6px solid var(--accent-green); }
+
+/* Section band variants on the warm ground. */
+section.paper { background: var(--paper); color: var(--gray-800); }
+section.paper-deep { background: var(--paper-deep); color: var(--gray-800); }
+
+section.paper-deep,
+section.paper {
+  border-top: 1px solid rgba(30, 41, 59, 0.08);
+}
+
+/* Buttons — rounded, sentence case, solid fills that hold white text. */
+.button.accent {
+  background: var(--accent-orange);
+  color: white;
+}
+
+.button.accent:hover {
+  background: #A8440B;
+  color: white;
+}
+
+.button.ink {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.button.ink:hover {
+  background: var(--secondary-blue);
+  color: white;
+}
+
+/* Outline on the warm ground: the white fill of .button.secondary reads as a
+   hole punched in the paper, so this one stays transparent. */
+.button.quiet {
+  background: transparent;
+  color: var(--primary-blue);
+  border: 1.5px solid var(--primary-blue);
+  box-shadow: none;
+}
+
+.button.quiet:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.button:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--secondary-blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Page intro — the opening block on secondary pages (Events, Our Work),
+   padded to clear the fixed header. Mirrors the program page's hero copy. */
+.page-intro {
+  background: var(--paper);
+  padding: calc(80px + var(--space-2xl)) 0 var(--space-xl);
+}
+
+.page-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.page-intro-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--primary-blue);
+  max-width: 52rem;
+}
+
+.page-intro-title em {
+  color: var(--accent-orange);
+}
+
+.page-intro-sub {
+  margin: 0;
+  max-width: 40rem;
+  font-size: clamp(1.125rem, 1.6vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+  .page-intro {
+    padding: calc(70px + var(--space-xl)) 0 var(--space-lg);
+  }
+
+  .page-intro-inner {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Balanced wrapping keeps multi-line headings from stranding a single word. */
+h1,
+h2,
+h3,
+.display-heading,
+.page-intro-title {
+  text-wrap: balance;
+}
+
+/* Duotone — the two-ink print treatment from the design. The photo goes
+   grayscale and screens over an ink, so shadows take the ink and highlights
+   go white; the whole tile then multiplies onto the paper beneath it. */
+.duotone {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--primary-blue);
+  mix-blend-mode: multiply;
+}
+
+.duotone-orange { background: var(--accent-orange); }
+.duotone-green { background: var(--accent-green); }
+
+.duotone img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(1) contrast(1.12) brightness(1.06);
+  mix-blend-mode: screen;
+}
+
+/* Section links land just below the fixed header instead of under it. */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 70px;
+  }
 }
