@@ -1,6 +1,7 @@
 import './Events.css';
 import Seo from './Seo';
 import PageIntro from './PageIntro';
+import SectionLink from './SectionLink';
 
 const LUMA_EMBED_URL = 'https://luma.com/embed/calendar/cal-4VqcQEpR4zqBF8Q/events';
 const LUMA_CALENDAR_URL = 'https://luma.com/calendar/cal-4VqcQEpR4zqBF8Q';
@@ -61,9 +62,9 @@ const Events = () => {
             <div className="events-aside-card events-aside-dark">
               <p className="eyebrow on-dark">Host with us</p>
               <p className="events-aside-lead">Run a nonprofit and want a hackathon built around your problem?</p>
-              <a className="events-aside-link" href="/#book">
+              <SectionLink className="events-aside-link" section="book">
                 Book a call with our team →
-              </a>
+              </SectionLink>
             </div>
           </aside>
         </div>

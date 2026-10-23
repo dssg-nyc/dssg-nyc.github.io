@@ -605,3 +605,14 @@ h3,
   filter: grayscale(1) contrast(1.12) brightness(1.06);
   mix-blend-mode: screen;
 }
+
+/* Section links land just below the fixed header instead of under it. */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  section[id] {
+    scroll-margin-top: 70px;
+  }
+}

@@ -3,6 +3,7 @@ import Seo from './Seo';
 import PageIntro from './PageIntro';
 import ImpactCarousel from './carousel/ImpactCarousel';
 import stories from '../data/impactstories.json';
+import SectionLink from './SectionLink';
 
 const TINTS = ['blue', 'orange', 'green'];
 
@@ -64,9 +65,9 @@ const Portfolio = () => (
             <h2 className="portfolio-cta-title">Need something like this for your organization?</h2>
             <p className="portfolio-cta-body">Tell us what’s hard. Our volunteers build it with you, pro bono.</p>
           </div>
-          <a className="button accent" href="/#book">
+          <SectionLink className="button accent" section="book">
             Book a free call
-          </a>
+          </SectionLink>
         </div>
       </div>
     </section>

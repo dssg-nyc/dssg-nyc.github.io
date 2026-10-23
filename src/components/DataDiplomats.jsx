@@ -3,6 +3,8 @@ import './DataDiplomats.css';
 import diplomatsData from '../data/diplomats.json';
 import siteProperties from '../data/siteproperties.json';
 import Seo from './Seo';
+import { Link } from 'react-router-dom';
+import SectionLink from './SectionLink';
 
 const APPLY_URL = diplomatsData.applyUrl;
 const VOLUNTEER_FORM_URL = siteProperties.volunteerFormUrl;
@@ -288,16 +290,16 @@ const DataDiplomats = () => {
       <div className="dd-subbar">
         <div className="dd-subbar-inner">
           <nav aria-label="Breadcrumb" className="dd-breadcrumb">
-            <a href="/#home">Home</a>
+            <Link to="/">Home</Link>
             <span aria-hidden="true">/</span>
             <span aria-current="page">Data Diplomats Program</span>
           </nav>
           <nav aria-label="On this page" className="dd-jump">
-            <a href="#ways">Ways to volunteer</a>
-            <a href="#program">What you’ll learn</a>
-            <a href="#expectations">Requirements</a>
-            <a href="#cohort">The diplomats</a>
-            <a href="#apply">Apply</a>
+            <SectionLink page="/diplomats" section="ways">Ways to volunteer</SectionLink>
+            <SectionLink page="/diplomats" section="program">What you’ll learn</SectionLink>
+            <SectionLink page="/diplomats" section="expectations">Requirements</SectionLink>
+            <SectionLink page="/diplomats" section="cohort">The diplomats</SectionLink>
+            <SectionLink page="/diplomats" section="apply">Apply</SectionLink>
           </nav>
         </div>
       </div>
@@ -334,12 +336,13 @@ const DataDiplomats = () => {
               <a className="button accent" href={APPLY_URL} target="_blank" rel="noopener noreferrer">
                 Apply now
               </a>
-              <a className="button quiet" href="#program">
+              <SectionLink className="button quiet" page="/diplomats" section="program">
                 What you’ll learn
-              </a>
+              </SectionLink>
             </div>
             <p className="dd-hero-alt">
-              Want something more flexible? <a href="#ways">Join our volunteer network →</a>
+              Want something more flexible?{' '}
+              <SectionLink page="/diplomats" section="ways">Join our volunteer network →</SectionLink>
             </p>
           </div>
 
@@ -415,9 +418,9 @@ const DataDiplomats = () => {
                 <a className="button accent" href={APPLY_URL} target="_blank" rel="noopener noreferrer">
                   Apply for Cohort 3
                 </a>
-                <a className="dd-way-link" href="#program">
+                <SectionLink className="dd-way-link" page="/diplomats" section="program">
                   See the curriculum ↓
-                </a>
+                </SectionLink>
               </div>
             </article>
 
@@ -440,9 +443,9 @@ const DataDiplomats = () => {
                 <a className="button ink" href={VOLUNTEER_FORM_URL} target="_blank" rel="noopener noreferrer">
                   Join as a volunteer
                 </a>
-                <a className="dd-way-link" href="/#/events">
+                <Link className="dd-way-link" to="/events">
                   Meet us at an event →
-                </a>
+                </Link>
               </div>
             </article>
           </div>
@@ -673,7 +676,7 @@ const DataDiplomats = () => {
               <a href={VOLUNTEER_FORM_URL} target="_blank" rel="noopener noreferrer">
                 Join the volunteer network
               </a>{' '}
-              or <a href="/#/events">come to an event</a> first.
+              or <Link to="/events">come to an event</Link> first.
             </p>
           </div>
           <div className="dd-dates">

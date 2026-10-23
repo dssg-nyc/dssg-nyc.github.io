@@ -2,11 +2,12 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 import siteProperties from '../data/siteproperties.json';
 import socialIcons from '../data/socialicons.json';
+import SectionLink from './SectionLink';
 
 const NONPROFIT_LINKS = [
-  { label: 'Partner with us', href: '/#projects' },
-  { label: 'Impact stories', href: '/#writing' },
-  { label: 'Book a call', href: '/#book' },
+  { label: 'Partner with us', section: 'projects' },
+  { label: 'Impact stories', section: 'writing' },
+  { label: 'Book a call', section: 'book' },
 ];
 
 const VOLUNTEER_LINKS = [
@@ -62,9 +63,9 @@ const Footer = () => {
             <nav className="footer-column" aria-label="For nonprofits">
               <h2 className="footer-column-title">For nonprofits</h2>
               {NONPROFIT_LINKS.map((link) => (
-                <a key={link.label} href={link.href}>
+                <SectionLink key={link.label} section={link.section}>
                   {link.label}
-                </a>
+                </SectionLink>
               ))}
             </nav>
 

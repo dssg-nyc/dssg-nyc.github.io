@@ -1,5 +1,7 @@
 import './Home.css';
 import heroData from '../data/heroimages.json';
+import { Link } from 'react-router-dom';
+import SectionLink from './SectionLink';
 
 const PROOF_POINTS = [
   { value: '260+', label: 'trained volunteers' },
@@ -24,12 +26,12 @@ const Home = () => {
             community organizing, so the tools fit the people you serve.
           </p>
           <div className="home-hero-ctas">
-            <a className="button accent" href="/#book">
+            <SectionLink className="button accent" section="book">
               Get pro bono support
-            </a>
-            <a className="button quiet" href="/#writing">
+            </SectionLink>
+            <SectionLink className="button quiet" section="writing">
               See our impact
-            </a>
+            </SectionLink>
           </div>
           <dl className="home-proof">
             {PROOF_POINTS.map((point) => (
@@ -43,10 +45,10 @@ const Home = () => {
 
         <div className="home-hero-media">
           {hero?.src && <img src={`/${hero.src}`} alt="Illustration of Central Park and the Manhattan skyline" />}
-          <a className="home-hero-tag" href="/#/diplomats">
+          <Link className="home-hero-tag" to="/diplomats">
             <span className="home-hero-tag-label">Volunteering?</span>
             <span className="home-hero-tag-text">Meet the Data Diplomats Program →</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
