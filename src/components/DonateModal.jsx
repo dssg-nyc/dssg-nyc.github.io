@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import './DonateModal.css';
 
 const GIVEBUTTER_EMBED_URL = 'https://givebutter.com/embed/c/aiforgood';
@@ -44,6 +45,11 @@ const DonateModal = ({ isOpen, onClose }) => {
       </div>
     </div>
   );
+};
+
+DonateModal.propTypes = {
+  isOpen: PropTypes.bool,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default DonateModal;

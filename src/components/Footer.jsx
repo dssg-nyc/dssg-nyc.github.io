@@ -3,6 +3,7 @@ import './Footer.css';
 import siteProperties from '../data/siteproperties.json';
 import socialIcons from '../data/socialicons.json';
 import SectionLink from './SectionLink';
+import { openCookieSettings } from '../consent/consent';
 
 const NONPROFIT_LINKS = [
   { label: 'Partner with us', section: 'projects' },
@@ -109,11 +110,22 @@ const Footer = () => {
         </div>
 
         <div className="footer-bottom">
-          <p>
-            &copy; {new Date().getFullYear()} Data Diplomats for Nonprofits, Inc. — 501(c)(3)
-            IRS-registered organization. EIN 41-4925712.
-          </p>
-          <p>Organizing before coding.</p>
+          <div className="footer-bottom-copy">
+            <p>
+              &copy; {new Date().getFullYear()} Data Diplomats for Nonprofits, Inc. — 501(c)(3)
+              IRS-registered organization. EIN 41-4925712.
+            </p>
+            <p className="footer-address">{siteProperties.address}</p>
+            <p>Organizing before coding.</p>
+          </div>
+          <nav className="footer-legal" aria-label="Legal">
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/cookies">Cookie Policy</Link>
+            <Link to="/ai-policy">AI Policy</Link>
+            <button type="button" className="footer-link-button" onClick={openCookieSettings}>
+              Cookie settings
+            </button>
+          </nav>
         </div>
       </div>
     </footer>
