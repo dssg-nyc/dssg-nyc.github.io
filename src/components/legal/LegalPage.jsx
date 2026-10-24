@@ -14,7 +14,7 @@ const LegalPage = ({ title, description, children }) => (
       name={title}
     />
     <PageIntro eyebrow="Legal" title={title}>
-      Effective date: {LEGAL_EFFECTIVE_DATE}
+      Last updated on {LEGAL_EFFECTIVE_DATE}
     </PageIntro>
     <section className="legal-body">
       <article className="legal-article paper-card">

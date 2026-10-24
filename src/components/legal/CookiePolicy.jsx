@@ -48,7 +48,7 @@ const CookiePolicy = () => (
               Display embedded content; providers may set cookies for session,
               fraud prevention, and functionality.
             </td>
-            <td>Yes</td>
+            <td>No — shown with the page</td>
           </tr>
           <tr>
             <td>Forms and email</td>

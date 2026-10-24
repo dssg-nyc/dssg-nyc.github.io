@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import EmbedGate from './EmbedGate';
 import './DonateModal.css';
 
 const GIVEBUTTER_EMBED_URL = 'https://givebutter.com/embed/c/aiforgood';
@@ -37,14 +36,12 @@ const DonateModal = ({ isOpen, onClose }) => {
         <button className="donate-modal-close" onClick={onClose} aria-label="Close donate dialog">
           &times;
         </button>
-        <EmbedGate provider="Givebutter">
-          <iframe
-            className="donate-modal-iframe"
-            src={GIVEBUTTER_EMBED_URL}
-            title="Donate to NYC x DSSG via Givebutter"
-            loading="lazy"
-          />
-        </EmbedGate>
+        <iframe
+          className="donate-modal-iframe"
+          src={GIVEBUTTER_EMBED_URL}
+          title="Donate to NYC x DSSG via Givebutter"
+          loading="lazy"
+        />
       </div>
     </div>
   );

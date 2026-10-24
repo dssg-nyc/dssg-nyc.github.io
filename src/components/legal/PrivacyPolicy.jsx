@@ -145,8 +145,8 @@ const PrivacyPolicy = () => {
 
       <h2>5. Cookies, analytics, and advertising</h2>
       <p>
-        We load non-essential cookies and third-party embeds only with your
-        consent and honor the Global Privacy Control signal by keeping
+        Event and donation embeds are shown on the page. We load analytics and
+        advertising cookies only with your consent and honor the Global Privacy Control signal by keeping
         advertising off. Under Google Consent Mode v2, Google tags receive
         “denied” signals for <code>ad_storage</code>, <code>ad_user_data</code>,{' '}
         <code>ad_personalization</code>, and <code>analytics_storage</code> until

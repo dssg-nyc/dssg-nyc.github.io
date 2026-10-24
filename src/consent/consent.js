@@ -5,6 +5,12 @@ export const OPEN_CONSENT_EVENT = 'dssg-open-consent-settings';
 const GOOGLE_TAG_ID = import.meta.env.VITE_GOOGLE_TAG_ID;
 
 export const defaultPreferences = () => ({
+  embeds: true,
+  analytics: true,
+  advertising: true,
+});
+
+const deniedPreferences = () => ({
   embeds: false,
   analytics: false,
   advertising: false,
@@ -73,7 +79,7 @@ const applyConsentMode = (preferences) => {
 
 export const initConsent = () => {
   pushDataLayer('consent', 'default', {
-    ...toConsentMode(defaultPreferences()),
+    ...toConsentMode(deniedPreferences()),
     wait_for_update: 500,
   });
   const stored = readConsent();
