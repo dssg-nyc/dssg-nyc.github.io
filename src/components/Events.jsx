@@ -2,6 +2,7 @@ import './Events.css';
 import Seo from './Seo';
 import PageIntro from './PageIntro';
 import SectionLink from './SectionLink';
+import EmbedGate from './EmbedGate';
 
 const LUMA_EMBED_URL = 'https://luma.com/embed/calendar/cal-4VqcQEpR4zqBF8Q/events';
 const LUMA_CALENDAR_URL = 'https://luma.com/calendar/cal-4VqcQEpR4zqBF8Q';
@@ -32,13 +33,15 @@ const Events = () => {
       <section className="events-body">
         <div className="events-layout">
           <div className="events-calendar paper-card">
-            <iframe
-              src={LUMA_EMBED_URL}
-              className="luma-embed"
-              frameBorder="0"
-              allowFullScreen
-              title="DSSG NYC Events Calendar"
-            />
+            <EmbedGate provider="Luma">
+              <iframe
+                src={LUMA_EMBED_URL}
+                className="luma-embed"
+                frameBorder="0"
+                allowFullScreen
+                title="DSSG NYC Events Calendar"
+              />
+            </EmbedGate>
           </div>
 
           <aside className="events-aside">

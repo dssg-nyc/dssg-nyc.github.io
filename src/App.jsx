@@ -13,6 +13,10 @@ import Events from './components/Events';
 import DataDiplomats from './components/DataDiplomats';
 import Portfolio from './components/Portfolio';
 import ScrollToTop from './components/ScrollToTop';
+import CookieConsent from './components/CookieConsent';
+import PrivacyPolicy from './components/legal/PrivacyPolicy';
+import CookiePolicy from './components/legal/CookiePolicy';
+import AiPolicy from './components/legal/AiPolicy';
 
 function App() {
   return (
@@ -39,8 +43,12 @@ function App() {
           <Route path="/diplomats" element={<DataDiplomats />} />
           <Route path="/events" element={<Events />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/cookies" element={<CookiePolicy />} />
+          <Route path="/ai-policy" element={<AiPolicy />} />
         </Routes>
         <Footer />
+        <CookieConsent />
       </div>
   );
 }
