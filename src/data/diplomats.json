@@ -76,10 +76,10 @@
         {
           "name": "Ursula",
           "image": "/images/ursula_pic.png",
-          "role": "Nonprofit Lead",
+          "role": "Data Scientist",
           "bio": "Ursula is a Brooklyn-based data scientist leading DSSG NYC's nonprofit engagement, researching voter engagement, economic development, and public infrastructure. She began as a lawyer in open data policy, then spent three years on civic projects in Tbilisi, Georgia.",
           "linkedin": "",
-          "motivation": "She started as a lawyer in open-data policy, then spent three years on civic projects in Tbilisi. She keeps returning to one question: who actually gets counted when a city decides something?",
+          "motivation": "She started as a lawyer working on open data policy and spent three years on civic projects in Tbilisi, Georgia.",
           "tint": "orange"
         },
         {
