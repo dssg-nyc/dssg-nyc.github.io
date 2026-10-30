@@ -105,12 +105,12 @@ const Projects = () => {
           <div>
             <p className="eyebrow">For nonprofits</p>
             <h2 className="display-heading np-title">
-              Free technology support, <span className="marker-highlight">built around your mission</span>
+              Leveraging Frontier-AI, <span className="marker-highlight">to expand your mission</span>
             </h2>
           </div>
           <p className="np-head-sub">
-            Small teams carry big missions with almost no technical help. We close that gap with
-            pro bono data, AI, and IT work — at no cost to your organization.
+            Small nonprofit teams carry big missions with almost no technical help. We close the gap by
+            transforming your organization into AI-powered Nonprofits (APNs).
           </p>
         </div>
 
