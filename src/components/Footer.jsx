@@ -13,7 +13,7 @@ const NONPROFIT_LINKS = [
 
 const VOLUNTEER_LINKS = [
   { label: 'Volunteer with us', href: siteProperties.volunteerFormUrl },
-  { label: 'Data Diplomats Program', to: '/diplomats' },
+  { label: 'Data Diplomats Program', href: 'https://www.datadiplomats.org' },
   { label: 'Our work', to: '/portfolio' },
   { label: 'Events', to: '/events' },
 ];

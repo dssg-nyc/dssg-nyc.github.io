@@ -9,8 +9,8 @@ import Footer from './components/Footer';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Seo from './components/Seo';
+import ExternalRedirect from './components/ExternalRedirect';
 import Events from './components/Events';
-import DataDiplomats from './components/DataDiplomats';
 import Portfolio from './components/Portfolio';
 import ScrollToTop from './components/ScrollToTop';
 import CookieConsent from './components/CookieConsent';
@@ -40,7 +40,7 @@ function App() {
           } />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogPost />} />
-          <Route path="/diplomats" element={<DataDiplomats />} />
+          <Route path="/diplomats" element={<ExternalRedirect to="https://www.datadiplomats.org" />} />
           <Route path="/events" element={<Events />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

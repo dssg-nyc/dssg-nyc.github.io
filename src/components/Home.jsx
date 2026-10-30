@@ -1,6 +1,5 @@
 import './Home.css';
 import heroData from '../data/heroimages.json';
-import { Link } from 'react-router-dom';
 import SectionLink from './SectionLink';
 
 const PROOF_POINTS = [
@@ -45,10 +44,10 @@ const Home = () => {
 
         <div className="home-hero-media">
           {hero?.src && <img src={`/${hero.src}`} alt="Illustration of Central Park and the Manhattan skyline" />}
-          <Link className="home-hero-tag" to="/diplomats">
+          <a className="home-hero-tag" href="https://www.datadiplomats.org">
             <span className="home-hero-tag-label">Volunteering?</span>
             <span className="home-hero-tag-text">Meet the Data Diplomats Program →</span>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
