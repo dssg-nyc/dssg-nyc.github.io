@@ -3,7 +3,6 @@ import useInViewReveal from './carousel/useInViewReveal';
 import StatCounter from './StatCounter';
 import diplomatsData from '../data/diplomats.json';
 import siteProperties from '../data/siteproperties.json';
-import { Link } from 'react-router-dom';
 import SectionLink from './SectionLink';
 
 const ADVICE_FORM_URL = siteProperties.adviceFormUrl;
@@ -172,9 +171,9 @@ const Projects = () => {
               <a className="button accent" href={VOLUNTEER_FORM_URL} target="_blank" rel="noopener noreferrer">
                 Volunteer with us
               </a>
-              <Link className="np-volunteer-link" to="/diplomats">
+              <a className="np-volunteer-link" href="https://www.datadiplomats.org">
                 Explore the Data Diplomats Program →
-              </Link>
+              </a>
             </div>
           </div>
           <div className="np-volunteer-faces" aria-hidden="true">

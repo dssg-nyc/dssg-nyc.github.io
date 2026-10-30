@@ -141,9 +141,13 @@ const Header = () => {
 
             {/* Right group: the volunteer path, set apart so it reads as its own track. */}
             <span className="nav-divider" aria-hidden="true" />
-            <NavLink to="/diplomats" className="nav-link nav-link-program" onClick={closeMenu}>
+            <a
+              href="https://www.datadiplomats.org"
+              className="nav-link nav-link-program"
+              onClick={closeMenu}
+            >
               Data Diplomats
-            </NavLink>
+            </a>
             <a
               href="https://givebutter.com/aiforgood"
               target="_blank"
