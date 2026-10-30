@@ -8,6 +8,8 @@ const PROOF_POINTS = [
   { value: '$40k+', label: 'pro bono value delivered' },
 ];
 
+const CYCLING_PHRASES = ['built with you.', 'for your community.', 'with safety and privacy.'];
+
 const Home = () => {
   const hero = heroData.find((h) => h.name === 'home');
 
@@ -17,8 +19,13 @@ const Home = () => {
         <div className="home-hero-copy">
           <p className="eyebrow">NYC Data Science for Social Good (DSSG) is a civic tech volunteering group in NYC</p>
           <h1 className="home-hero-title">
-            Technology that serves your mission,{' '}
-            <span className="home-hero-accent">built with you.</span>
+            Human-centered apps that amplify your mission,{' '}
+            <span className="sr-only">{CYCLING_PHRASES[0]}</span>
+            <span className="home-hero-accent home-hero-cycle" aria-hidden="true">
+              {CYCLING_PHRASES.map((phrase) => (
+                <span key={phrase}>{phrase}</span>
+              ))}
+            </span>
           </h1>
           <p className="home-hero-sub">
             We pair nonprofits with trained volunteers for free data, AI, and IT support — grounded in
