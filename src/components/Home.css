@@ -39,6 +39,49 @@ section.home-hero {
   font-style: italic;
 }
 
+.home-hero .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Rotating phrase: the spans share one grid cell, so the block is as tall as
+   the longest phrase and wraps cleanly on narrow screens. One phrase per second. */
+.home-hero-cycle {
+  display: inline-grid;
+}
+
+.home-hero-cycle > span {
+  grid-area: 1 / 1;
+  opacity: 0;
+  animation: home-phrase-cycle 3s cubic-bezier(0.2, 0.7, 0.2, 1) infinite both;
+}
+
+.home-hero-cycle > span:nth-child(1) { animation-delay: 0s; }
+.home-hero-cycle > span:nth-child(2) { animation-delay: 1s; }
+.home-hero-cycle > span:nth-child(3) { animation-delay: 2s; }
+
+@keyframes home-phrase-cycle {
+  0% { opacity: 0; transform: translateY(0.3em); }
+  6% { opacity: 1; transform: translateY(0); }
+  27% { opacity: 1; transform: translateY(0); }
+  33% { opacity: 0; transform: translateY(-0.3em); }
+  100% { opacity: 0; transform: translateY(-0.3em); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-cycle > span {
+    animation: none;
+  }
+
+  .home-hero-cycle > span:first-child {
+    opacity: 1;
+  }
+}
+
 .home-hero-sub {
   margin: 0;
   font-size: clamp(1.125rem, 1.6vw, 1.375rem);
