@@ -17,7 +17,7 @@ const Home = () => {
     <section className="home-hero" id="home">
       <div className="home-hero-inner">
         <div className="home-hero-copy">
-          <p className="eyebrow">NYC Data Science for Social Good (DSSG) is a civic tech volunteering group in NYC</p>
+          <p className="eyebrow">Data Science for Social Good (DSSG) is a civic tech volunteering group in NYC</p>
           <h1 className="home-hero-title">
             Human-centered apps that amplify your mission,{' '}
             <span className="sr-only">{CYCLING_PHRASES[0]}</span>
@@ -28,7 +28,7 @@ const Home = () => {
             </span>
           </h1>
           <p className="home-hero-sub">
-            We pair nonprofits with trained volunteers for free data, AI, and IT support — grounded in
+            We put frontier-AI models to work for social impact, pairing nonprofits with trained volunteers for pro bono projects in
             community organizing, so the tools fit the people you serve.
           </p>
           <div className="home-hero-ctas">
