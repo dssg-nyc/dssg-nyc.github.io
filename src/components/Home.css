@@ -49,7 +49,7 @@ section.home-hero {
 }
 
 /* Rotating phrase: the spans share one grid cell, so the block is as tall as
-   the longest phrase and wraps cleanly on narrow screens. One phrase per second. */
+   the longest phrase and wraps cleanly on narrow screens. One phrase every 3 seconds. */
 .home-hero-cycle {
   display: inline-grid;
 }
@@ -57,18 +57,18 @@ section.home-hero {
 .home-hero-cycle > span {
   grid-area: 1 / 1;
   opacity: 0;
-  animation: home-phrase-cycle 3s cubic-bezier(0.2, 0.7, 0.2, 1) infinite both;
+  animation: home-phrase-cycle 9s cubic-bezier(0.2, 0.7, 0.2, 1) infinite both;
 }
 
 .home-hero-cycle > span:nth-child(1) { animation-delay: 0s; }
-.home-hero-cycle > span:nth-child(2) { animation-delay: 1s; }
-.home-hero-cycle > span:nth-child(3) { animation-delay: 2s; }
+.home-hero-cycle > span:nth-child(2) { animation-delay: 3s; }
+.home-hero-cycle > span:nth-child(3) { animation-delay: 6s; }
 
 @keyframes home-phrase-cycle {
   0% { opacity: 0; transform: translateY(0.3em); }
-  6% { opacity: 1; transform: translateY(0); }
-  27% { opacity: 1; transform: translateY(0); }
-  33% { opacity: 0; transform: translateY(-0.3em); }
+  2% { opacity: 1; transform: translateY(0); }
+  31% { opacity: 1; transform: translateY(0); }
+  33.3% { opacity: 0; transform: translateY(-0.3em); }
   100% { opacity: 0; transform: translateY(-0.3em); }
 }
 
@@ -151,9 +151,13 @@ section.home-hero {
   bottom: 1.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  padding: 0.9rem 1.2rem;
-  background: var(--primary-blue);
+  gap: 0.4rem;
+  width: min(30rem, calc(100% - 1rem));
+  padding: 1.6rem 1.9rem;
+  /* 50% transparent so the skyline shows through; the blur keeps text legible. */
+  background: color-mix(in srgb, var(--primary-blue) 50%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   color: white;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
@@ -168,7 +172,7 @@ section.home-hero {
 }
 
 .home-hero-tag-label {
-  font-size: 0.6875rem;
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -176,8 +180,10 @@ section.home-hero {
 }
 
 .home-hero-tag-text {
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 1000px) {
@@ -210,7 +216,10 @@ section.home-hero {
   /* On a phone the signpost would cover the picture, so it sits below it. */
   .home-hero-tag {
     position: static;
+    width: auto;
     margin-top: var(--space-sm);
+    /* Below the picture there is nothing to see through, so keep it solid for contrast. */
+    background: var(--primary-blue);
   }
 
   .home-proof {

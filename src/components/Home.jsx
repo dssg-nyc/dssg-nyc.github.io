@@ -53,7 +53,7 @@ const Home = () => {
           {hero?.src && <img src={`/${hero.src}`} alt="Illustration of Central Park and the Manhattan skyline" />}
           <a className="home-hero-tag" href="https://www.datadiplomats.org">
             <span className="home-hero-tag-label">Volunteering?</span>
-            <span className="home-hero-tag-text">Meet the Data Diplomats Program →</span>
+            <span className="home-hero-tag-text">Apply to our Data Diplomat Program TODAY! →</span>
           </a>
         </div>
       </div>
