@@ -29,12 +29,14 @@ const OPTIONAL_CATEGORIES = [
 
 const CookieConsent = () => {
   const [visible, setVisible] = useState(() => readConsent() === null);
+  const [showPrefs, setShowPrefs] = useState(false);
   const [choices, setChoices] = useState(() => readConsent() || defaultPreferences());
   const gpc = hasGlobalPrivacyControl();
 
   useEffect(() => {
     const openSettings = () => {
       setChoices(readConsent() || defaultPreferences());
+      setShowPrefs(true);
       setVisible(true);
     };
 
@@ -45,6 +47,7 @@ const CookieConsent = () => {
   const finish = (next) => {
     saveConsent(next);
     setVisible(false);
+    setShowPrefs(false);
   };
 
   if (!visible) {
@@ -56,8 +59,7 @@ const CookieConsent = () => {
       <div className="consent-inner">
         <p className="consent-text">
           We use only essential storage by default. With your permission we also use
-          third-party embeds and, if enabled, analytics and advertising cookies.
-          You can change your mind at any time. See our{' '}
+          embeds, analytics and advertising cookies. See our{' '}
           <Link to="/privacy">Privacy Policy</Link>
           {' '}and{' '}
           <Link to="/cookies">Cookie Policy</Link>
@@ -65,6 +67,7 @@ const CookieConsent = () => {
           {gpc ? ' We detected a Global Privacy Control signal and are keeping advertising off.' : ''}
         </p>
 
+        {showPrefs && (
         <ul className="consent-options">
           <li>
             <label>
@@ -95,29 +98,42 @@ const CookieConsent = () => {
             </li>
           ))}
         </ul>
+        )}
 
         <div className="consent-actions">
-          <button
-            type="button"
-            className="consent-btn consent-btn-primary"
-            onClick={() => finish(choices)}
-          >
-            Save choices
-          </button>
-          <button
-            type="button"
-            className="consent-btn consent-btn-primary"
-            onClick={() => finish({ embeds: false, analytics: false, advertising: false })}
-          >
-            Reject non-essential
-          </button>
-          <button
-            type="button"
-            className="consent-btn consent-btn-primary"
-            onClick={() => finish({ embeds: true, analytics: true, advertising: true })}
-          >
-            Accept all
-          </button>
+          {showPrefs ? (
+            <button
+              type="button"
+              className="consent-btn consent-btn-primary"
+              onClick={() => finish(choices)}
+            >
+              Save choices
+            </button>
+          ) : (
+            <>
+              <button
+                type="button"
+                className="consent-btn consent-btn-primary"
+                onClick={() => finish({ embeds: true, analytics: true, advertising: true })}
+              >
+                Accept
+              </button>
+              <button
+                type="button"
+                className="consent-btn consent-btn-primary"
+                onClick={() => finish({ embeds: false, analytics: false, advertising: false })}
+              >
+                Deny
+              </button>
+              <button
+                type="button"
+                className="consent-link"
+                onClick={() => setShowPrefs(true)}
+              >
+                Preferences
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>
