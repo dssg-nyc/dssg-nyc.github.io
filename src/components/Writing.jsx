@@ -1,3 +1,5 @@
+import LogoCloud from './LogoCloud';
+import partnerLogos from '../data/partnerlogos.json';
 import './Writing.css';
 
 const STORIES = [
@@ -24,13 +26,6 @@ const STORIES = [
       'A Stop-Super-Speeder dashboard for Families for Safe Streets and Transportation Alternatives, built by data scientists, engineers, and community advocates to help prevent speeding-related crashes in NYC.',
     url: 'https://medium.com/@dssgnyc/nyc-transportation-safety-hackathon-stop-super-speeders-d474cff6e4e4',
   },
-];
-
-const PARTNERS = [
-  { src: '/images/social/FSS.png', alt: 'Families for Safe Streets' },
-  { src: '/images/social/TA.png', alt: 'Transportation Alternatives' },
-  { src: '/images/social/BetaNYC.png', alt: 'BetaNYC' },
-  { src: '/images/social/give.png', alt: 'G.I.V.E. Inc.' },
 ];
 
 const Writing = () => {
@@ -75,13 +70,9 @@ const Writing = () => {
           ))}
         </div>
 
-        <div className="stories-partners">
-          <h3 className="stories-partners-title">Organizations we’ve built with</h3>
-          <div className="stories-partners-logos">
-            {PARTNERS.map((partner) => (
-              <img key={partner.alt} src={partner.src} alt={partner.alt} loading="lazy" />
-            ))}
-          </div>
+        <div className="partner-logo-grid">
+          <LogoCloud title="Our members" logos={partnerLogos.members} />
+          <LogoCloud title="Event collaborators" logos={partnerLogos.eventCollaborators} />
         </div>
       </div>
     </section>

@@ -1,0 +1,101 @@
+.logo-cloud {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  overflow: hidden;
+}
+
+.logo-cloud-title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  text-align: center;
+}
+
+/* Two ribbons side by side on wide screens, stacked on narrow ones. */
+.partner-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  align-items: stretch;
+}
+
+@media (max-width: 900px) {
+  .partner-logo-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Continuous ticker, after code-crew.org's Supporters ribbon. */
+.logo-ribbon {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.logo-ribbon-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logo-ribbon-scroll 40s linear infinite;
+}
+
+/* Spacing lives on the items (not flex gap/padding) so half the track width
+   is exactly one loop unit and the -50% loop point is seamless. */
+.logo-ribbon-track .logo-cloud-item {
+  margin-right: var(--space-2xl, 3rem);
+}
+
+.logo-ribbon:hover .logo-ribbon-track,
+.logo-ribbon:focus-within .logo-ribbon-track {
+  animation-play-state: paused;
+}
+
+.logo-cloud-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.logo-cloud-item img {
+  height: 60px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+@keyframes logo-ribbon-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 700px) {
+  .logo-cloud {
+    padding: var(--space-md) 0;
+  }
+
+  .logo-cloud-item img {
+    height: 40px;
+    max-width: 130px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-ribbon {
+    overflow-x: auto;
+  }
+
+  .logo-ribbon-track {
+    animation: none;
+    width: auto;
+  }
+}

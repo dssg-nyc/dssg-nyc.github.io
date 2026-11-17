@@ -150,41 +150,6 @@ section.stories-section {
   color: #A8440B;
 }
 
-.stories-partners {
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg) var(--space-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-}
-
-.stories-partners-title {
-  margin: 0;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gray-500);
-}
-
-/* Equal cells so round seals and wide wordmarks carry similar visual weight. */
-.stories-partners-logos {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-lg);
-  align-items: center;
-  justify-items: center;
-}
-
-.stories-partners-logos img {
-  height: 76px;
-  width: 100%;
-  max-width: 190px;
-  object-fit: contain;
-}
-
 @media (max-width: 900px) {
   .stories-grid {
     grid-template-columns: minmax(0, 1fr);
@@ -200,15 +165,4 @@ section.stories-section {
     padding: 0 var(--space-md);
   }
 
-  .stories-partners {
-    padding: var(--space-md);
-  }
-
-  .stories-partners-logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .stories-partners-logos img {
-    height: 60px;
-  }
 }
