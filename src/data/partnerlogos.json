@@ -1,0 +1,58 @@
+{
+  "members": [
+    {
+      "src": "/images/partners/cyber-arts.svg",
+      "alt": "Cyber Arts",
+      "href": "https://www.cyberarts.io/"
+    },
+    {
+      "src": "/images/partners/families-for-safe-streets.png",
+      "alt": "Families for Safe Streets",
+      "href": "https://www.familiesforsafestreets.org/"
+    },
+    {
+      "src": "/images/partners/san-joaquin-history-museum.png",
+      "alt": "San Joaquin County Historical Museum",
+      "href": "https://sanjoaquinhistory.org/"
+    }
+  ],
+  "eventCollaborators": [
+    {
+      "src": "/images/partners/transportation-alternatives.png",
+      "alt": "Transportation Alternatives"
+    },
+    {
+      "src": "/images/partners/betanyc.png",
+      "alt": "BetaNYC"
+    },
+    {
+      "src": "/images/partners/give-inc.png",
+      "alt": "G.I.V.E. Inc."
+    },
+    {
+      "src": "/images/partners/dssg-berlin.svg",
+      "alt": "DSSG Berlin - Data Science for Social Good Berlin",
+      "href": "https://dssg-berlin.github.io/"
+    },
+    {
+      "src": "/images/partners/civic-data-lab.svg",
+      "alt": "Civic Data Lab",
+      "href": "https://www.civic-data.de"
+    },
+    {
+      "src": "/images/partners/kavi.png",
+      "alt": "KAVI - Kings Against Violence Initiative",
+      "href": "https://www.kavibrooklyn.org"
+    },
+    {
+      "src": "/images/partners/les-cultural-center.png",
+      "alt": "LES Cultural Center",
+      "href": "https://www.lesculturalcenter.org"
+    },
+    {
+      "src": "/images/partners/http-archive.png",
+      "alt": "HTTP Archive",
+      "href": "https://www.httparchive.org"
+    }
+  ]
+}
